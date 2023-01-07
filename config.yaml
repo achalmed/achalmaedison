@@ -37,12 +37,16 @@ ignoreFiles:
   - \.utf8\.md$
 # habilita el uso de emojis en el sitio
 enableEmoji: yes
+
+
 # Permalinks especifica la estructura de las URLs de los posts y páginas del sitio
 permalinks:
   # para los posts del blog, la URL incluye el año, mes y título del post
  blog: "/blog/:year-:month-:slug/"
  # para las páginas de charlas, la URL incluye el nombre del archivo
  talk: "/talk/:filename/"
+ 
+ 
 markup:
   # utiliza goldmark como procesador de markdown
   defaultMarkdownHandler: goldmark
@@ -53,7 +57,7 @@ markup:
       # Permite contenido potencialmente inseguro (HTML) en el contenido de Markdown
       unsafe: yes
   highlight:
-    # Utiliza el estilo de resaltado de código "github"
+    # Utiliza el estilo de resaltado de código "github" (esto es para el estilo de los terminales cuadro de codigos)
     # one of: https://xyproto.github.io/splash/docs/
     style: github
   tableOfContents:
@@ -63,28 +67,16 @@ markup:
     ordered: no
     # El nivel de inicio de la tabla de contenidos es el nivel 2
     startLevel: 2
+    
+    
 # Parámetros de la página
 params:
-  # Tema personalizado para el sitio. Dejar en blanco para usar un tema incorporado
-  # o especificar un archivo SCSS personalizado en la carpeta assets/ con el nombre del archivo.
-  # Para usar colores hexadecimales en lugar de colores nombrados de Tachyons, incluir "hex" en el nombre del archivo.
-  custom_theme: ''
-  # Ejemplo de tema personalizado: fb-hex-achi
-  # Fuente personalizada para el texto del sitio.
-  # Opciones de serif: Fraunces / EB Garamond / Bitter
-  # Opciones de sans-serif: Commissioner / Alegreya Sans / Metropolis
-  # Si importa sus propias fuentes, también debe nombrarlas aquí.
-  customtextFontFamily: Commissioner
-  # Fuente personalizada para los encabezados del sitio. Ver opciones de customtextFontFamily.
-  customheadingFontFamily: Fraunces
   # Descripción del sitio. Se usa en motores de búsqueda y cuando se comparte en redes sociales.
   description: Personal website and portfolio of Dr. Edison Achalma.
   # Favicon del sitio.
   favicon: /img/favicon.ico
-  # Tipografía para encabezados
-  headingFontFamily: sans-serif
   # URL para el logo del sitio
-  logo: /img/blogophonic-mark-dark.png
+  logo: /img/penguin.png
   # Secciones principales del sitio
   mainSections:
     - blog
@@ -102,6 +94,7 @@ params:
   orgName: Edison Achalma
   #  Imagen por defecto para compartir en redes sociales y buscadores. Place image file in `static` folder and specify image name here.
   sharing_image: /img/papillons.jpg
+  
   # Social icons may appear on homepage and in site header or footer
   # Configure show/hide above - add as many as you like below
   # Icon pack "fab" includes brand icons, see: https://fontawesome.com/icons?d=gallery&s=brands&m=free
@@ -133,40 +126,60 @@ params:
   socialInFooter: yes
   # no mostrar botones de redes sociales en el encabezado
   socialInHeader: no
-  # usar fuente sans-serif para el texto
-  textFontFamily: sans-serif
-  # usar tema "sky" use a built-in color theme one of: forest / grayscale / peach / plum / poppy / sky / violet / water
-  theme: sky
   # usuario de Twitter para botón de compartir
   twitter: achalmaedison
+  # usar tema "sky" use a built-in color theme one of: forest / grayscale / peach / plum / poppy / sky / violet / water
+  theme: sky
+  # Tema personalizado para el sitio. Dejar en blanco para usar un tema incorporado
+  # o especificar un archivo SCSS personalizado en la carpeta assets/ con el nombre del archivo.
+  # Para usar colores hexadecimales en lugar de colores nombrados de Tachyons, incluir "hex" en el nombre del archivo.
+  # Ejemplo de tema personalizado: fb-hex-achi
+  custom_theme: ''
+  # usar fuente sans-serif para el texto
+  textFontFamily: sans-serif
+  # Fuente personalizada para el texto del sitio.
+  # Opciones de serif: Fraunces / EB Garamond / Bitter
+  # Opciones de sans-serif: Commissioner / Alegreya Sans / Metropolis
+  # Si importa sus propias fuentes, también debe nombrarlas aquí.
+  customtextFontFamily: Commissioner
+  # Tipografía para encabezados
+  headingFontFamily: sans-serif
+  # Fuente personalizada para los encabezados del sitio. Ver opciones de customtextFontFamily.
+  customheadingFontFamily: Fraunces
+  
+  
   # Configuration of https://utteranc.es/ for comments
   utterances:
-    # usar la ruta del artículo como término de la issue para los comentarios # url, pathname, or title
-    issue_term: pathname
-    # etiqueta para los comentarios
-    label: 'comments :crystal_ball:'
-    # nombre del repositorio donde se encuentran los comentarios
-    repo_name: apreshill/apero
-    # tema para los comentarios
-    theme: boxy-light
     # habilitar el uso de Utterances para los comentarios
     use_utterances: yes
+    # nombre del repositorio donde se encuentran los comentarios
+    repo_name: achalmed/achalmaedison
+    # usar la ruta del artículo como término de la issue para los comentarios # url, pathname, or title
+    issue_term: pathname # url, pathname, or title
+    # tema para los comentarios
+    theme: boxy-light
+    # etiqueta para los comentarios
+    label: 'comments :crystal_ball:'
+
+
 taxonomies:
   category: categories
   series: series
   tag: tags
+  
+  
 menu:
 # Configure header
   footer:
-    - name: License
+    - name: Licencia
       title: License
       url: /license/
       weight: 1
-    - name: Contact
+    - name: Contacto
       title: Contact form
       url: /contact/
       weight: 2
-    - name: Contributors
+    - name: Colaboradores
       title: Contributors
       url: /contributors/
       weight: 3
@@ -195,6 +208,8 @@ menu:
       title: Element Page
       url: /elements/
       weight: 6
+      
+      
 # see https://gohugo.io/about/hugo-and-gdpr/
 privacy:
   disqus:

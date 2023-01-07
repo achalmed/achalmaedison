@@ -43,9 +43,10 @@
         <meta name="twitter:image" content="https://achalmaedison.netlify.app/img/papillons.jpg" >
     
   <meta itemprop="name" content="Tema 7: Documentos reproducibles con **Rmarkdown**">
-<meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-01-07T00:00:00+00:00" />
+<meta itemprop="description" content="1. Introducción El proceso habitual para hacer un informe (o unas transparencias) en el que aparezcan gráficos o tablas resumen de algún análisis estadístico consiste en :
+Escribir el texto en un programa (Word, Powerpoint, Prezi, etc.) Realizar los cálculos estadísticos y gráficos en otro programa (R, Stata, Eviews, etc.) Pegar los gráficos y tablas en el documento de texto. Este proceso tiene ciertas desventajas: dificulta la investigación reproducible y puede ser tedioso de rehacer si por ejemplo cambian ligeramente los datos, etc."><meta itemprop="datePublished" content="2023-01-07T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2023-01-07T00:00:00+00:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="4391">
 <meta itemprop="keywords" content="" />
   
   
@@ -67,7 +68,7 @@
 <header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
   <nav class="site-nav db dt-l w-100" role="navigation">
     <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="https://achalmaedison.netlify.app/" title="Home">
-      <img src="/img/blogophonic-mark-dark.png" class="dib db-l h2 w-auto" alt="Edison Achalma, Econ">
+      <img src="/img/penguin.png" class="dib db-l h2 w-auto" alt="Edison Achalma, Econ">
     </a>
     <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
       
@@ -126,7 +127,7 @@
 
     
     
-      <a href="/collection/">Create a Collection</a>
+      <a href="/collection/">Cursos</a>
     
   
 
@@ -150,15 +151,815 @@
         
         <h1 class="f1 lh-solid measure-narrow mb3 fw4">Tema 7: Documentos reproducibles con **Rmarkdown**</h1>
         
-        
-        
+        <p class="f6 measure lh-copy mv1">By Edison Achalma Mendoza</p>
+        <p class="f7 db mv0 ttu">January 7, 2023</p>
         
         
       
         
       </header>
       <section class="post-body pt5 pb4">
-        
+        <script src="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-7-documentos-reproducibles-con-rmarkdown/index_files/clipboard/clipboard.min.js"></script>
+<link href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-7-documentos-reproducibles-con-rmarkdown/index_files/primer-tooltips/build.css" rel="stylesheet" />
+<link href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-7-documentos-reproducibles-con-rmarkdown/index_files/klippy/css/klippy.min.css" rel="stylesheet" />
+<script src="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-7-documentos-reproducibles-con-rmarkdown/index_files/klippy/js/klippy.min.js"></script>
+<script src="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-7-documentos-reproducibles-con-rmarkdown/index_files/twitter-widget/widgets.js"></script>
+<script src="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-7-documentos-reproducibles-con-rmarkdown/index_files/twitter-widget/widgets.js"></script>
+<link href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-7-documentos-reproducibles-con-rmarkdown/index_files/vembedr/css/vembedr.css" rel="stylesheet" />
+<script>
+  addClassKlippyTo("pre.r, pre.markdown");
+  addKlippy('right', 'top', 'auto', '1', 'Copy code', 'Copied!');
+</script>
+<hr>
+<br>
+
+
+
+
+<h1 id="1-introducción">1. Introducción
+  <a href="#1-introducci%c3%b3n"></a>
+</h1>
+<p>El proceso habitual para hacer un informe (o unas transparencias) en el que aparezcan gráficos o tablas resumen de algún análisis estadístico consiste en :</p>
+<ol>
+<li>Escribir el texto en un programa (Word, Powerpoint, Prezi, etc.)</li>
+<li>Realizar los cálculos estadísticos y gráficos en otro programa (R, Stata, Eviews, etc.)</li>
+<li>Pegar los gráficos y tablas en el documento de texto.</li>
+</ol>
+<p>Este proceso tiene ciertas desventajas: dificulta la investigación reproducible y puede ser tedioso de rehacer si por ejemplo cambian ligeramente los datos, etc.</p>
+<br>
+<p><strong>En R es posible realizar todo el informe</strong>, tanto la escritura del texto como la realización de los cálculos y gráficos, <strong>en un único documento</strong>. Hay varias formas de hacerlo, pero nos centraremos en los documentos RMarkdown (.Rmd).</p>
+<p>Los <strong>documentos RMarkdown (.Rmd)</strong> facilitan mucho la realización de informes y transparencias ya que permiten combinar texto, código y resultados de la evaluación del código en un único documento. Si por ejemplo cambian los datos sólo habría que cambiar la ruta a los nuevos datos y el informe (gráficos, tablas etc…) se volvería a generar automáticamente con los nuevos datos.</p>
+<p>La razón para hacer los análisis reproducibles no sólo es cumplir con los estándares científicos, que también, sino también hay un interés personal para el analista. Para entenderlo puedes ver el siguiente 
+<a href="https://www.youtube.com/watch?v=s3JldKoA0zw&amp;feature=youtu.be" target="_blank" rel="noopener">video de 1’44’’</a> que muestra una de las principales ventajas de usar documentos <code>.Rmd</code>.</p>
+<p>Hace poco David Keyes pregunto en Twitter a la comunidad R cuales eran los principales beneficios de usar ficheros .Rmd para tus investigaciones/informes:</p>
+<blockquote class="twitter-tweet" align="center" data-width="400" data-lang="en" data-dnt="true" data-theme="light"><p lang="en" dir="ltr">Help me out <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> hive mind. I&#39;ve been asked to explain the benefits of RMarkdown. I&#39;m developing a list on a continuum from simple (i.e. do what you currently do, just better) to complex (i.e. completely transform how you work). Here &#39;tis:</p>&mdash; David Keyes (@dgkeyes) <a href="https://twitter.com/dgkeyes/status/1101554699566641152?ref_src=twsrc%5Etfw">March 1, 2019</a></blockquote>
+<p>Con las respuestas al tweet, David elaboró 
+<a href="https://rfortherestofus.com/2019/03/r-killer-feature-rmarkdown/" target="_blank" rel="noopener">este post</a>.</p>
+<br>
+<p>Ya hemos trabajado con algunos <strong>documentos Rmarkdown</strong> (<code>.Rmd</code>); de hecho, todos los tutoriales del curso (incluido éste que estás viendo) se han elaborado usando ficheros .Rmd. Los tutoriales se escriben en ficheros RMarkdown, pero estos ficheros .Rmd se convierten a html, que suele ser el formato final en el que se muestran los tutoriales. En RStudio el proceso de conversión de .Rmd a .html consiste simplemente en pinchar un botón; además, simplemente cambiando una linea podemos convertir los documentos .Rmd a una gran variedad de formatos: html, pdf, word, ioslides, beamer, etc…</p>
+<p>Si quieres ver algunos ejemplos de la gran variedad de formatos a los que puedes transformar un documento .Rmd ve a la siguiente 
+<a href="http://rmarkdown.rstudio.com/gallery.html" target="_blank" rel="noopener">galería</a>. Para iniciarte en el universo Rmarkdown puedes consultar 
+<a href="https://bookdown.org/yihui/rmarkdown/" target="_blank" rel="noopener"><code>R Markdown: The Definitive Guide</code></a>.</p>
+<br>
+
+
+
+
+<h4 id="proceso-para-convertir-los-rmd-a-otros-formatos-opcional">Proceso para convertir los .Rmd a otro(s) formatos [OPCIONAL]
+  <a href="#proceso-para-convertir-los-rmd-a-otros-formatos-opcional"></a>
+</h4>
+<p>Como trabajamos con RStudio, en la práctica, procesar los ficheros .Rmd consistirá solamente en pinchar en el icono <code>Knit</code><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. Muy fácil!!</p>
+<p>No es necesario, pero quizá os interese saber cómo se procesan realmente los ficheros .Rmd para acabar convirtiéndose en html, pdf, etc.</p>
+<p>La respuesta es que se ocupa de ello el paquete 
+<a href="https://github.com/rstudio/rmarkdown" target="_blank" rel="noopener"><code>rmarkdown</code></a> que llama otro paquete de R, 
+<a href="https://yihui.name/knitr/" target="_blank" rel="noopener"><code>knitr</code></a> y a un programa llamado 
+<a href="https://es.wikipedia.org/wiki/Pandoc" target="_blank" rel="noopener"><code>pandoc</code></a>. Si quieres más detalles puedesir 
+<a href="https://stackoverflow.com/questions/40563479/relationship-between-r-markdown-knitr-pandoc-and-bookdown" target="_blank" rel="noopener">aquí</a></p>
+<p><strong>En palabras:</strong> knitr se ocupa de ejecutar todos los trozos con código R que haya en el fichero .Rmd, después de ejecutar el código, pegará los resultados de la evaluación del código (gráficos, tablas etc…) junto con el texto en un documento intermedio (con extensión .md), para después transferir, con la ayuda del paquete <code>rmarkdown</code>, este documento .md a <code>pandoc</code> que se encargará de traducirlo al formato elegido (html, pdf, …)<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. Knitr sabe diferenciar el texto del código R porque éste se señaliza con unas marcas.</p>
+<p><strong>Visualmente:</strong></p>
+<br>
+<hr>
+
+
+
+
+<h1 id="2-creando-rmds-en-rstudio">2 Creando .Rmd’s en RStudio
+  <a href="#2-creando-rmds-en-rstudio"></a>
+</h1>
+<p>En la práctica, RStudio facilita mucho la creación de documentos Rmarkdown. Para generar un documento .Rmd basta con seguir la siguiente ruta de menús: <code>File &gt; New File &gt; R Markdown ...</code></p>
+<p>Se abrirá una ventana que nos solicitará un título y un autor para nuestro .Rmd, así como el formato de salida.</p>
+<p>Cuando aceptemos nos generará un documento/plantilla para nuestro .Rmd. Si queremos procesarlo o “knitearlo” tendremos que hacer click en el icono <strong><code>Knit</code></strong></p>
+<br>
+<hr>
+
+
+
+
+<h1 id="3-qué-son-los-documentos-rmd">3. ¿Qué son los documentos .Rmd?
+  <a href="#3-qu%c3%a9-son-los-documentos-rmd"></a>
+</h1>
+<p>Son simplemente ficheros de texto (se pueden escribir en cualquier editor de texto, por ejemplo Notepad); PERO <strong>facilitan mucho la tarea de generar informes o transparencias</strong> con contenido estadístico, ya que permiten mezclar en un mismo documento texto y código R.</p>
+<p>El código R (así como los resultados de la evaluación del código) se mostrarán automáticamente (gracias a <code>knitr</code>) en el documento final; de esta forma, se facilita mucho la realización de informes y transparencias ya que evita el tener que ir copiando los resultados (tablas, gráficos etc…) en el informe.</p>
+<br>
+<p>Veamos un <strong>ejemplo</strong> con un documento Rmarkdown muy sencillo:</p>
+<br>
+<p>Como veis, los documentos Rmarkdown tienen 3 partes o elementos:</p>
+<ul>
+<li>encabezamiento</li>
+<li>trozos de código R</li>
+<li>texto</li>
+</ul>
+<p>Luego hablaremos de ellas. Antes veamos como quedaría el documento .Rmd tras ser procesado por knitr (“kniteado”). Tras pasar por knitr y pandoc se generará un documento .html que se verá así:</p>
+<p>Como veis, el chunk con código R <code>summary(iris)</code> se ha ejecutado y se ha mostrado tanto el código como el resultado de su evaluación en unas cajas de texto.</p>
+<br>
+<hr>
+
+
+
+
+<h1 id="4-partes-de-los-ficheros-rmd">4. Partes de los ficheros .Rmd
+  <a href="#4-partes-de-los-ficheros-rmd"></a>
+</h1>
+<p>Los documentos Rmarkdown tienen 3 partes o elementos:</p>
+<ul>
+<li>Encabezamiento o YAML header</li>
+<li>Trozos de código R(chunks)</li>
+<li>Texto (escrito en markdown)</li>
+</ul>
+<p>Veámoslas una a una.</p>
+<br>
+<hr>
+
+
+
+
+<h2 id="encabezamiento-yaml-header">Encabezamiento (YAML header)
+  <a href="#encabezamiento-yaml-header"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<br>
+<p>Abajo tenéis un ejemplo sencillo de un YAML header:</p>
+<br>
+<p>Como podéis imaginar, el encabezamiento se coloca <strong>al principio del documento y comienza y acaba con una marca de 3 guiones</strong>: <strong><code>---</code></strong></p>
+<p>En el encabezamiento se introducen elementos básicos del documento como el título, el autor, fecha, y el formato de salida del documento. En el ejemplo hemos elegido como formato de salida <code>html</code>; si preferimos pdf, habría que sustituir <code>output: html_document</code> por <code>output: pdf_document</code></p>
+<br>
+<p>El YAML header puede incluir otros elementos para personalizar un poco más el documento final o output. Abajo tenéis un ejemplo más complejo de un YAML header. Es el que utilizo para hacer los tutoriales del curso.</p>
+<p>En 
+<a href="https://scienceloft.com/technical/useful-yaml-options-for-generating-html-reports-in-r/" target="_blank" rel="noopener">este post</a> y en 
+<a href="https://ymlthis.r-lib.org/articles/yaml-fieldguide.html" target="_blank" rel="noopener">esta vignette</a> del paquete <code>ymlthis</code> tienes más opciones/posibilidades a especificar en el YAML.</p>
+<br>
+<hr>
+
+
+
+
+<h2 id="chunks-o-código-r">Chunks (o código R)
+  <a href="#chunks-o-c%c3%b3digo-r"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<br>
+<p>Los trozos de código R o chunks permiten hacer análisis estadísticos y mostrar los resultados en el documento final.</p>
+<p>Para que knitr distinga las instrucciones de R del texto normal <strong>tenemos que poner las instrucciones de R dentro de unas marcas</strong> o identificadores: <code>```{r}</code> al principio y <code>```</code> al final.</p>
+<p>Por ejemplo:</p>
+<p>Knitr interpreta ese trozo de texto como instrucciones de R porque van dentro de las marcas, y hará que R las ejecute y muestre los resultados en el documento final.</p>
+<br>
+<p>Los chunks pueden tienen diversas opciones que permiten una mayor flexibilidad en como se muestra el código y los resultados en el documento final. Las opciones más usadas son:</p>
+<ul>
+<li>echo</li>
+<li>eval</li>
+</ul>
+<br>
+<p>Por ejemplo, si introducimos este texto en nuestro fichero .Rmd:</p>
+<p>En este caso, se mostrará el chunk(<code>echo = TRUE</code>) y también se evaluará (<code>eval = TRUE</code>) y, por tanto, se mostrarán los resultados en el documento final. Se verá algo como:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">summary</span>(iris)
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  Median :5.800   Median :3.000   Median :4.350   Median :1.300  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;        Species  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  setosa    :50  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  versicolor:50  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  virginica :50  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;                 </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;                 </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt; </span>
+</span></span></code></pre></div><br>
+<p>Mientras que si en el .Rmd escribimos lo siguiente:</p>
+<p>Se mostrará el código (<code>echo = TRUE</code>), pero no se evaluará (<code>eval = FALSE</code>) y ,por lo tanto, no se mostrarán los resultados en el documento final.</p>
+<br>
+<p>Si en el .Rmd escribimos lo siguiente:</p>
+<p>NO se mostrará el código (<code>echo = FALSE</code>), pero SÍ se evaluará (<code>eval = FALSE</code>) y ,por lo tanto, SI se mostrarán los resultados en el documento final.</p>
+<br>
+<p>Si en el .Rmd escribimos lo siguiente:</p>
+<p>NO se mostrará el código (<code>echo = FALSE</code>), SI se evaluará (<code>eval = FALSE</code>), PERO como <code>results = &quot;hide&quot;</code> NO se mostrarán los resultados en documento final.</p>
+<br>
+<p>Hay más opciones sobre los chunks que nos permiten una mayor flexibilidad sobre como mostrar los resultados y el código; pero si quieres ver todas las opciones tendrás que ir a la 
+<a href="https://yihui.name/knitr/options/" target="_blank" rel="noopener">página web de knitr</a> o al 
+<a href="https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf" target="_blank" rel="noopener">cheat sheet sobre Rmarkdown</a>.</p>
+<p>Una opción útil es <code>include = FALSE</code>; en este caso, el chunk se ejecutará, pero ni se mostrará en el documento final ni se mostrarán los resultados de la ejecución del código. Esta opción es muy útil para los chunks que se utilizan para hacer el “setup”.</p>
+<p>Generalmente los documentos .Rmd tienen un primer chunk (chunk de setup) donde se fijan opciones globales para los chunks, fijra opciones globales, incluso se puede utilizar para cargar paquetes básicos como el <code>tidyverse</code>. Por ejemplo este suele ser el primer chunk en mis documentos .RMd:</p>
+<br>
+<p>Con la llegada de 
+<a href="https://github.com/yihui/knitr/releases" target="_blank" rel="noopener"><code>knitr v1.35</code></a> disponemos de una nueva forma de especificar las opciones de los chunks.</p>
+<blockquote class="twitter-tweet" align="center" data-width="550" data-lang="en" data-dnt="true" data-theme="light"><p lang="es" dir="ltr">Si vas a pasar el tiempo tratando de humillarme, haciendo que la clase sea innecesariamente dura, entonces mejor me voy, pero si de verdad quieres hacer el esfuerzo de ser un buen maestro entonces yo también estoy dispuesto a intentarlo.</p>&mdash; Edison Achalma (@achalmaedison) <a href="https://twitter.com/achalmaedison/status/1597228787431002113?ref_src=twsrc%5Etfw">November 28, 2022</a></blockquote>
+<br>
+<hr>
+
+
+
+
+<h2 id="el-texto-en-rmarkdown">El texto (en Rmarkdown)
+  <a href="#el-texto-en-rmarkdown"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<br>
+<p>La parte principal de un informe suele ser texto (narratives). En un fichero .Rmd, todo lo que no sea encabezamiento o chunks será interpretado por knit como texto y lo mostrará tal cual; es decir, como texto.</p>
+<p>Aquí podríamos acabar nuestro tutoría sobre como escribir texto en un fichero .Rmd; pero generalmente en un texto queremos resaltar ciertas palabras con negrita, o ponerlas en cursiva, o poner un titulo de sección y de sub-secciones. Todo esto lo tendremos que hacer utilizando <strong>Markdown</strong>. Markdown es un lenguaje de marcas ligero y muy sencillo de aprender (lo básico se aprende en unos 10 minutos) pero muy utilizado. Es posible que alguno de vosotros haya utilizado una variante de Markdown al escribir en negrita en Whatsapp.</p>
+<p>El texto de un documento .Rmd es “simplemente” texto PERO está escrito en <strong>Markdown</strong>. Ahora lo veremos, pero antes vamos a ver un poco más sobre qué es Markdown.</p>
+<br>
+
+
+
+
+<h4 id="qué-es-markdown-opcional">¿Qué es Markdown? [OPCIONAL]
+  <a href="#qu%c3%a9-es-markdown-opcional"></a>
+</h4>
+<p>Mardown es un lenguaje de marcado ligero ideado en 2004 por Jhon Grueber y 
+<a href="https://es.wikipedia.org/wiki/Aaron_Swartz" target="_blank" rel="noopener">Aaron Swartz</a>. Hay diversas variantes de Markdown, 
+<a href="https://blog.codinghorror.com/standard-markdown-is-now-common-markdown/" target="_blank" rel="noopener">aquí</a> peuedes leer sobre un intento de estandarización.</p>
+<p>Podemos pensar que Markdown es un método de escritura<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>: evidentemente sirve para escribir. La ventaja de escribir en Markdown es que es un lenguaje muy fácil de aprender y que como está basado en un formato de texto plano, es y será compatible con la mayoría de plataformas.</p>
+<p>La mayoría de vosotros escribís en Word. Es muy fácil escribir en Word pero un archivo word solo es posible leerlo en el programa WORD de Microsoft. Si intentas abrir un documento .doc en Notepad, éste será completamente ilegible; sin embargo, la mayoría de plataformas y servicios web saben interpretar y mostrar correctamente un documento escrito en Markdown.</p>
+<p>Lo que escribas en Rmarkdown se mostrará tal cual en el documento final, pero lo más habitual es que quieras dar un poco de formato el texto: negritas, cursivas, listas, enlaces de internet, etc…</p>
+<p>Todos estos formatos (negrita, …) se introducen en rmarkdown con marcas; por ejemplo si quieres que una palabra se resalte en negritas tienes que escribirla enmarcada en <code>**</code>: <strong><code>**esto se mostraría en negrita**</code></strong></p>
+<p>Para aprender las principales reglas de Rmarkdown podéis usar un 
+<a href="https://vuejs.org/v2/examples/" target="_blank" rel="noopener">editor on-line de Markdown</a> y probar a escribir algo.</p>
+<p>En este otro 
+<a href="https://www.markdowntutorial.com/" target="_blank" rel="noopener">tutorial de Markdown</a>, se puede leer lo siguiente:</p>
+<blockquote>
+<p>Markdown is a way to write content for the web. It’s written in what nerds like to call “plaintext”, which is exactly the sort of text you’re used to writing and seeing. Plaintext is just the regular alphabet, with a few familiar symbols. Unlike cumbersome word processing applications, text written in Markdown can be easily shared between computers, mobile phones, and people. It’s quickly becoming the writing standard for academics, scientists, writers, and many more. Websites like GitHub and reddit use Markdown to style their comments.</p>
+</blockquote>
+
+
+
+
+<h5 id="aquí-tienes-algunas-reglas-de-markdown">Aquí tienes algunas reglas de Markdown
+  <a href="#aqu%c3%ad-tienes-algunas-reglas-de-markdown"></a>
+</h5>
+<br>
+
+
+
+
+<h1 id="5-más-cosas-de-rmarkdown">5. Más cosas de RMarkdown
+  <a href="#5-m%c3%a1s-cosas-de-rmarkdown"></a>
+</h1>
+<p>En la página web de Markdown, concretamente 
+<a href="https://daringfireball.net/projects/markdown/syntax#html" target="_blank" rel="noopener">aquí</a> nos avisan de lo siguiente:</p>
+<blockquote>
+<p>Markdown is not a replacement for HTML, or even close to it. Its syntax is very small, corresponding only to a very small subset of HTML tags … The idea for Markdown is to make it easy to read, write, and edit prose. HTML is a publishing format; Markdown is a writing format. Markdown was not designed to solve everything.</p>
+</blockquote>
+<p>A pesar de que, como nos avisó Jhon Grueber, el desarrollador de Markdown, Markdown no está diseñado para resolver todas las necesidades de un escritor/científico, en Rmarkdown se pueden introducir también elementos como:</p>
+
+
+
+
+<h3 id="ecuaciones">Ecuaciones
+  <a href="#ecuaciones"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>Se pueden introducir formulas matemáticas escritas en Látex. Para formulas en linea se usa la marca <code>$</code> y para formulas independientes se usa <code>$$</code>.</p>
+<ul>
+<li>
+<p>Para fórmulas en linea (o dentro del texto) se utiliza la marca <code>$</code> al principio y final de la formula. Por ejemplo <code>$\sum_{i=1}^n X_i$</code> se mistaría así: <code>\(\sum_{i=1}^n X_i\)</code>. Ves, la formula está dentro del texto, en una linea del texto.</p>
+</li>
+<li>
+<p>Para presentar una ecuación independiente (en una linea independiente), se usa la marca <code>$$</code> al principio y final de la formula. Si escribes <code>$$E = mc^{2}$$</code>, se mostrará en una linea independiente tal que así:</p>
+</li>
+</ul>
+<p><code>$$E = mc^{2}$$</code></p>
+<p>¿Que pasa, que no sabes escribir formulas o ecuaciones en Latex? Yo tampoco mucho, pero puedes utilizar un programa como 
+<a href="https://www.lyx.org/" target="_blank" rel="noopener">Lyx</a>, o mucho más fácil, puedes utilizar algún editor online de Latex, por ejemplo: 
+<a href="http://www.sciweavers.org/free-online-latex-equation-editor" target="_blank" rel="noopener">este</a> o 
+<a href="https://www.latex4technics.com/" target="_blank" rel="noopener">este</a>. En 
+<a href="https://dereksonderegger.github.io/570L/16-rmarkdown-tricks.html" target="_blank" rel="noopener">este libro</a> tienen algunos ejemplos de ecuaciones en Latex.</p>
+<p>Recientemente, el paquete 
+<a href="https://github.com/datalorax/equatiomatic" target="_blank" rel="noopener"><code>equatiomatic</code></a> permite obtener fácilmente la ecuación de un modelo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># remotes::install_github(&#34;datalorax/equatiomatic&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(equatiomatic)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># Fit a simple model</span>
+</span></span><span style="display:flex;"><span>mod1 <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">lm</span>(mpg <span style="color:#000;font-weight:bold">~</span> cyl <span style="color:#000;font-weight:bold">+</span> disp, mtcars)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># Give the results to extract_eq</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">extract_eq</span>(mod1)
+</span></span></code></pre></div><p>$$
+\operatorname{mpg} = \alpha + \beta_{1}(\operatorname{cyl}) + \beta_{2}(\operatorname{disp}) + \epsilon
+$$</p>
+<p>También de un modelo estimado:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">extract_eq</span>(mod1, use_coefs <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">TRUE</span>)
+</span></span></code></pre></div><p>$$
+\operatorname{\widehat{mpg}} = 34.66 - 1.59(\operatorname{cyl}) - 0.02(\operatorname{disp})
+$$</p>
+<br>
+
+
+
+
+<h3 id="imágenes">Imágenes
+  <a href="#im%c3%a1genes"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>Para mostrar una imagen basta con poner:</p>
+<pre><code>![Una imagen chula](./imagenes/img1.jpeg) 
+</code></pre>
+<p>Aunque yo prefiero hacerlo así:</p>
+<pre><code>```{r eval = TRUE, echo = TRUE}
+knitr::include_graphics(here::here(&quot;imagenes&quot;, &quot;rmarkdown_ejemplos&quot;, &quot;imagenes&quot;, &quot;fucking_ages_image.jpeg&quot;)  )
+```
+</code></pre>
+
+
+
+
+<h3 id="hyperlinks">Hyperlinks
+  <a href="#hyperlinks"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>Para poner hyperlinks se puede escribir lo siguiente: <code>&lt;http://www.wikipedia.es&gt;</code> y se mostrará así: 
+<a href="http://www.wikipedia.es" target="_blank" rel="noopener">http://www.wikipedia.es</a></p>
+<p>Pero es mejor ponerlo así: <code>[enlace a la Wikipedia](http://www.wikipedia.es)</code> y se mostrará así: <a href="http://www.wikipedia.es" target="_blank">enlace a la Wikipedia</a>.</p>
+<p>Si quieres que el enlace se abra en el navegador en una página nueva has de añadir <code>{target=&quot;_blank&quot;}</code></p>
+
+
+
+
+<h3 id="notas-al-pie-de-página">Notas al pie de página
+  <a href="#notas-al-pie-de-p%c3%a1gina"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>Para poner notas al pie has de poner <code>[^1]</code> y luego al final del documento poner <code>[^1]: esto es una nota al pie.</code>, y se verá esto: <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<p>O alternativamente poner, en el sitio del texto donde quieras insertar una nota al pie, esta marca: <code>^[el texto que quiero que se lea en la nota al pie]</code> y se mostrará como una nota al pie.</p>
+
+
+
+
+<h3 id="tablas">Tablas
+  <a href="#tablas"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>Habrá un tutorial especifico para tablas, pero para mostrar una tabla, lo más básico y sencillo es utilizar la función <code>knitr::kable()</code>:</p>
+<pre><code>```{r}   
+knitr::kable(summary(iris))    
+```    
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">Sepal.Length</th>
+<th style="text-align:left">Sepal.Width</th>
+<th style="text-align:left">Petal.Length</th>
+<th style="text-align:left">Petal.Width</th>
+<th style="text-align:left">Species</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">Min. :4.300</td>
+<td style="text-align:left">Min. :2.000</td>
+<td style="text-align:left">Min. :1.000</td>
+<td style="text-align:left">Min. :0.100</td>
+<td style="text-align:left">setosa :50</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">1st Qu.:5.100</td>
+<td style="text-align:left">1st Qu.:2.800</td>
+<td style="text-align:left">1st Qu.:1.600</td>
+<td style="text-align:left">1st Qu.:0.300</td>
+<td style="text-align:left">versicolor:50</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">Median :5.800</td>
+<td style="text-align:left">Median :3.000</td>
+<td style="text-align:left">Median :4.350</td>
+<td style="text-align:left">Median :1.300</td>
+<td style="text-align:left">virginica :50</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">Mean :5.843</td>
+<td style="text-align:left">Mean :3.057</td>
+<td style="text-align:left">Mean :3.758</td>
+<td style="text-align:left">Mean :1.199</td>
+<td style="text-align:left">NA</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">3rd Qu.:6.400</td>
+<td style="text-align:left">3rd Qu.:3.300</td>
+<td style="text-align:left">3rd Qu.:5.100</td>
+<td style="text-align:left">3rd Qu.:1.800</td>
+<td style="text-align:left">NA</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">Max. :7.900</td>
+<td style="text-align:left">Max. :4.400</td>
+<td style="text-align:left">Max. :6.900</td>
+<td style="text-align:left">Max. :2.500</td>
+<td style="text-align:left">NA</td>
+</tr>
+</tbody>
+</table>
+<br>
+
+
+
+
+<h1 id="6-aún-más-cosas">6. Aún más cosas
+  <a href="#6-a%c3%ban-m%c3%a1s-cosas"></a>
+</h1>
+<p>Hay más cosas, como referencias bibliográficas, pero ya será para el segundo curso de R o lo tendrás que aprender por tu cuenta en 
+<a href="https://bookdown.org/yihui/rmarkdown/" target="_blank" rel="noopener"><code>R Markdown: The Definitive Guide</code></a>.</p>
+<p>A pesar de que Markdown permite formatear el texto, en ciertos sentidos es limitado; pero si quieres aún más flexibilidad en el output, tendrás que aprender html y mejor html+CSS.</p>
+<br>
+<p><strong>Algunos ejemplos:</strong></p>
+<ol>
+<li>
+<p>Si quieres introducir un párrafo en otro color tendrás que hacerlo en html, tendrás que escribir: <code>&lt;FONT COLOR=&quot;Red&quot;&gt;Esto se mostrará en ROJO!!&lt;/FONT&gt;</code></p>
+<p><FONT COLOR="Red">Esto se mostrará en ROJO!!</FONT></p>
+</li>
+</ol>
+<br>
+<ol start="2">
+<li>si quieres centrar un párrafo, tendrás que escribir: <code>&lt;CENTER&gt;Este párrafo irá centrado&lt;/CENTER&gt;</code></li>
+</ol>
+<CENTER>
+Este párrafo irá centrado
+</CENTER>
+<br>
+<ol start="3">
+<li>Puedes insertar en tu documento (sólo si el output es html) una página web completa, para ello has de escribir: <code>&lt;iframe src=&quot;http://www.eldiario.es/&quot; height=&quot;400&quot; width=&quot;800&quot;&gt;&lt;/iframe&gt;</code></li>
+</ol>
+<br>
+<iframe src="http://www.eldiario.es/" height="400" width="800">
+</iframe>
+<br>
+<ol start="4">
+<li>Un vídeo. Has de escribir: <code>&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/ACv9zaBa1A4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</code></li>
+</ol>
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/ACv9zaBa1A4" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+<p>Aunque también hay un paquete, al menos, que facilita la inserción de videos en documentos .Rmd: es el paquete 
+<a href="https://ijlyttle.github.io/vembedr/articles/vembedr.html" target="_blank" rel="noopener"><code>vembedr</code></a>.</p>
+<br>
+<hr>
+<br>
+
+
+
+
+<h2 id="aún-más-cosas-ii">Aún más cosas (II)
+  <a href="#a%c3%ban-m%c3%a1s-cosas-ii"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<ul>
+<li>
+<p>El paquete 
+<a href="https://github.com/kbodwin/demoR" target="_blank" rel="noopener"><code>demoR</code></a> ayuda a presentar el código R en documentos Rmd. Por ejemplo, permite marcar/highligt algunas partes de una sentencia o código R. Para aprender puedes ir a la 
+<a href="https://web.calpoly.edu/~kbodwin/demoR/articles/demoR.html" target="_blank" rel="noopener">viñeta</a> del paquete. Por ejemplo, en el próximo chunk voy a marcar en amarillo el operador pipe <code>%&gt;%</code></p>
+</li>
+<li>
+<p>Podemos 
+<a href="https://ropensci.org/technotes/2018/05/15/icon/" target="_blank" rel="noopener">usar iconos</a> en nuestros Rmds. Por ejemplo: <code>ricons::icon_style(icons::fontawesome(&quot;rocket&quot;), fill = &quot;#1FA67A&quot;)</code> +
+<code>ricons::icon_style(icons::fontawesome(&quot;r-project&quot;), fill = &quot;#384CB7&quot;)</code> =
+<code>ricons::icon_style(icons::fontawesome(&quot;heart&quot;), fill = &quot;red&quot;)</code></p>
+</li>
+<li>
+<p>Podemos usar cajas de colores para resaltar un trozo de texto por ejemplo para poner conclusiones. Esto lo aprendí 
+<a href="https://holtzy.github.io/Pimp-my-rmd/#figures_caption" target="_blank" rel="noopener">aquí</a>. En este 
+<a href="https://desiree.rbind.io/post/2019/making-tip-boxes-with-bookdown-and-rmarkdown/" target="_blank" rel="noopener">otro post</a> nos enseñan a hacer esos cuadros realmente bonitos.</p>
+</li>
+</ul>
+<style>
+div.blue {background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class="blue">
+<p><strong>Conclusiones:</strong></p>
+<ul>
+<li>This is my first conclusion</li>
+<li>This is my second conclusion</li>
+</ul>
+</div>
+<ul>
+<li>si queremos que los chunks puedan copiarse en el portapapeles, podemos usar el paquete 
+<a href="https://rlesur.github.io/klippy/index.html" target="_blank" rel="noopener"><code>klippy</code></a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>klippy<span style="color:#000;font-weight:bold">::</span><span style="color:#900;font-weight:bold">klippy</span>()  <span style="color:#998;font-style:italic">#- remotes::install_github(&#34;rlesur/klippy&#34;)</span>
+</span></span></code></pre></div>
+
+
+
+<h2 id="aún-más-cosas-iii">Aún más cosas (III)
+  <a href="#a%c3%ban-m%c3%a1s-cosas-iii"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<ul>
+<li>
+<p>Puedes cambiar algunos aspectos de tu documento html. Puedes verlo 
+<a href="https://bookdown.org/yihui/rmarkdown/html-document.html#appearance-and-style." target="_blank" rel="noopener">aquí</a></p>
+</li>
+<li>
+<p>Con CSS se puede personalizar completamente el aspecto de los documentos html que se generan con Rmarkdown. Aunque no sepas CSS tienes una gran variedad de formatos predefinidos. Puedes ver un listado 
+<a href="https://www.datadreaming.org/post/r-markdown-theme-gallery/" target="_blank" rel="noopener">aquí</a>, 
+<a href="https://github.com/gadenbuie/cleanrmd" target="_blank" rel="noopener">aquí</a>o 
+<a href="https://github.com/juba/rmdformats" target="_blank" rel="noopener">aquí</a>.</p>
+</li>
+<li>
+<p>El paquete 
+<a href="https://rstudio.github.io/bslib/" target="_blank" rel="noopener">bslib</a> facilita el tuneado de los html.</p>
+</li>
+<li>
+<p>El paquete 
+<a href="https://rstudio.github.io/thematic/" target="_blank" rel="noopener">thematic</a> puede hacer que los gráficos reflejen el theme de RStudio que estas usando: sólo hay que hacer <code>thematic_on()</code></p>
+</li>
+<li>
+<p>El paquete 
+<a href="https://agricolamz.github.io/checkdown/" target="_blank" rel="noopener">checkdown</a> permite crear campos y casillas de verificación. Por ejemplo:</p>
+</li>
+</ul>
+<!-- -->
+<pre><code>¿Cuanto es 7 + 2?
+</code></pre>
+<form name="form_29902" onsubmit="return validate_form_29902()" method="post">
+<input type="text" name="answer_29902"><br><input type="submit" value="check">
+</form>
+<p id="result_29902">
+</p>
+<script> function validate_form_29902() {var x, text; var x = document.forms["form_29902"]["answer_29902"].value;if (x == "9"){text = 'Acertaste!!!';} else {text = 'no way';} document.getElementById('result_29902').innerHTML = text; return false;} </script>
+<ul>
+<li>
+<p>Puedes incluir páginas web con <code>knitr::include_url()</code> , shiny’s con <code>knitr::include_app ()</code> e imágenes con <code>knitr::include_graphics()</code></p>
+</li>
+<li>
+<p>El paquete 
+<a href="https://github.com/rstudio/fontawesome" target="_blank" rel="noopener">fontawesome</a> permite incluir iconos de 
+<a href="https://fontawesome.com/" target="_blank" rel="noopener"><strong>Font Awesome</strong></a> en documentos RMarkdown. Por ejemplo con <code>` fontawesome::fa(&quot;r-project&quot;, fill = &quot;steelblue&quot;)`</code> podemos insertar el icono de <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> para instalar usar install.packages(“fontawesome”)</p>
+</li>
+</ul>
+<br>
+<hr>
+<br>
+
+
+
+
+<h1 id="7-investigación-reproducible-y-rmd">7. Investigación reproducible y Rmd
+  <a href="#7-investigaci%c3%b3n-reproducible-y-rmd"></a>
+</h1>
+<p>Hemos hablado muy poco de investigación reproducible pero, es evidente que usar documentos <code>.Rmd</code> y trabajar con <code>Rprojects</code> facilita la investigación reproducible. No la garantiza del todo, para ello habría que ver/usar más herramientas (docker, packrat, github, …). No lo vamos a hacer, pero al menos señalar dos prácticas que facilitan que tus análisis se acerquen a ser reproducibles:</p>
+<br>
+<ol>
+<li>
+<p>Cuando estás haciendo un análisis y quieres compartirlo hay que estar seguro de los packages que se necesitan cargar para replicarlo, por eso es bueno hacer el análisis desde una sesión nueva/fresca de R y cargar los paquetes al principio del script. Para ello, puede ser de utilidad saber que paquetes tienes cargados en un momento dado, y puedes saberlo con: <code>(.packages())</code>.</p>
+</li>
+<li>
+<p>A pesar de que yo no lo suelo hacer (<code>remo::ji(&quot;-1&quot;)</code>), es recomendable introducir al final de los ficheros <code>.Rmd</code> la siguiente instrucción: <code>sessionInfo()</code>. De esta forma, proporcionarás información sobre que ordenador, sistema operativo y versión de R utilizaste en tu análisis, así como de las opciones locales de tu sistema (idioma, etc …) y de los paquetes que tienes cargados en memoria. Por ejemplo, ahora mismo mi sessionInfo es:</p>
+</li>
+</ol>
+<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">sessionInfo</span>()
+</span></span></code></pre></div><pre><code>#&gt; R version 4.0.4 (2021-02-15)
+#&gt; Platform: x86_64-pc-linux-gnu (64-bit)
+#&gt; Running under: Parrot OS 5.1 (Electro Ara)
+#&gt; 
+#&gt; Matrix products: default
+#&gt; BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3
+#&gt; LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.13.so
+#&gt; 
+#&gt; locale:
+#&gt;  [1] LC_CTYPE=es_PE.UTF-8       LC_NUMERIC=C              
+#&gt;  [3] LC_TIME=es_PE.UTF-8        LC_COLLATE=es_PE.UTF-8    
+#&gt;  [5] LC_MONETARY=es_PE.UTF-8    LC_MESSAGES=es_PE.UTF-8   
+#&gt;  [7] LC_PAPER=es_PE.UTF-8       LC_NAME=C                 
+#&gt;  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+#&gt; [11] LC_MEASUREMENT=es_PE.UTF-8 LC_IDENTIFICATION=C       
+#&gt; 
+#&gt; attached base packages:
+#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     
+#&gt; 
+#&gt; other attached packages:
+#&gt;  [1] icons_0.2.0        demoR_0.0.0.9000   vembedr_0.1.5      equatiomatic_0.3.1
+#&gt;  [5] forcats_0.5.1      stringr_1.4.0      dplyr_1.0.10       purrr_0.3.4       
+#&gt;  [9] readr_1.4.0        tidyr_1.2.1        tibble_3.1.8       ggplot2_3.4.0     
+#&gt; [13] tidyverse_1.3.0   
+#&gt; 
+#&gt; loaded via a namespace (and not attached):
+#&gt;  [1] httr_1.4.2        sass_0.4.4        jsonlite_1.7.2    modelr_0.1.8     
+#&gt;  [5] bslib_0.4.2       shiny_1.5.0       assertthat_0.2.1  highr_0.8        
+#&gt;  [9] cellranger_1.1.0  yaml_2.2.1        pillar_1.8.1      backports_1.2.1  
+#&gt; [13] glue_1.6.2        digest_0.6.27     promises_1.1.1    rvest_0.3.6      
+#&gt; [17] colorspace_2.0-0  htmltools_0.5.4   httpuv_1.5.5      pkgconfig_2.0.3  
+#&gt; [21] tweetrmd_0.0.9    broom_0.7.4       haven_2.3.1       bookdown_0.31    
+#&gt; [25] xtable_1.8-4      scales_1.2.1      fontawesome_0.4.0 later_1.1.0.1    
+#&gt; [29] timechange_0.1.1  generics_0.1.3    ellipsis_0.3.2    cachem_1.0.3     
+#&gt; [33] withr_2.5.0       klippy_0.0.0.9500 cli_3.5.0         magrittr_2.0.1   
+#&gt; [37] crayon_1.4.0      readxl_1.3.1      mime_0.9          evaluate_0.19    
+#&gt; [41] fs_1.5.2          fansi_0.4.2       xml2_1.3.2        blogdown_1.16    
+#&gt; [45] tools_4.0.4       hms_1.0.0         lifecycle_1.0.3   munsell_0.5.0    
+#&gt; [49] reprex_1.0.0      compiler_4.0.4    jquerylib_0.1.4   rlang_1.0.6      
+#&gt; [53] grid_4.0.4        rstudioapi_0.13   rappdirs_0.3.3    rmarkdown_2.19   
+#&gt; [57] checkdown_0.0.7   gtable_0.3.0      DBI_1.1.1         curl_4.3         
+#&gt; [61] markdown_1.1      R6_2.5.0          lubridate_1.9.0   knitr_1.41       
+#&gt; [65] fastmap_1.1.0     utf8_1.1.4        stringi_1.5.3     Rcpp_1.0.6       
+#&gt; [69] vctrs_0.5.1       dbplyr_2.2.1      tidyselect_1.2.0  xfun_0.36
+</code></pre>
+<p>Otra forma de poner los detalles de la sesión es utilizar <code>sessioninfo::session_info()</code>; además lo usamos junto a <code>details::details()</code> que genera un desplegable para ver (o no) el outpt).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>sessioninfo<span style="color:#000;font-weight:bold">::</span><span style="color:#900;font-weight:bold">session_info</span>() <span style="color:#000;font-weight:bold">%&gt;%</span> details<span style="color:#000;font-weight:bold">::</span><span style="color:#900;font-weight:bold">details</span>(summary <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;current session info&#39;</span>) 
+</span></span></code></pre></div><details closed>
+<summary>
+<span title="Click to Expand"> current session info </span>
+</summary>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>─ Session info ───────────────────────────────────────────────────────────────
+</span></span><span style="display:flex;"><span> setting  value
+</span></span><span style="display:flex;"><span> version  R version <span style="color:#099">4.0.4</span> (<span style="color:#099">2021-02-15</span>)
+</span></span><span style="display:flex;"><span> os       Parrot OS <span style="color:#099">5.1</span> (Electro Ara)
+</span></span><span style="display:flex;"><span> system   x86_64, linux<span style="color:#000;font-weight:bold">-</span>gnu
+</span></span><span style="display:flex;"><span> ui       X11
+</span></span><span style="display:flex;"><span> <span style="color:#900;font-weight:bold">language </span>(EN)
+</span></span><span style="display:flex;"><span> collate  es_PE.UTF<span style="color:#099">-8</span>
+</span></span><span style="display:flex;"><span> ctype    es_PE.UTF<span style="color:#099">-8</span>
+</span></span><span style="display:flex;"><span> tz       America<span style="color:#000;font-weight:bold">/</span>Lima
+</span></span><span style="display:flex;"><span> date     <span style="color:#099">2023-01-07</span>
+</span></span><span style="display:flex;"><span> pandoc   <span style="color:#099">2.19.2</span> <span style="color:#000;font-weight:bold">@</span> <span style="color:#000;font-weight:bold">/</span>usr<span style="color:#000;font-weight:bold">/</span>lib<span style="color:#000;font-weight:bold">/</span>rstudio<span style="color:#000;font-weight:bold">/</span>resources<span style="color:#000;font-weight:bold">/</span>app<span style="color:#000;font-weight:bold">/</span>bin<span style="color:#000;font-weight:bold">/</span>quarto<span style="color:#000;font-weight:bold">/</span>bin<span style="color:#000;font-weight:bold">/</span>tools<span style="color:#000;font-weight:bold">/</span> (via rmarkdown)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>─ Packages ───────────────────────────────────────────────────────────────────
+</span></span><span style="display:flex;"><span> package      <span style="color:#000;font-weight:bold">*</span> version    <span style="color:#900;font-weight:bold">date </span>(UTC) lib source
+</span></span><span style="display:flex;"><span> assertthat     <span style="color:#099">0.2.1</span>      <span style="color:#099">2019-03-21</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.0</span>)
+</span></span><span style="display:flex;"><span> backports      <span style="color:#099">1.2.1</span>      <span style="color:#099">2020-12-09</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> blogdown       <span style="color:#099">1.16</span>       <span style="color:#099">2022-12-13</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> bookdown       <span style="color:#099">0.31</span>       <span style="color:#099">2022-12-13</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> broom          <span style="color:#099">0.7.4</span>      <span style="color:#099">2021-01-29</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> bslib          <span style="color:#099">0.4.2</span>      <span style="color:#099">2022-12-16</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> cachem         <span style="color:#099">1.0.3</span>      <span style="color:#099">2021-02-04</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> cellranger     <span style="color:#099">1.1.0</span>      <span style="color:#099">2016-07-27</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.0</span>)
+</span></span><span style="display:flex;"><span> checkdown      <span style="color:#099">0.0.7</span>      <span style="color:#099">2020-11-01</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> cli            <span style="color:#099">3.5.0</span>      <span style="color:#099">2022-12-20</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> clipr          <span style="color:#099">0.7.1</span>      <span style="color:#099">2020-10-08</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> colorspace     <span style="color:#099">2.0-0</span>      <span style="color:#099">2020-11-11</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> crayon         <span style="color:#099">1.4.0</span>      <span style="color:#099">2021-01-30</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> curl           <span style="color:#099">4.3</span>        <span style="color:#099">2019-12-02</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.0</span>)
+</span></span><span style="display:flex;"><span> DBI            <span style="color:#099">1.1.1</span>      <span style="color:#099">2021-01-15</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> dbplyr         <span style="color:#099">2.2.1</span>      <span style="color:#099">2022-06-27</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> demoR        <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">0.0.0.9000</span> <span style="color:#099">2023-01-07</span> [1] <span style="color:#900;font-weight:bold">Github </span>(kbodwin<span style="color:#000;font-weight:bold">/</span>demoR<span style="color:#000;font-weight:bold">@</span>a8dc5db)
+</span></span><span style="display:flex;"><span> desc           <span style="color:#099">1.4.2</span>      <span style="color:#099">2022-09-08</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> details        <span style="color:#099">0.3.0</span>      <span style="color:#099">2022-03-27</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> digest         <span style="color:#099">0.6.27</span>     <span style="color:#099">2020-10-24</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> dplyr        <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">1.0.10</span>     <span style="color:#099">2022-09-01</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> ellipsis       <span style="color:#099">0.3.2</span>      <span style="color:#099">2021-04-29</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> equatiomatic <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">0.3.1</span>      <span style="color:#099">2022-01-30</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> evaluate       <span style="color:#099">0.19</span>       <span style="color:#099">2022-12-13</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> fansi          <span style="color:#099">0.4.2</span>      <span style="color:#099">2021-01-15</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> fastmap        <span style="color:#099">1.1.0</span>      <span style="color:#099">2021-01-25</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> fontawesome    <span style="color:#099">0.4.0</span>      <span style="color:#099">2022-10-25</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> forcats      <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">0.5.1</span>      <span style="color:#099">2021-01-27</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> fs             <span style="color:#099">1.5.2</span>      <span style="color:#099">2021-12-08</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> generics       <span style="color:#099">0.1.3</span>      <span style="color:#099">2022-07-05</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> ggplot2      <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">3.4.0</span>      <span style="color:#099">2022-11-04</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> glue           <span style="color:#099">1.6.2</span>      <span style="color:#099">2022-02-24</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> gtable         <span style="color:#099">0.3.0</span>      <span style="color:#099">2019-03-25</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.0</span>)
+</span></span><span style="display:flex;"><span> haven          <span style="color:#099">2.3.1</span>      <span style="color:#099">2020-06-01</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.1</span>)
+</span></span><span style="display:flex;"><span> highr          <span style="color:#099">0.8</span>        <span style="color:#099">2019-03-20</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.0</span>)
+</span></span><span style="display:flex;"><span> hms            <span style="color:#099">1.0.0</span>      <span style="color:#099">2021-01-13</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> htmltools      <span style="color:#099">0.5.4</span>      <span style="color:#099">2022-12-07</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> httpuv         <span style="color:#099">1.5.5</span>      <span style="color:#099">2021-01-13</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> httr           <span style="color:#099">1.4.2</span>      <span style="color:#099">2020-07-20</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.2</span>)
+</span></span><span style="display:flex;"><span> icons        <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">0.2.0</span>      <span style="color:#099">2023-01-07</span> [1] <span style="color:#900;font-weight:bold">Github </span>(ropenscilabs<span style="color:#000;font-weight:bold">/</span>icon<span style="color:#000;font-weight:bold">@</span><span style="color:#099">6e4</span>dc37)
+</span></span><span style="display:flex;"><span> jquerylib      <span style="color:#099">0.1.4</span>      <span style="color:#099">2021-04-26</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> jsonlite       <span style="color:#099">1.7.2</span>      <span style="color:#099">2020-12-09</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> klippy         <span style="color:#099">0.0.0.9500</span> <span style="color:#099">2023-01-07</span> [1] <span style="color:#900;font-weight:bold">Github </span>(rlesur<span style="color:#000;font-weight:bold">/</span>klippy<span style="color:#000;font-weight:bold">@</span><span style="color:#099">378</span>c247)
+</span></span><span style="display:flex;"><span> knitr          <span style="color:#099">1.41</span>       <span style="color:#099">2022-11-18</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> later          <span style="color:#099">1.1.0.1</span>    <span style="color:#099">2020-06-05</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.1</span>)
+</span></span><span style="display:flex;"><span> lifecycle      <span style="color:#099">1.0.3</span>      <span style="color:#099">2022-10-07</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> lubridate      <span style="color:#099">1.9.0</span>      <span style="color:#099">2022-11-06</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> magrittr       <span style="color:#099">2.0.1</span>      <span style="color:#099">2020-11-17</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> markdown       <span style="color:#099">1.1</span>        <span style="color:#099">2019-08-07</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.0</span>)
+</span></span><span style="display:flex;"><span> mime           <span style="color:#099">0.9</span>        <span style="color:#099">2020-02-04</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.0</span>)
+</span></span><span style="display:flex;"><span> modelr         <span style="color:#099">0.1.8</span>      <span style="color:#099">2020-05-19</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.0</span>)
+</span></span><span style="display:flex;"><span> munsell        <span style="color:#099">0.5.0</span>      <span style="color:#099">2018-06-12</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.0</span>)
+</span></span><span style="display:flex;"><span> pillar         <span style="color:#099">1.8.1</span>      <span style="color:#099">2022-08-19</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> pkgconfig      <span style="color:#099">2.0.3</span>      <span style="color:#099">2019-09-22</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.0</span>)
+</span></span><span style="display:flex;"><span> png            <span style="color:#099">0.1-7</span>      <span style="color:#099">2013-12-03</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.2</span>)
+</span></span><span style="display:flex;"><span> promises       <span style="color:#099">1.1.1</span>      <span style="color:#099">2020-06-09</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.2</span>)
+</span></span><span style="display:flex;"><span> purrr        <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">0.3.4</span>      <span style="color:#099">2020-04-17</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.0</span>)
+</span></span><span style="display:flex;"><span> R6             <span style="color:#099">2.5.0</span>      <span style="color:#099">2020-10-28</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> rappdirs       <span style="color:#099">0.3.3</span>      <span style="color:#099">2021-01-31</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> Rcpp           <span style="color:#099">1.0.6</span>      <span style="color:#099">2021-01-15</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> readr        <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">1.4.0</span>      <span style="color:#099">2020-10-05</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> readxl         <span style="color:#099">1.3.1</span>      <span style="color:#099">2019-03-13</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.0</span>)
+</span></span><span style="display:flex;"><span> reprex         <span style="color:#099">1.0.0</span>      <span style="color:#099">2021-01-27</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> rlang          <span style="color:#099">1.0.6</span>      <span style="color:#099">2022-09-24</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> rmarkdown      <span style="color:#099">2.19</span>       <span style="color:#099">2022-12-15</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> rprojroot      <span style="color:#099">2.0.2</span>      <span style="color:#099">2020-11-15</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> rstudioapi     <span style="color:#099">0.13</span>       <span style="color:#099">2020-11-12</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.3</span>)
+</span></span><span style="display:flex;"><span> rvest          <span style="color:#099">0.3.6</span>      <span style="color:#099">2020-07-25</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.2</span>)
+</span></span><span style="display:flex;"><span> sass           <span style="color:#099">0.4.4</span>      <span style="color:#099">2022-11-24</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> scales         <span style="color:#099">1.2.1</span>      <span style="color:#099">2022-08-20</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> sessioninfo    <span style="color:#099">1.2.2</span>      <span style="color:#099">2021-12-06</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> shiny          <span style="color:#099">1.5.0</span>      <span style="color:#099">2020-06-23</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> stringi        <span style="color:#099">1.5.3</span>      <span style="color:#099">2020-09-09</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.2</span>)
+</span></span><span style="display:flex;"><span> stringr      <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">1.4.0</span>      <span style="color:#099">2019-02-10</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.0</span>)
+</span></span><span style="display:flex;"><span> tibble       <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">3.1.8</span>      <span style="color:#099">2022-07-22</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> tidyr        <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">1.2.1</span>      <span style="color:#099">2022-09-08</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> tidyselect     <span style="color:#099">1.2.0</span>      <span style="color:#099">2022-10-10</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> tidyverse    <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">1.3.0</span>      <span style="color:#099">2019-11-21</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.0</span>)
+</span></span><span style="display:flex;"><span> timechange     <span style="color:#099">0.1.1</span>      <span style="color:#099">2022-11-04</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> tweetrmd       <span style="color:#099">0.0.9</span>      <span style="color:#099">2023-01-07</span> [1] <span style="color:#900;font-weight:bold">Github </span>(gadenbuie<span style="color:#000;font-weight:bold">/</span>tweetrmd<span style="color:#000;font-weight:bold">@</span><span style="color:#099">075102</span>b)
+</span></span><span style="display:flex;"><span> utf8           <span style="color:#099">1.1.4</span>      <span style="color:#099">2018-05-24</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.2</span>)
+</span></span><span style="display:flex;"><span> vctrs          <span style="color:#099">0.5.1</span>      <span style="color:#099">2022-11-16</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> vembedr      <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">0.1.5</span>      <span style="color:#099">2021-12-11</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> withr          <span style="color:#099">2.5.0</span>      <span style="color:#099">2022-03-03</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> xfun           <span style="color:#099">0.36</span>       <span style="color:#099">2022-12-21</span> [1] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.4</span>)
+</span></span><span style="display:flex;"><span> xml2           <span style="color:#099">1.3.2</span>      <span style="color:#099">2020-04-23</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.0</span>)
+</span></span><span style="display:flex;"><span> xtable         <span style="color:#099">1.8-4</span>      <span style="color:#099">2019-04-21</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.0</span>)
+</span></span><span style="display:flex;"><span> yaml           <span style="color:#099">2.2.1</span>      <span style="color:#099">2020-02-01</span> [3] <span style="color:#900;font-weight:bold">CRAN </span>(R <span style="color:#099">4.0.0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> [1] <span style="color:#000;font-weight:bold">/</span>home<span style="color:#000;font-weight:bold">/</span>achalmaedison<span style="color:#000;font-weight:bold">/</span>R<span style="color:#000;font-weight:bold">/</span>x86_64<span style="color:#000;font-weight:bold">-</span>pc<span style="color:#000;font-weight:bold">-</span>linux<span style="color:#000;font-weight:bold">-</span>gnu<span style="color:#000;font-weight:bold">-</span>library<span style="color:#000;font-weight:bold">/</span><span style="color:#099">4.0</span>
+</span></span><span style="display:flex;"><span> [2] <span style="color:#000;font-weight:bold">/</span>usr<span style="color:#000;font-weight:bold">/</span>local<span style="color:#000;font-weight:bold">/</span>lib<span style="color:#000;font-weight:bold">/</span>R<span style="color:#000;font-weight:bold">/</span>site<span style="color:#000;font-weight:bold">-</span>library
+</span></span><span style="display:flex;"><span> [3] <span style="color:#000;font-weight:bold">/</span>usr<span style="color:#000;font-weight:bold">/</span>lib<span style="color:#000;font-weight:bold">/</span>R<span style="color:#000;font-weight:bold">/</span>site<span style="color:#000;font-weight:bold">-</span>library
+</span></span><span style="display:flex;"><span> [4] <span style="color:#000;font-weight:bold">/</span>usr<span style="color:#000;font-weight:bold">/</span>lib<span style="color:#000;font-weight:bold">/</span>R<span style="color:#000;font-weight:bold">/</span>library
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>──────────────────────────────────────────────────────────────────────────────
+</span></span></code></pre></div></details>
+<br>
+<p>Otro ejemplo de uso de <code>details::details()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#details::details(plot(sin, xlim = c(0, 20)), summary = &#34;My curvy plot. Thanks McBain!!&#34;)</span>
+</span></span></code></pre></div><br>
+<p>Si quieres ver todos los paquetes que tienes instalados en tu ordenador, lo puedes hacer así:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>pkgs_instalados <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">installed.packages</span>(fields <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">c</span>(<span style="color:#d14">&#34;Package&#34;</span>, <span style="color:#d14">&#34;Version&#34;</span>)) <span style="color:#000;font-weight:bold">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>                        <span style="color:#900;font-weight:bold">as.data.frame</span>()
+</span></span></code></pre></div><br>
+<br>
+<hr>
+<hr>
+
+
+
+
+<h1 id="bibliografía">Bibliografía
+  <a href="#bibliograf%c3%ada"></a>
+</h1>
+<p>
+<a href="http://rmarkdown.rstudio.com/lesson-1.html" target="_blank" rel="noopener">Tutorial oficial de Rmarkdown</a> Muy bueno y muy completo. Quizás la primera opción para aprender.</p>
+<p>
+<a href="http://www.sfs.uni-tuebingen.de/~jvanrij/Tutorial/tutorialMarkdown.html" target="_blank" rel="noopener">Tutorial completo</a>. Tutorial sencillo pero bastante completo. Bastante didáctico.</p>
+<p>
+<a href="https://yihui.name/knitr/" target="_blank" rel="noopener">Pagina oficial de knitr</a>. Solamente para verla. Usarla sólo cuando ya “pilotes”.</p>
+<p>
+<a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-spanish.pdf" target="_blank" rel="noopener">Cheat Sheet de Rmarkdon en castellano</a>. Parece complicado, pero cuando te acostumbras es una fantástica chuleta.</p>
+<p>
+<a href="https://fernandosansegundo.wordpress.com/2016/05/05/programacion-literaria-en-r-con-knitr-y-markdown/" target="_blank" rel="noopener">Tutorial de Rmarkdown en español</a></p>
+<p>
+<a href="http://joedicastro.com/pages/markdown.html" target="_blank" rel="noopener">Tutorial de Markdown en español</a></p>
+<p>
+<a href="https://slides.yihui.name/2017-rstudio-conf-ext-rmd-Yihui-Xie.html#1" target="_blank" rel="noopener">Customizing &amp; Extending R Markdown</a>. Tutorial del desarrollador de knitr. Corto pero avanzado.</p>
+<p>
+<a href="https://bookdown.org/yihui/rmarkdown/" target="_blank" rel="noopener">R Markdown: The Definitive Guide</a>. Pues eso, la guía definitiva. Fantástica!!</p>
+<p>
+<a href="https://bookdown.org/yihui/rmarkdown-cookbook/" target="_blank" rel="noopener">R Markdown Cookbook</a>. Nuevo libro, 2020, de Yihui Xie, Christophe Dervieux y Emily Riederer.</p>
+<p>
+<a href="https://ardata-fr.github.io/officeverse/index.html" target="_blank" rel="noopener">Officeverse</a>. Un bookdown para facilitar la generación de documentos word desde Rmarkdown.</p>
+<p>
+<a href="https://rmd4sci.njtierney.com/" target="_blank" rel="noopener">RMarkdown for Scientists</a> de Nicholas Tierney.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>En realidad, under the hood estaremos usando la función <code>rmarkdown::render()</code>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Si te interesa saber un poco más de este proceso puedes ir 
+<a href="https://stackoverflow.com/questions/40563479/relationship-between-r-markdown-knitr-pandoc-and-bookdown" target="_blank" rel="noopener">aquí</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Markdown es un lenguaje de marcado que permite la aplicación de formato a un texto empleando una serie de marcas o caracteres especiales&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>esto es una nota al pie.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
       </section>
       <footer class="post-footer">
         <div class="post-pagination dt w-100 mt4 mb2">
@@ -204,7 +1005,7 @@
 <div class="flex items-start sticky ph4 pb4 flex-row">
   <div class="w-two-thirds w-50-l ph0">
     <h2 class="mv3 f5 fw7 ttu tracked">
-      <a class="no-underline dim" href="/collection/">Outline</a></h2>
+      <a class="no-underline dim" href="/collection/">En esta serie</a></h2>
     <nav id="SectionTableOfContents" aria-label="SectionTableOfContents">
         <ul>
         
@@ -276,6 +1077,9 @@
               <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-1-ciencia-de-datos-y-la-era-del-big-data/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-1-ciencia-de-datos-y-la-era-del-big-data/">Tema 1: Ciencia de datos y la era del Big Data</a></li>
             
               
+              <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-10-eda-y-modelos-datos-de-bebes/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-10-eda-y-modelos-datos-de-bebes/">Tema 10: EDA y modelos (datos de bebes)</a></li>
+            
+              
               <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-2-r-rstudio-y-forma-de-trabajar/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-2-r-rstudio-y-forma-de-trabajar/">Tema 2. R, RStudio y forma de trabajar</a></li>
             
               
@@ -297,6 +1101,9 @@
               <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-8-tablas-en-documentos-rmarkdown/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-8-tablas-en-documentos-rmarkdown/">Tema 8: Tablas en documentos Rmarkdown</a></li>
             
               
+              <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-9-introduccion-a-gis-con-r/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-9-introduccion-a-gis-con-r/">Tema 9: Introduccion a GIS con R</a></li>
+            
+              
               <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/prefacio/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/prefacio/">Prefacio</a></li>
             
           </details>
@@ -306,6 +1113,31 @@
         </ul>
     </nav>
   </div>
+  <details id="PageTableOfContents">
+    <summary><h2 class="mv0 f5 fw7 ttu tracked dib">En esta página<h2></summary>
+    <div class="pl2 pr0 mh0">
+    <nav id="TableOfContents">
+  <ul>
+    <li></li>
+  </ul>
+
+  <ul>
+    <li><a href="#encabezamiento-yaml-header">Encabezamiento (YAML header)</a></li>
+    <li><a href="#chunks-o-código-r">Chunks (o código R)</a></li>
+    <li><a href="#el-texto-en-rmarkdown">El texto (en Rmarkdown)</a></li>
+  </ul>
+
+  <ul>
+    <li></li>
+  </ul>
+
+  <ul>
+    <li><a href="#aún-más-cosas-ii">Aún más cosas (II)</a></li>
+    <li><a href="#aún-más-cosas-iii">Aún más cosas (III)</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
   
 </div>
 
@@ -435,11 +1267,11 @@ Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xml
     
     <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
       
-      <a class="dib pv1 ph2 link" href="/license/" title="License">License</a>
+      <a class="dib pv1 ph2 link" href="/license/" title="License">Licencia</a>
       
-      <a class="dib pv1 ph2 link" href="/contact/" title="Contact form">Contact</a>
+      <a class="dib pv1 ph2 link" href="/contact/" title="Contact form">Contacto</a>
       
-      <a class="dib pv1 ph2 link" href="/contributors/" title="Contributors">Contributors</a>
+      <a class="dib pv1 ph2 link" href="/contributors/" title="Contributors">Colaboradores</a>
       
     </div>
   </nav>

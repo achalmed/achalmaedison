@@ -1,7 +1,6 @@
 ---
 title: Blog
-description: "This is a fully featured blog that supports categories, \ntags, series,
-  and pagination.\n"
+description: "This is a fully featured blog that supports categories, \ntags, series,and pagination.\n"
 author: Edison Achalma
 show_post_thumbnail: true
 thumbnail_left: false

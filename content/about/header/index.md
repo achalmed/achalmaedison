@@ -7,7 +7,7 @@ headline: |
 ---
 
 <!-- este es un subtitulo -->
-¡Hola! Soy Edison Achalma. :fr: 
+¡Hola! Soy Edison Achalma.
 
 Soy economista en proceso | ☭ Comunista | 👨‍💻 "Programador" con muchas comillas | 💻 Hacking y Ciberseguridad entre otros.
 ✈ Viajar 💳🎒📷.

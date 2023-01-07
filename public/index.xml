@@ -141,6 +141,15 @@ My content section is: collection My layout is: single-series part 2! does this 
     </item>
     
     <item>
+      <title>Tema 10: EDA y modelos (datos de bebes)</title>
+      <link>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-10-eda-y-modelos-datos-de-bebes/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-10-eda-y-modelos-datos-de-bebes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Tema 2. R, RStudio y forma de trabajar</title>
       <link>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-2-r-rstudio-y-forma-de-trabajar/</link>
       <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
@@ -195,7 +204,8 @@ En el curso vamos a trabajar/manejar los datos usando un conjunto de paquetes as
       <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-7-documentos-reproducibles-con-rmarkdown/</guid>
-      <description></description>
+      <description>1. Introducción El proceso habitual para hacer un informe (o unas transparencias) en el que aparezcan gráficos o tablas resumen de algún análisis estadístico consiste en :
+Escribir el texto en un programa (Word, Powerpoint, Prezi, etc.) Realizar los cálculos estadísticos y gráficos en otro programa (R, Stata, Eviews, etc.) Pegar los gráficos y tablas en el documento de texto. Este proceso tiene ciertas desventajas: dificulta la investigación reproducible y puede ser tedioso de rehacer si por ejemplo cambian ligeramente los datos, etc.</description>
     </item>
     
     <item>
@@ -204,6 +214,16 @@ En el curso vamos a trabajar/manejar los datos usando un conjunto de paquetes as
       <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-8-tablas-en-documentos-rmarkdown/</guid>
+      <description>1. Introducción Hacer cuadros/tablas para mostrar resultados es una parte importante (y time consuming) de cualquier informe o investigación. En este tutorial explicaré como presentar nuestros resultados en tablas en documentos (ya sean estos .html, .pdf etc..) creados a partir de archivos .Rmd.
+Veremos que presentar los resultados (previamente almacenados en un df) como un cuadro en el documento final es muy sencillo, sólo tenemos que llamar a la función kable(), pero si queremos tener más flexibilidad y opciones para mejorar nuestras tablas tendremos que usar otros paquetes como kableextra, formatable, flextable, DT o más recientemente gt y reactable</description>
+    </item>
+    
+    <item>
+      <title>Tema 9: Introduccion a GIS con R</title>
+      <link>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-9-introduccion-a-gis-con-r/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-9-introduccion-a-gis-con-r/</guid>
       <description></description>
     </item>
     
