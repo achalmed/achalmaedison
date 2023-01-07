@@ -100,8 +100,13 @@ params:
   orgLocal: Ayacucho
   # Nombre de la organización
   orgName: Edison Achalma
-  #  Imagen por defecto para compartir en redes sociales y buscadores
+  #  Imagen por defecto para compartir en redes sociales y buscadores. Place image file in `static` folder and specify image name here.
   sharing_image: /img/papillons.jpg
+  # Social icons may appear on homepage and in site header or footer
+  # Configure show/hide above - add as many as you like below
+  # Icon pack "fab" includes brand icons, see: https://fontawesome.com/icons?d=gallery&s=brands&m=free
+  # Icon pack "fas" includes solid icons, see: https://fontawesome.com/icons?d=gallery&s=solid&m=free
+  # Icon pack "far" includes regular icons, see: https://fontawesome.com/icons?d=gallery&s=regular&m=free
   social:
     - icon: github
       icon_pack: fab
@@ -130,12 +135,13 @@ params:
   socialInHeader: no
   # usar fuente sans-serif para el texto
   textFontFamily: sans-serif
-  # usar tema "sky"
+  # usar tema "sky" use a built-in color theme one of: forest / grayscale / peach / plum / poppy / sky / violet / water
   theme: sky
   # usuario de Twitter para botón de compartir
   twitter: achalmaedison
+  # Configuration of https://utteranc.es/ for comments
   utterances:
-    # usar la ruta del artículo como término de la issue para los comentarios
+    # usar la ruta del artículo como término de la issue para los comentarios # url, pathname, or title
     issue_term: pathname
     # etiqueta para los comentarios
     label: 'comments :crystal_ball:'
@@ -150,6 +156,7 @@ taxonomies:
   series: series
   tag: tags
 menu:
+# Configure header
   footer:
     - name: License
       title: License
@@ -188,6 +195,7 @@ menu:
       title: Element Page
       url: /elements/
       weight: 6
+# see https://gohugo.io/about/hugo-and-gdpr/
 privacy:
   disqus:
     disable: no

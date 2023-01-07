@@ -1,11 +1,11 @@
 ---
-## Configure sidebar content in narrow column
-author: "Hugo Apéro"
-role: "A Hugo theme"
-avatar_shape: rounded # circle, square, rounded, leave blank to exclude
-show_social_links: true # specify social accounts in site config
-audio_link_label: "How to say my name" # leave blank to exclude
-link_list_label: "Interests" # bookmarks, elsewhere, etc.
+## Configurar el contenido de la barra lateral en una columna estrecha
+author: "Edison Achalma"
+role: "Estudiante de economía"
+avatar_shape: rounded # circle, square, rounded, dejar en blanco para excluir
+show_social_links: true # especificar cuentas sociales en la configuración del sitio
+audio_link_label: "¿Cómo decir mi nombre?" # dejar en blanco para excluir
+link_list_label: "Intereses" # bookmarks, elsewhere, etc.
 link_list:
 - name: Paris
   url: https://en.wikipedia.org/wiki/Paris
