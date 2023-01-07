@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo Apéro on Edison Achalma, Econ</title>
+    <title>Edison Achalma on Edison Achalma, Econ</title>
     <link>/</link>
-    <description>Recent content in Hugo Apéro on Edison Achalma, Econ</description>
+    <description>Recent content in Edison Achalma on Edison Achalma, Econ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <lastBuildDate>Fri, 06 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
@@ -286,13 +286,13 @@ Since I began building websites in Y2K, I&amp;rsquo;ve lost count how many times
     </item>
     
     <item>
-      <title>Contact</title>
+      <title>¡Hola!</title>
       <link>/contact/</link>
       <pubDate>Mon, 25 Feb 2019 13:38:41 -0600</pubDate>
       
       <guid>/contact/</guid>
-      <description>** Contact page don&amp;rsquo;t contain a body, just the front matter above. See form.html in the layouts folder.
-Formspree requires a (free) account and new form to be set up. The link is made on the final published url in the field: Restrict to Domain. It is possible to register up to 2 emails free and you can select which one you want the forms to go to within Formspree in the Settings tab.</description>
+      <description>** La página de contacto no contiene un cuerpo, solo la portada anterior. Ver form.html en la carpeta de diseños (layouts folder).
+Formspree requiere una cuenta (gratuita) y un nuevo formulario para configurar. El enlace se realiza en la URL final publicada en el campo: Restringir al dominio. Es posible registrar hasta 2 correos electrónicos gratis y puede seleccionar a cuál desea que vayan los formularios dentro de Formspree en la pestaña Configuración.</description>
     </item>
     
     <item>
@@ -313,24 +313,24 @@ Formspree requires a (free) account and new form to be set up. The link is made 
     </item>
     
     <item>
-      <title>Contributors</title>
+      <title>LICENSE CC-BY-SA</title>
+      <link>/license/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      
+      <guid>/license/</guid>
+      <description>Mis blog posts se publican bajo una Creative Commons Attribution-ShareAlike 4.0 International License.</description>
+    </item>
+    
+    <item>
+      <title>Colaboradores</title>
       <link>/contributors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/contributors/</guid>
-      <description>Thank you to all the folks who have contributed both technical and creative skills to this project:
+      <description>Gracias a todas las personas que han contribuido con habilidades técnicas y creativas a este proyecto:
 Desirée De Leon 🦒 (designed 5 of the custom color themes, made illustrations for the workshop, and provided general aesthetic feedback along the way)
 Garrick Aden-Buie 🧙‍♀️ (debugged headroom.js and lent his panelset.js code to the theme)
 Allison Horst 🐕 (awesome illustrations of campfires, seedlings, and evergreens, as well as my R Markdown hedgehog mascot 🦔)</description>
-    </item>
-    
-    <item>
-      <title>License</title>
-      <link>/license/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/license/</guid>
-      <description>My blog posts are released under a Creative Commons Attribution-ShareAlike 4.0 International License.</description>
     </item>
     
   </channel>

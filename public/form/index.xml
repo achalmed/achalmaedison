@@ -8,13 +8,13 @@
     <language>es</language>
     <lastBuildDate>Mon, 25 Feb 2019 13:38:41 -0600</lastBuildDate><atom:link href="/form/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Contact</title>
+      <title>¡Hola!</title>
       <link>/contact/</link>
       <pubDate>Mon, 25 Feb 2019 13:38:41 -0600</pubDate>
       
       <guid>/contact/</guid>
-      <description>** Contact page don&amp;rsquo;t contain a body, just the front matter above. See form.html in the layouts folder.
-Formspree requires a (free) account and new form to be set up. The link is made on the final published url in the field: Restrict to Domain. It is possible to register up to 2 emails free and you can select which one you want the forms to go to within Formspree in the Settings tab.</description>
+      <description>** La página de contacto no contiene un cuerpo, solo la portada anterior. Ver form.html en la carpeta de diseños (layouts folder).
+Formspree requiere una cuenta (gratuita) y un nuevo formulario para configurar. El enlace se realiza en la URL final publicada en el campo: Restringir al dominio. Es posible registrar hasta 2 correos electrónicos gratis y puede seleccionar a cuál desea que vayan los formularios dentro de Formspree en la pestaña Configuración.</description>
     </item>
     
   </channel>

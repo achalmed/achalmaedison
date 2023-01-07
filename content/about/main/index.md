@@ -9,7 +9,7 @@ intro: |
   Actualmente, trabajo en la creación de experiencias en línea para dar vida a problemas y soluciones de aprendizaje automático e IA. Mi objetivo es hacer que la IA sea más accesible, comprensible y empoderadora. 
 show_outro: true
 outro: |
-  <i class="fas fa-glass-cheers pr2"></i>Sincere thanks to [Maëlle Salmon](https://masalmon.eu/) for her help naming this Hugo theme!
+  <i class="fas fa-glass-cheers pr2"></i>¡Gracias por su visita!
 ---
 
 ** el índice no contiene un cuerpo, solo el frente anterior.

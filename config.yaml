@@ -113,22 +113,22 @@ params:
       url: https://github.com/achalmed
     - icon: facebook-square
       icon_pack: fab
-      url: https://www.facebook.com/achalmed.23
+      url: https://www.facebook.com/achalmaedison.23
     - icon: instagram
       icon_pack: fab
-      url: https://www.instagram.com/explore/tags/apero/
+      url: https://www.instagram.com/achalmaedison/
     - icon: twitter
       icon_pack: fab
       url: https://twitter.com/achalmaedison
-    - icon: impactstory
-      icon_pack: ai
-      url: https://impactstory.org/u/0000-0002-8082-1890
     - icon: orcid
       icon_pack: ai
-      url: http://orcid.org/0000-0002-8082-1890
-    - icon: rss
-      icon_pack: fas
-      url: /blog/index.xml
+      url: https://orcid.org/0000-0001-6996-3364
+    - icon: youtube # icon name without the 'fa-'
+      icon_pack: fab
+      url: https://www.youtube.com/@achalmaedison
+    - icon: linkedin-in # icon name without the 'fa-'
+      icon_pack: fab
+      url: https://www.linkedin.com/in/achalmaedison/
   # habilitar botones de redes sociales en el pie de página
   socialInFooter: yes
   # no mostrar botones de redes sociales en el encabezado
@@ -171,7 +171,7 @@ menu:
       url: /contributors/
       weight: 3
   header:
-    - name: About
+    - name: Sobre Mí
       title: About Blogophonic
       url: /about/
       weight: 1
@@ -179,7 +179,7 @@ menu:
       title: Blog
       url: /blog/
       weight: 2
-    - name: Projects
+    - name: Proyectos
       title: Project Portfolio
       url: /project/
       weight: 3
@@ -187,11 +187,11 @@ menu:
       title: Talks
       url: /talk/
       weight: 4
-    - name: A collection
+    - name: Cursos
       title: A collection
       url: /collection/
       weight: 5
-    - name: Elements
+    - name: Elementos
       title: Element Page
       url: /elements/
       weight: 6

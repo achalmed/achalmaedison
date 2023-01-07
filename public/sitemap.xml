@@ -161,10 +161,11 @@
     <loc>/elements/</loc>
     <lastmod>2019-02-18T12:27:33-06:00</lastmod>
   </url><url>
+    <loc>/license/</loc>
+    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
+  </url><url>
     <loc>/about/</loc>
   </url><url>
     <loc>/contributors/</loc>
-  </url><url>
-    <loc>/license/</loc>
   </url>
 </urlset>

@@ -1,22 +1,22 @@
 ---
 date: "2019-02-25T13:38:41-06:00"
-description: This template has a **contact-us** form built right in. All you need
-  to do is add a valid recipient form-id to the front matter of this form page and
-  you're ready to receive submissions.
+description: Este formulario es para contactarme sobre compromisos para hablar, oportunidades para trabajar juntos o solicitudes de tutoría. Este NO es un formulario para solicitar ayuda.
 draft: false
+# Desde la pestaña Integración en Formspree donde dice El punto final de su formulario es:
+# https://formspree.io/f/abcdefgh La identificación será "abcdefgh"
 formspree_form_id: id-from-formspree
-layout: split-right
+layout: split-right # split-right or split-left
 name: Contact Us Form
 show_poweredby_formspree: true
-show_social_links: true
-submit_button_label: Send Message
-title: Contact
+show_social_links: true # Especificar cuentas sociales en la configuración del sitio (config.yaml)
+submit_button_label: Enviar Mensaje
+title: ¡Hola!
 type: form
 url: contact
 ---
 
-** Contact page don't contain a body, just the front matter above.
-See form.html in the layouts folder.
+** La página de contacto no contiene un cuerpo, solo la portada anterior.
+Ver form.html en la carpeta de diseños (layouts folder).
 
-Formspree requires a (free) account and new form to be set up. The link is made on the final published url in the field: Restrict to Domain. It is possible to register up to 2 emails free and you can select which one you want the forms to go to within Formspree in the Settings tab.
+Formspree requiere una cuenta (gratuita) y un nuevo formulario para configurar. El enlace se realiza en la URL final publicada en el campo: Restringir al dominio. Es posible registrar hasta 2 correos electrónicos gratis y puede seleccionar a cuál desea que vayan los formularios dentro de Formspree en la pestaña Configuración.
 **
