@@ -2,170 +2,199 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/collection/2023-01-06-investigacion-operativa/2023-01-06-unidad-1/</loc>
+    <loc>https://achalmaedison.netlify.app/collection/2023-01-06-investigacion-operativa/2023-01-06-unidad-1/</loc>
     <lastmod>2023-01-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/collection/day02/01-netlify/</loc>
+    <loc>https://achalmaedison.netlify.app/collection/day02/01-netlify/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2021-01-a-first-post/</loc>
+    <loc>https://achalmaedison.netlify.app/blog/2021-01-a-first-post/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/collection/day01/01-github/</loc>
+    <loc>https://achalmaedison.netlify.app/collection/day01/01-github/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/collection/prework/</loc>
+    <loc>https://achalmaedison.netlify.app/collection/prework/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/collection/day01/</loc>
+    <loc>https://achalmaedison.netlify.app/collection/day01/</loc>
     <lastmod>2021-01-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/collection/day01/02-postcards/</loc>
+    <loc>https://achalmaedison.netlify.app/collection/day01/02-postcards/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2021-01-a-second-post/</loc>
+    <loc>https://achalmaedison.netlify.app/blog/2021-01-a-second-post/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/collection/day02/02-blogdown/</loc>
+    <loc>https://achalmaedison.netlify.app/collection/day02/02-blogdown/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/collection/day02/</loc>
+    <loc>https://achalmaedison.netlify.app/collection/day02/</loc>
     <lastmod>2021-01-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2021-01-a-third-post/</loc>
+    <loc>https://achalmaedison.netlify.app/blog/2021-01-a-third-post/</loc>
     <lastmod>2021-01-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/collection/day01/03-distill/</loc>
+    <loc>https://achalmaedison.netlify.app/collection/day01/03-distill/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/collection/day02/03-blogdown/</loc>
+    <loc>https://achalmaedison.netlify.app/collection/day02/03-blogdown/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/collection/2023-01-06-investigacion-operativa/</loc>
+    <loc>https://achalmaedison.netlify.app/collection/2023-01-06-investigacion-operativa/</loc>
     <lastmod>2023-01-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/collection/</loc>
-    <lastmod>2023-01-06T00:00:00+00:00</lastmod>
+    <loc>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/</loc>
+    <lastmod>2023-01-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/</loc>
-    <lastmod>2023-01-06T00:00:00+00:00</lastmod>
+    <loc>https://achalmaedison.netlify.app/collection/</loc>
+    <lastmod>2023-01-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/</loc>
+    <loc>https://achalmaedison.netlify.app/</loc>
+    <lastmod>2023-01-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://achalmaedison.netlify.app/tags/regression/</loc>
+    <lastmod>2023-01-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://achalmaedison.netlify.app/tags/</loc>
+    <lastmod>2023-01-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-1-ciencia-de-datos-y-la-era-del-big-data/</loc>
+    <lastmod>2023-01-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-2-r-rstudio-y-forma-de-trabajar/</loc>
+    <lastmod>2023-01-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-3-iniciaci-n-a-r-base/</loc>
+    <lastmod>2023-01-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-4-importar-y-exportar-datos-con-r/</loc>
+    <lastmod>2023-01-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-5-data-munging-manejo-de-datos-con-r-the-tidyverse-way/</loc>
+    <lastmod>2023-01-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-6-visualizaci-n-gr-ficos-con-ggplot2/</loc>
+    <lastmod>2023-01-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-7-documentos-reproducibles-con-rmarkdown/</loc>
+    <lastmod>2023-01-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-8-tablas-en-documentos-rmarkdown/</loc>
+    <lastmod>2023-01-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://achalmaedison.netlify.app/blog/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>https://achalmaedison.netlify.app/categories/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2021-01-set-up-your-social/</loc>
+    <loc>https://achalmaedison.netlify.app/blog/2021-01-set-up-your-social/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/theme-features/</loc>
+    <loc>https://achalmaedison.netlify.app/categories/theme-features/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/style/</loc>
+    <loc>https://achalmaedison.netlify.app/tags/style/</loc>
     <lastmod>2021-01-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2021-01-style-your-site-colors/</loc>
+    <loc>https://achalmaedison.netlify.app/blog/2021-01-style-your-site-colors/</loc>
     <lastmod>2021-01-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2021-01-style-your-site-typography/</loc>
+    <loc>https://achalmaedison.netlify.app/blog/2021-01-style-your-site-typography/</loc>
     <lastmod>2021-01-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2021-01-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/blog/2021-01-an-evergreen-post/</loc>
+    <loc>https://achalmaedison.netlify.app/blog/2021-01-an-evergreen-post/</loc>
     <lastmod>2021-01-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/evergreen/</loc>
+    <loc>https://achalmaedison.netlify.app/categories/evergreen/</loc>
     <lastmod>2021-01-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/campfire/</loc>
+    <loc>https://achalmaedison.netlify.app/talk/campfire/</loc>
     <lastmod>2021-01-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/</loc>
+    <loc>https://achalmaedison.netlify.app/talk/</loc>
     <lastmod>2021-01-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/workshop/</loc>
+    <loc>https://achalmaedison.netlify.app/categories/workshop/</loc>
     <lastmod>2021-01-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/series/a-spoonful-of-hugo/</loc>
+    <loc>https://achalmaedison.netlify.app/series/a-spoonful-of-hugo/</loc>
     <lastmod>2021-01-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/spoonful-series/</loc>
+    <loc>https://achalmaedison.netlify.app/blog/spoonful-series/</loc>
     <lastmod>2021-01-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/hugo-site/</loc>
+    <loc>https://achalmaedison.netlify.app/tags/hugo-site/</loc>
     <lastmod>2021-01-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/r/</loc>
+    <loc>https://achalmaedison.netlify.app/categories/r/</loc>
     <lastmod>2021-01-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/series/</loc>
+    <loc>https://achalmaedison.netlify.app/series/</loc>
     <lastmod>2021-01-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2021-01-using-panelsets/</loc>
+    <loc>https://achalmaedison.netlify.app/blog/2021-01-using-panelsets/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/second-seedling/</loc>
+    <loc>https://achalmaedison.netlify.app/talk/second-seedling/</loc>
     <lastmod>2021-01-01T14:15:59-06:00</lastmod>
   </url><url>
-    <loc>/categories/meetup/</loc>
+    <loc>https://achalmaedison.netlify.app/categories/meetup/</loc>
     <lastmod>2021-01-01T14:15:59-06:00</lastmod>
   </url><url>
-    <loc>/blog/2020-12-an-rmarkdown-post/</loc>
+    <loc>https://achalmaedison.netlify.app/blog/2020-12-an-rmarkdown-post/</loc>
     <lastmod>2020-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2020-12-hello-r-markdown/</loc>
+    <loc>https://achalmaedison.netlify.app/blog/2020-12-hello-r-markdown/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/tags/plot/</loc>
+    <loc>https://achalmaedison.netlify.app/tags/plot/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/tags/r-markdown/</loc>
+    <loc>https://achalmaedison.netlify.app/tags/r-markdown/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>/tags/regression/</loc>
-    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
-  </url><url>
-    <loc>/talk/seedling/</loc>
+    <loc>https://achalmaedison.netlify.app/talk/seedling/</loc>
     <lastmod>2020-01-13T14:15:59-06:00</lastmod>
   </url><url>
-    <loc>/project/</loc>
+    <loc>https://achalmaedison.netlify.app/project/</loc>
     <lastmod>2019-07-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/package/</loc>
+    <loc>https://achalmaedison.netlify.app/categories/package/</loc>
     <lastmod>2019-07-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/project/giraffes/</loc>
+    <loc>https://achalmaedison.netlify.app/project/giraffes/</loc>
     <lastmod>2019-07-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2019-07-css-grid-scaffold/</loc>
+    <loc>https://achalmaedison.netlify.app/blog/2019-07-css-grid-scaffold/</loc>
     <lastmod>2019-07-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/project/penguins/</loc>
+    <loc>https://achalmaedison.netlify.app/project/penguins/</loc>
     <lastmod>2019-07-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/project/bakeoff/</loc>
+    <loc>https://achalmaedison.netlify.app/project/bakeoff/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2019-07-built-in-contact-form/</loc>
+    <loc>https://achalmaedison.netlify.app/blog/2019-07-built-in-contact-form/</loc>
     <lastmod>2019-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/contact/</loc>
+    <loc>https://achalmaedison.netlify.app/contact/</loc>
     <lastmod>2019-02-25T13:38:41-06:00</lastmod>
   </url><url>
-    <loc>/form/</loc>
+    <loc>https://achalmaedison.netlify.app/form/</loc>
     <lastmod>2019-02-25T13:38:41-06:00</lastmod>
   </url><url>
-    <loc>/elements/</loc>
+    <loc>https://achalmaedison.netlify.app/elements/</loc>
     <lastmod>2019-02-18T12:27:33-06:00</lastmod>
   </url><url>
-    <loc>/license/</loc>
+    <loc>https://achalmaedison.netlify.app/license/</loc>
     <lastmod>2018-06-28T00:00:00+01:00</lastmod>
   </url><url>
-    <loc>/about/</loc>
+    <loc>https://achalmaedison.netlify.app/about/</loc>
   </url><url>
-    <loc>/contributors/</loc>
+    <loc>https://achalmaedison.netlify.app/contributors/</loc>
+  </url><url>
+    <loc>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/prefacio/</loc>
   </url>
 </urlset>

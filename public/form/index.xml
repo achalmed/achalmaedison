@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Forms on Edison Achalma, Econ</title>
-    <link>/form/</link>
+    <link>https://achalmaedison.netlify.app/form/</link>
     <description>Recent content in Forms on Edison Achalma, Econ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Mon, 25 Feb 2019 13:38:41 -0600</lastBuildDate><atom:link href="/form/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Feb 2019 13:38:41 -0600</lastBuildDate><atom:link href="https://achalmaedison.netlify.app/form/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>¡Hola!</title>
-      <link>/contact/</link>
+      <link>https://achalmaedison.netlify.app/contact/</link>
       <pubDate>Mon, 25 Feb 2019 13:38:41 -0600</pubDate>
       
-      <guid>/contact/</guid>
+      <guid>https://achalmaedison.netlify.app/contact/</guid>
       <description>** La página de contacto no contiene un cuerpo, solo la portada anterior. Ver form.html en la carpeta de diseños (layouts folder).
 Formspree requiere una cuenta (gratuita) y un nuevo formulario para configurar. El enlace se realiza en la URL final publicada en el campo: Restringir al dominio. Es posible registrar hasta 2 correos electrónicos gratis y puede seleccionar a cuál desea que vayan los formularios dentro de Formspree en la pestaña Configuración.</description>
     </item>

@@ -1,5 +1,5 @@
 # baseURL es la URL base del sitio
-baseURL: /
+baseURL: https://achalmaedison.netlify.app/
 # El tema del sitio es hugo-apero
 theme: hugo-apero
 # El idioma del sitio es español

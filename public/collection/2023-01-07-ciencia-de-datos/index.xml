@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ciencia de datos on Edison Achalma, Econ</title>
+    <link>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/</link>
+    <description>Recent content in Ciencia de datos on Edison Achalma, Econ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sat, 07 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tema 1: Ciencia de datos y la era del Big Data</title>
+      <link>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-1-ciencia-de-datos-y-la-era-del-big-data/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-1-ciencia-de-datos-y-la-era-del-big-data/</guid>
+      <description>El objetivo principal achi del curso es aprender un poco, todo lo que podamos, sobre una nueva disciplina: Ciencia de datos o Data Science. En concreto, nos centraremos en aprender a manejar y analizar datos utilizando una herramienta profesional como R. En el tema 2 hablaremos y utilizaremos intensivamente R, de momento nos sobra con señalar que R es un programa informático, más bien un entorno, con el que hacer análisis de datos (o ciencia de datos), pero R también es un lenguaje de programación.</description>
+    </item>
+    
+    <item>
+      <title>Tema 2. R, RStudio y forma de trabajar</title>
+      <link>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-2-r-rstudio-y-forma-de-trabajar/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-2-r-rstudio-y-forma-de-trabajar/</guid>
+      <description>El objetivo de esta sección es proporcionar una breve primera introducción a R y RStudio para personas que no han tenido contacto previo con estos programas y explicitar la forma que tendremos de interactuar con ellos; es decir, la forma de trabajar con ellos (workflow).
+El curso es una introducción a la Ciencia de Datos: haremos diversos análisis con datos y para ello utilizaremos R. R será el programa que hará los cálculos, gráficos, informes, pero interactuaremos con R, le daremos las ordenes a R, a través de otro programa: RStudio.</description>
+    </item>
+    
+    <item>
+      <title>Tema 3: Iniciación a R-base</title>
+      <link>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-3-iniciaci-n-a-r-base/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-3-iniciaci-n-a-r-base/</guid>
+      <description>El objetivo de este tema es proporcionar una introducción a R para personas que no han tenido contacto previo con el programa. Se presentan algunos de los rudimentos del lenguaje de programación R. Conocer en detalle el lenguaje R es complicado, hay muchas cosas, pero conociendo unas cuantas de ellas puede ser suficiente para hacer análisis de datos complejos.
+Se presentan conceptos básicos y, por tanto necesarios, como distintos tipos y estructuras de datos, asignación, funciones, operadores lógicos, subsetting etc… PERO, recuerda que en el curso vamos a enfatizar otra forma de trabajar con R.</description>
+    </item>
+    
+    <item>
+      <title>Tema 4: Importar (y exportar) datos con R</title>
+      <link>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-4-importar-y-exportar-datos-con-r/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-4-importar-y-exportar-datos-con-r/</guid>
+      <description>1. Intro Ya sabemos que R es un lenguaje de programación orientado al análisis de datos. Lo primero que tenemos que hacer para empezar un análisis con datos en R es, evidentemente, cargar los datos en R. En realidad en este tutorial aprenderemos a importar y exportar datos en diferentes formatos.
+Hay datos de muchos tipos y en muchos formatos: imágenes, texto, … , pero en el curso nos centraremos en conjuntos de datos que pueden almacenarse en hojas de calculo, ya que esta es la forma habitual de trabajar con datos en las ciencias sociales.</description>
+    </item>
+    
+    <item>
+      <title>Tema 5: Data munging: manejo de datos con R, the tidyverse way</title>
+      <link>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-5-data-munging-manejo-de-datos-con-r-the-tidyverse-way/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-5-data-munging-manejo-de-datos-con-r-the-tidyverse-way/</guid>
+      <description>1. Introducción En el tutorial anterior aprendimos a cargar datos en R. Sin embargo, es difícil que en una aplicación real tengamos los datos tal y como los necesitamos para hacer nuestro análisis. Habitualmente tendremos que trabajar los datos para arreglarlos. Este proceso, que en castellano podría llamarse “limpieza” o procesado de datos, se conoce en inglés como data munging or data wrangling.
+En el curso vamos a trabajar/manejar los datos usando un conjunto de paquetes asociados asociados con el enfoque conocido como tidyverse.</description>
+    </item>
+    
+    <item>
+      <title>Tema 6: Visualización: gráficos con ggplot2</title>
+      <link>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-6-visualizaci-n-gr-ficos-con-ggplot2/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-6-visualizaci-n-gr-ficos-con-ggplot2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tema 7: Documentos reproducibles con **Rmarkdown**</title>
+      <link>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-7-documentos-reproducibles-con-rmarkdown/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-7-documentos-reproducibles-con-rmarkdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tema 8: Tablas en documentos Rmarkdown</title>
+      <link>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-8-tablas-en-documentos-rmarkdown/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-8-tablas-en-documentos-rmarkdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prefacio</title>
+      <link>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/prefacio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/prefacio/</guid>
+      <description>0. Intenciones y Disclaimer Este libro sirve de acompañamiento al curso “Programación y manejo de datos en la era del Big Data” que se empezó a impartir el curso 2019-2020 en el Grado de Economía de la Universitat de València. 1
+Está edición es para el curso 2021-22. Se escribe, otra vez, con un poco con prisa, así que veremos como sale!! En esta primera frase ya he querido dejar claro cual será el estilo del libro: se sacrificará el estilo, e incluso a veces la corrección ortográfica para conseguir más claridad.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr"><head>
+  
+                           
+     
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.104.3" />
+<title>Tema 4: Importar (y exportar) datos con R | Edison Achalma, Econ</title>
+
+
+<meta property="twitter:site" content="@achalmaedison">
+<meta property="twitter:creator" content="@achalmaedison">
+
+
+
+
+
+
+
+  
+    
+  
+<meta name="description" content="Personal website and portfolio of Dr. Edison Achalma.">
+
+
+<meta property="og:site_name" content="Edison Achalma, Econ">
+<meta property="og:title" content="Tema 4: Importar (y exportar) datos con R | Edison Achalma, Econ">
+<meta property="og:description" content="Personal website and portfolio of Dr. Edison Achalma." />
+<meta property="og:type" content="page" />
+<meta property="og:url" content="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-4-importar-y-exportar-datos-con-r/" />
+<meta property="og:locale" content="es">
+
+
+
+
+    
+        <meta property="og:image" content="https://achalmaedison.netlify.app/img/papillons.jpg" >
+        <meta property="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="https://achalmaedison.netlify.app/img/papillons.jpg" >
+    
+  <meta itemprop="name" content="Tema 4: Importar (y exportar) datos con R">
+<meta itemprop="description" content="1. Intro Ya sabemos que R es un lenguaje de programación orientado al análisis de datos. Lo primero que tenemos que hacer para empezar un análisis con datos en R es, evidentemente, cargar los datos en R. En realidad en este tutorial aprenderemos a importar y exportar datos en diferentes formatos.
+Hay datos de muchos tipos y en muchos formatos: imágenes, texto, … , pero en el curso nos centraremos en conjuntos de datos que pueden almacenarse en hojas de calculo, ya que esta es la forma habitual de trabajar con datos en las ciencias sociales."><meta itemprop="datePublished" content="2023-01-07T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-01-07T00:00:00+00:00" />
+<meta itemprop="wordCount" content="5876">
+<meta itemprop="keywords" content="" />
+  
+  
+  <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+  
+  
+  <link rel="stylesheet" href="/style.main.min.508aa34bb4fa7ebfddd6892a4ec251e1ce46ad0e0c5be6380abc84336f01b14e.css" integrity="sha256-UIqjS7T6fr/d1okqTsJR4c5GrQ4MW&#43;Y4CryEM28BsU4=" media="screen">
+  
+  
+  <script src="/panelset.min.ed1ac24b6e16f4e2481e3d1d098ae66f5bc77438aef619e6e266d8ac5b00dc72.js" type="text/javascript"></script>
+  
+  
+  <script src="/main.min.bd942b3ee0207252d2636d656fcdf94a2442e99ac52f2b4145605a78e6b0a6d4.js" type="text/javascript"></script>
+</head>
+<body>
+      <div class="grid-container single-series">
+<header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
+  <nav class="site-nav db dt-l w-100" role="navigation">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="https://achalmaedison.netlify.app/" title="Home">
+      <img src="/img/blogophonic-mark-dark.png" class="dib db-l h2 w-auto" alt="Edison Achalma, Econ">
+    </a>
+    <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/about/" title="About Blogophonic">Sobre Mí</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/blog/" title="Blog">Blog</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/project/" title="Project Portfolio">Proyectos</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/talk/" title="Talks">Talks</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 active" href="/collection/" title="A collection">Cursos</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/elements/" title="Element Page">Elementos</a>
+      
+      
+    </div>
+  </nav>
+</header>
+
+
+<main class="page-main ph4 pt4" role="main">
+  <section class="page-content mw7 center">
+    <article class="post-content pa0 pr3-l">
+      <header class="post-header">
+        <h4 class="breadcrumb pb5">
+
+  
+    
+      
+  
+    
+      
+  
+    
+      
+  
+
+    
+    
+      <a href="/collection/">Create a Collection</a>
+    
+  
+
+    
+    
+      <a href="/collection/2023-01-07-ciencia-de-datos/">Ciencia de datos</a>
+    
+  
+
+    
+    
+      Tema 4: Importar (y exportar) datos con R
+    
+  
+
+</h4>
+
+
+
+
+        
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">Tema 4: Importar (y exportar) datos con R</h1>
+        
+        
+        
+        
+        
+      
+        
+      </header>
+      <section class="post-body pt5 pb4">
+        <script src="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-4-importar-y-exportar-datos-con-r/index_files/clipboard/clipboard.min.js"></script>
+<link href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-4-importar-y-exportar-datos-con-r/index_files/primer-tooltips/build.css" rel="stylesheet" />
+<link href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-4-importar-y-exportar-datos-con-r/index_files/klippy/css/klippy.min.css" rel="stylesheet" />
+<script src="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-4-importar-y-exportar-datos-con-r/index_files/klippy/js/klippy.min.js"></script>
+<script src="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-4-importar-y-exportar-datos-con-r/index_files/kePrint/kePrint.js"></script>
+<link href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-4-importar-y-exportar-datos-con-r/index_files/lightable/lightable.css" rel="stylesheet" />
+<script>
+  addClassKlippyTo("pre.r, pre.markdown");
+  addKlippy('right', 'top', 'auto', '1', 'Copy code', 'Copied!');
+</script>
+<hr>
+<br>
+
+
+
+
+<h1 id="1-intro">1. Intro
+  <a href="#1-intro"></a>
+</h1>
+<br>
+<p>Ya sabemos que R es un lenguaje de programación orientado al análisis de datos. Lo primero que tenemos que hacer para empezar un análisis con datos en R es, evidentemente, cargar los datos en R. En realidad en este tutorial aprenderemos a <strong>importar y exportar datos en diferentes formatos</strong>.</p>
+<p>Hay datos de muchos tipos y en muchos formatos: imágenes, texto, … , pero en el curso nos centraremos en conjuntos de datos que pueden almacenarse en hojas de calculo, ya que esta es la forma habitual de trabajar con datos en las ciencias sociales.</p>
+<br>
+<p>Utilizando un diagrama de 
+<a href="http://r4ds.had.co.nz/" target="_blank" rel="noopener">este fantástico libro</a>, estamos en la casilla de salida de cualquier análisis de datos.</p>
+<p>Para importar/exportar datos vamos a usar funciones de varios packages, así que tenemos que saber como acceder a su documentación, pero esto ya se vio en el tutorial sobre R-base.</p>
+<br>
+<p>Cargar datos es una de las primeras frustraciones de alguien que comienza a aprender R. Generalmente piensan: pero si en Excel/SSPSS sólo tengo que pinchar en el fichero!! Como mucho tengo que usar los menús desplegables!!
+En R esto también es posible: R tiene 2 formatos de datos propios que se abren simplemente haciendo doble click y la última versión de RStudio también permite cargar datos a través de menús; pero …. no os acordáis de la Investigación Reproducible!!</p>
+<br>
+
+
+
+
+<h4 id="rstudio-permite-cargar-datos-a-través-de-menús-pero-">RStudio permite cargar datos a través de menús, pero …
+  <a href="#rstudio-permite-cargar-datos-a-trav%c3%a9s-de-men%c3%bas-pero-"></a>
+</h4>
+<p>RStudio permite cargar datos a través de menús (<code>File &gt; Import Dataset</code>). Por menús se pueden cargar datos CSV, EXCEL, SPSS, SAS y STATA. En el curso pensamos que hay que hacerlo todo a través de scripts; por lo tanto, no usaremos los menús.</p>
+<p>Al usar los menús de RStudio para importar datos en realidad se está llamando a unas funciones que son las que importan realmente los datos; ademas, para importar datos a través de los menús, RStudio no usa las funciones de R-base sino las funciones de dos packages <strong><code>readr</code></strong> y <strong><code>haven</code></strong>. En el curso seguiremos este enfoque y usaremos <code>readr</code> y <code>haven</code>, además de algún otro pkg, para importar y exportar datos.</p>
+<p>Haremos un poco más de énfasis en la importación de datos ya que si usas R, lo normal es hacer todo el análisis (incluso la generación de informes) en el entorno R.</p>
+<br>
+<hr>
+<br>
+
+
+
+
+<h4 id="por-qué-no-usar-r-base-opcional">¿Por qué no usar R-base? [OPCIONAL]
+  <a href="#por-qu%c3%a9-no-usar-r-base-opcional"></a>
+</h4>
+<p>Ya hemos dicho que RStudio carga datos a través de menús, pero no utiliza las funciones de R-base, sino de otros paquetes, concretamente <code>readr</code> y <code>haven</code></p>
+<p>R tiene ya unos 20 años. Las funciones de R-base se construyeron pensando en los estadísticos de hace 20 años (hoy se llamarían analistas de datos). Modificar las funciones de R-base haría que código antiguo dejase de funcionar, así que la mayoría de avances y mejoras se producen en los packages.</p>
+<p>Las funciones de <code>readr</code> tratan de ser lo mas parecidas a las funciones equivalentes de R-base pero en cierto sentido mejorándolas y haciéndolas más consistentes; por ejemplo para leer datos CSV la función de R-base es <code>read.csv()</code>; mientas que la función equivalente de “readr” es <code>read_csv()</code>. Las dos hacen lo mismo, leer datos en formato CSV, pero las nuevas funciones tienen algunas ventajas:</p>
+<ul>
+<li>
+<p>Son más rápidas.</p>
+</li>
+<li>
+<p>Encajan más en el workflow/paradigma de la investigación reproducible. Por ejemplo, algunas de las funciones de R-base heredan algunas opciones del sistema operativo y las variables de entorno, haciendo posible que un script que funciona en un ordenador no funcione en otro. (Esto aún puede pasarnos a nosotros en el curso. Esperemos que no!!).</p>
+</li>
+<li>
+<p>En lugar de generar data.frames, producen tibbles. Las tibbles son en realidad data.frames pero con algunas particularidades.</p>
+</li>
+<li>
+<p>Las tibbles o “data frames tuneados” tienen unas ciertas ventajas: no convierten por defecto vectores de texto en factores, no usan row names, ni transforman los column names (estás 3 cosas que sí hacen los “data.frames tradicionales” pueden provocar algunas complicaciones, así que mejor tener herramientas que las sorteen).</p>
+</li>
+</ul>
+<br>
+<hr>
+
+
+
+
+<h4 id="datos-precargados-en-r-opcional">Datos precargados en R [OPCIONAL]
+  <a href="#datos-precargados-en-r-opcional"></a>
+</h4>
+<p>R-base viene con muchos datos precargados; concretamente en el pkg de R-base llamado <code>datasets</code>. Además muchos packages contienen también conjuntos de datos. Para ver los datos que tenemos precargados y disponibles en R se usa la función <code>data()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- se abrirá una ventana con el listado de datos disponibles</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">data</span>()  
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#!! guardamos el listado de datos en un data.frame llamado &#34;aa&#34;</span>
+</span></span><span style="display:flex;"><span>aa <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">as.data.frame</span>(<span style="color:#900;font-weight:bold">data</span>()[[3]]) 
+</span></span></code></pre></div><br>
+<p>Si queremos ver los datos que hay en un package concreto usaremos <code>data(package = &quot;pkg_name&quot;)</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- vemos en una ventana el listado de datos disponibles en el pkg ggplot2</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">data</span>(package <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;ggplot2&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#!! guardamos el listado de datos del pkg ggplot2 en el df &#34;aa&#34;</span>
+</span></span><span style="display:flex;"><span>aa <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">as.data.frame</span>(<span style="color:#900;font-weight:bold">data</span>(package <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;ggplot2&#34;</span>)[[3]]) <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#900;font-weight:bold">select</span>(<span style="color:#099">-2</span>)
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#!! guardamos el listado de datos del pkg ggplot2 en una tibble</span>
+</span></span><span style="display:flex;"><span>aa <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">as_tibble</span>(<span style="color:#900;font-weight:bold">data</span>(package <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;ggplot2&#34;</span>)[[3]]) <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#900;font-weight:bold">select</span>(<span style="color:#099">-2</span>) 
+</span></span></code></pre></div><br>
+<p>Por ejemplo, el package <code>ggplot2</code> tiene los siguientes conjuntos de datos:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Package</th>
+<th style="text-align:left">Item</th>
+<th style="text-align:left">Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ggplot2</td>
+<td style="text-align:left">diamonds</td>
+<td style="text-align:left">Prices of over 50,000 round cut diamonds</td>
+</tr>
+<tr>
+<td style="text-align:left">ggplot2</td>
+<td style="text-align:left">economics</td>
+<td style="text-align:left">US economic time series</td>
+</tr>
+<tr>
+<td style="text-align:left">ggplot2</td>
+<td style="text-align:left">economics_long</td>
+<td style="text-align:left">US economic time series</td>
+</tr>
+<tr>
+<td style="text-align:left">ggplot2</td>
+<td style="text-align:left">faithfuld</td>
+<td style="text-align:left">2d density estimate of Old Faithful data</td>
+</tr>
+<tr>
+<td style="text-align:left">ggplot2</td>
+<td style="text-align:left">luv_colours</td>
+<td style="text-align:left">‘colors()’ in Luv space</td>
+</tr>
+<tr>
+<td style="text-align:left">ggplot2</td>
+<td style="text-align:left">midwest</td>
+<td style="text-align:left">Midwest demographics</td>
+</tr>
+<tr>
+<td style="text-align:left">ggplot2</td>
+<td style="text-align:left">mpg</td>
+<td style="text-align:left">Fuel economy data from 1999 to 2008 for 38 popular models of cars</td>
+</tr>
+<tr>
+<td style="text-align:left">ggplot2</td>
+<td style="text-align:left">msleep</td>
+<td style="text-align:left">An updated and expanded version of the mammals sleep dataset</td>
+</tr>
+<tr>
+<td style="text-align:left">ggplot2</td>
+<td style="text-align:left">presidential</td>
+<td style="text-align:left">Terms of 11 presidents from Eisenhower to Obama</td>
+</tr>
+<tr>
+<td style="text-align:left">ggplot2</td>
+<td style="text-align:left">seals</td>
+<td style="text-align:left">Vector field of seal movements</td>
+</tr>
+<tr>
+<td style="text-align:left">ggplot2</td>
+<td style="text-align:left">txhousing</td>
+<td style="text-align:left">Housing sales in TX</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>Podemos ver todos los datasets que hay en los packages que tenemos en nuestra librería de packages de nuestro ordenador:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># !! abre una ventana donde se ve el listado de todos los datasets que contienen los packages de nuestra librería</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">data</span>(package <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">.packages</span>(all.available <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">TRUE</span>))
+</span></span></code></pre></div><br>
+<hr>
+<br>
+
+
+
+
+<h1 id="2-tipos-de-datos-que-veremos">2. Tipos de datos que veremos
+  <a href="#2-tipos-de-datos-que-veremos"></a>
+</h1>
+<br>
+<p>Introduciremos funciones para importar/exportar datos de los siguientes formatos:</p>
+<br>
+<ul>
+<li>
+<p>Datos en formato texto (o tabulares)</p>
+<ul>
+<li>CSV: <code>.csv</code> (comma separated values o , en castellano, datos separados por comas)</li>
+<li>otros datos en formato texto</li>
+</ul>
+</li>
+</ul>
+<br>
+<ul>
+<li>
+<p>Formatos de otros programas (software propietario)</p>
+<ul>
+<li>EXCEL: <code>.xls</code> y <code>.xlsx</code></li>
+<li>SPSS: <code>.sav</code> y <code>.por</code></li>
+<li>STATA: <code>.dta</code></li>
+<li>SAS: <code>.sas</code></li>
+</ul>
+</li>
+</ul>
+<br>
+<ul>
+<li>
+<p>Formatos propios de R</p>
+<ul>
+<li>R objects: <code>.RData</code> o <code>.rda</code></li>
+<li>Serialized R objects: <code>.rds</code></li>
+</ul>
+</li>
+</ul>
+<br>
+<ul>
+<li>
+<p>Otros Formatos</p>
+<ul>
+<li>JSON</li>
+<li>XML</li>
+</ul>
+</li>
+</ul>
+<br>
+<p>Además aprenderemos como bajar datos a través de APIs:</p>
+<ul>
+<li>Eurostat</li>
+<li>INE</li>
+<li>Banco Mundial</li>
+</ul>
+<br>
+<hr>
+
+
+
+
+<h4 id="estrategia-que-seguiremos-para-aprender-a-importarexportar-datos">Estrategia que seguiremos para aprender a Importar/Exportar datos
+  <a href="#estrategia-que-seguiremos-para-aprender-a-importarexportar-datos"></a>
+</h4>
+<p>Lo que vamos a hacer en este tutorial para aprender a importar (y exportar) datos en R es elegir un fichero de datos precargado en R y exportarlo a un determinado formato para luego importar el archivo generado o exportado. Repetiremos esto para distintos formatos de datos.</p>
+<p>Da igual que archivo de datos usar, así que utilizaremos un conjunto de datos famoso y que pesa poco: “el 
+<a href="https://es.wikipedia.org/wiki/Iris_flor_conjunto_de_datos" target="_blank" rel="noopener"><code>iris</code></a> dataset” que fue utilizado por Ronald Fisher. Iris contiene 150 observaciones de 5 variables: mediciones de 5 características sobre 150 flores de la especie Iris.</p>
+<br>
+<hr>
+
+
+
+
+<h4 id="cómo-podemos-ver-que-variables-y-de-que-tipo-hay-en-un-df">¿Cómo podemos ver que variables (y de que tipo) hay en un df?
+  <a href="#c%c3%b3mo-podemos-ver-que-variables-y-de-que-tipo-hay-en-un-df"></a>
+</h4>
+<p>Supongamos que ya hemos cargado un conjunto de datos y que está almacenado en un df, ¿cómo podemos ver que variables (y de que tipo) hay en el df?</p>
+<p>Vamos a ver los nombres de las variables (columnas) del dataset iris:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># names() muestra los nombres de las variables de un dataframe</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">names</span>(iris)
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt; [1] &#34;Sepal.Length&#34; &#34;Sepal.Width&#34;  &#34;Petal.Length&#34; &#34;Petal.Width&#34;  &#34;Species&#34;</span>
+</span></span></code></pre></div><p>No nos hace falta, pero veamos los primeros valores de iris:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># head() muestra las n (ne este caso 4) primeras filas de un dataframe</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">head</span>(iris, n <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">4</span>)
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt; 1          5.1         3.5          1.4         0.2  setosa</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt; 2          4.9         3.0          1.4         0.2  setosa</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt; 3          4.7         3.2          1.3         0.2  setosa</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt; 4          4.6         3.1          1.5         0.2  setosa</span>
+</span></span></code></pre></div><p>La función <code>summary()</code>, nos hace un resumen (!) del df</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># Fíjate que la variable &#34;Species&#34; no tiene media, ni mínimo, ni max. ... es porque es un factor</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">summary</span>(iris)
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  Median :5.800   Median :3.000   Median :4.350   Median :1.300  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;        Species  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  setosa    :50  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  versicolor:50  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  virginica :50  </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;                 </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;                 </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt; </span>
+</span></span></code></pre></div><br>
+<p><strong>SIEMPRE-SIEMPRE</strong> hay que chequear de que clase son las variables que contiene el df.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- ver la estructura del df. Visualizaremos los nombres y el tipo de las variables</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">str</span>(iris)
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt; &#39;data.frame&#39;:	150 obs. of  5 variables:</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#&gt;  $ Species     : Factor w/ 3 levels &#34;setosa&#34;,&#34;versicolor&#34;,..: 1 1 1 1 1 1 1 1 1 1 ...</span>
+</span></span></code></pre></div><p>También podéis usar la función <code>skim()</code> del package <code>skimr</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#devtools::install_github(&#34;ropenscilabs/skimr&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(skimr)
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">skim</span>(iris)
+</span></span></code></pre></div><br>
+<p><strong>Vamos YA a exportar (e importar) “iris” a diferentes formatos. Empezamos!!</strong></p>
+<br>
+<hr>
+<br>
+
+
+
+
+<h1 id="3-datos-tabulares-o-de-texto">3. Datos tabulares (o de texto)
+  <a href="#3-datos-tabulares-o-de-texto"></a>
+</h1>
+<br>
+<p>Estamos acostumbrados a visualizar datos en <strong>formato tabular</strong>; es decir, como una tabla. Generalmente <strong>las columnas son variables y las filas son observaciones</strong> de esas variables para diferentes unidades de análisis (“individuos”).</p>
+<p>Las columnas <strong>se separan con un carácter</strong> (generalmente la coma) y las filas con un salto de linea.</p>
+<p>Podemos pensar que dependiendo de como se separen las observaciones tenemos distintos tipos de datos tabulares, pero en realidad su estructura es similar: variables en columnas y las observaciones de un individuo separadas por una marca o carácter. Este carácter puede ser un espacio, un tabulador, una coma, punto y coma etc… El formato tabular mas extendido es el <strong>CSV</strong>, donde las observaciones están separadas por comas.</p>
+<p>Estos datos se pueden visualizar en los editores de texto y por eso también se llaman datos en formato texto.</p>
+<p>Podemos pensar que hay 2 grupos de datos tabulares:</p>
+<ul>
+<li>delimitados por caracteres</li>
+<li>de anchura fija</li>
+</ul>
+<p>El package <code>readr</code> lee datos tabulares con las siguientes funciones:</p>
+<ul>
+<li>si los datos están delimitados por caracteres utiliza: <code>read_delim()</code>, <code>read_csv()</code>, <code>read_tsv()</code> …</li>
+<li>si los datos son de anchura fija: <code>read_fwf()</code> y <code>read_table()</code></li>
+</ul>
+<p>Sólo veremos como importar/exportar datos tabulares del primer tipo; es decir, separados por caracteres. Comenzaremos con el formato CSV que es el más utilizado.</p>
+<br>
+<hr>
+
+
+
+
+<h2 id="csv">CSV
+  <a href="#csv"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>CSV significa “comma separated data”. En realidad CSV es un caso particular de “tabular o text data”</p>
+<p>Recordad que tenemos que exportar el dataframe <code>iris</code> a formato CSV y luego importarlo.</p>
+<p>Para exportar <code>iris</code> a un fichero en formato <code>CSV</code> utilizaremos la función <code>write_csv()</code>: solo hay que decirle el objeto que queremos exportar (en este caso un df “iris”) y el nombre (junto con la ruta) del archivo donde queremos guardarlo.</p>
+<p>Podemos especificar la ruta completa. Por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- exporta en formato CSV el df iris al fichero &#34;iris.csv&#34; </span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- Cuidado!! es una ruta absoluta. No funcionará en todos los ordenadores</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">write_csv</span>(iris, path <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;C:/Users/perezp/Desktop/iris.csv&#34;</span>)
+</span></span></code></pre></div><br>
+<p>En realidad no hace falta especificar la ruta completa. Si solo especificamos el nombre del archivo, R lo guardará en el directorio de trabajo.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- exporta en formato CSV el df iris al fichero &#34;iris.csv&#34;. Como no se especifica la ruta, se grabará en el directorio de trabajo </span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">write_csv</span>(iris, path <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;iris.csv&#34;</span>)
+</span></span></code></pre></div><p>Recuerda que para saber cual es tu directorio de trabajo puedes usar la función <code>getwd()</code> y puedes cambiarlo desde los menús de RStudio o con <code>setwd()</code>. Por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- almacenamos en el objeto &#34;path_wd&#34; la ruta del directorio de trabajo del ordenador que estás usando</span>
+</span></span><span style="display:flex;"><span>path_a_mi_wd <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">getwd</span>() 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- Podemos fijar  el directorio de trabajo donde queramos. Por ejemplo:</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">setwd</span>(<span style="color:#d14">&#34;C:/Users/perezp/Desktop/Mis_datos/&#34;</span>)  
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- en tu ordenador no funcionará porque tu ordenador no tiene esa ruta o estructura de carpetas</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- fijamos el directorio de trabajo (aunque en realidad no hace falta porque esa ruta almacenada en  &#34;path_a_mi_wd&#34; ya era ese el directorio de trabajo</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">setwd</span>(path_a_mi_wd)      
+</span></span></code></pre></div><br>
+<p>Recomendamos trabajar con Rprojects y guardar los ficheros de datos en una carpeta llamada <code>/datos/</code>.</p>
+<p>Por lo tanto, para exportar los datos de “iris” en la subcarpeta <code>/datos/pruebas/</code> dentro del proyecto, hay que hacer lo siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- exporta en formato .csv el df iris al fichero &#34;iris.csv&#34;. Se guardará en la subcarpeta &#34;datos/pruebas/&#34; del proyecto</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">write_csv</span>(iris, <span style="color:#d14">&#34;./datos/pruebas/iris.csv&#34;</span>)
+</span></span></code></pre></div><p>Si queremos, podemos poner explícitamente los argumentos (o parámetros) de la función <code>write_csv()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- Otra vez exportamos en formato .csv el df iris. Esta vez explicitamos las opciones o parámetros de la función</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">write_csv</span>(iris, path <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;./datos/pruebas/iris.csv&#34;</span>, col_names <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">TRUE</span>)
+</span></span></code></pre></div><br>
+<p>Bien, ya hemos exportado “iris” a un fichero en formato CSV, ahora vamos a importarlo.</p>
+<br>
+<p>Para importar los datos del fichero “iris.csv” hacemos lo siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- importamos los datos del fichero &#34;iris.csv&#34; y los guardamos en un objeto que llamamos &#34;iris_imp_csv&#34;. Recuerda que acabamos de exportar &#34;iris&#34; a la carpeta &#34;/datos/pruebas/&#34; dentro del Rproject</span>
+</span></span><span style="display:flex;"><span>iris_imp_csv <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">read_csv</span>(<span style="color:#d14">&#34;./datos/pruebas/iris.csv&#34;</span>)
+</span></span></code></pre></div><br>
+<p>Así de sencillo!! Además la mayoría de programas permiten leer y exportar datos en CSV; así que si trabajamos con otro software (Excel, SPSS …), siempre podemos pasar nuestros datos a R exportándolos a CSV; y desde R podemos hacer lo mismo.</p>
+<br>
+
+
+
+
+<h4 id="algunas-opciones-de-read_csv-que-conviene-conocer">Algunas opciones de <code>read_csv()</code> que conviene conocer
+  <a href="#algunas-opciones-de-read_csv-que-conviene-conocer"></a>
+</h4>
+<p>A veces los datos tienen ciertos problemas que hay que arreglar; por lo que conviene conocer algunas opciones de <code>read_csv()</code>:</p>
+<ul>
+<li>
+<p><strong>col_names:</strong> read_csv() asume que la primera fila contiene los nombres de las variables. Esto puede cambiarse con <code>col_names = FALSE</code>. Puedes proveer nombres a las variables (o columnas) con <code>col_names = c(&quot;X1&quot;, &quot;X2&quot;)</code></p>
+</li>
+<li>
+<p>**skip:**read_csv() por defecto importa todas las filas del archivo, pero puedes hacer que comience a importar en la fila que quieras con <code>skip = n</code></p>
+</li>
+<li>
+<p><strong>na:</strong> En algunos ficheros con datos tabulares los NAs se especifican con algún carácter. Esto podemos tratarlo al leer los datos con el argumento <code>na = &quot;xxx&quot;</code></p>
+</li>
+</ul>
+<p>Por ejemplo, el chunk que ves abajo utiliza read_csv() para cargar el fichero “my_fichero.csv”. Comienza a importar datos desde la quinta columna, trata los valores -44 y $ como NAs y provee un vector con los nombres que queremos para las variables (o columnas)</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>mis_datos <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">read_csv</span>(<span style="color:#d14">&#34;my_fichero.csv&#34;</span>, skip <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">5</span>, na <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">c</span>(<span style="color:#d14">&#34;-44&#34;</span>, <span style="color:#d14">&#34;$&#34;</span>), col_names <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">c</span>(<span style="color:#d14">&#34;X1&#34;</span>, <span style="color:#d14">&#34;X2&#34;</span>, <span style="color:#d14">&#34;YY&#34;</span>, <span style="color:#d14">&#34;X4&#34;</span>, <span style="color:#d14">&#34;ZZ&#34;</span>))
+</span></span></code></pre></div><hr>
+
+
+
+
+<h2 id="otros-datos-tabulares">Otros datos tabulares
+  <a href="#otros-datos-tabulares"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>En realidad, todos los datos tabulares (<strong>separados por caracteres</strong>) son muy similares. ¡Solo se diferencian en el carácter que hace de separador.</p>
+<p>El package “readr” tiene una función especifica para cada tipo de datos tabulares. Por ejemplo, si el separador es un punto y coma, la función para importar estos datos es <code>read_csv2()</code>; si el separador es un tabulador, la función es <code>read_tsv()</code>. Pero también tiene una función genérica que sirve para cualquier tipo de separador: <code>read_delim()</code> . Obviamente usaremos estas funciones.</p>
+<p>Por ejemplo, podemos cargar el fichero “my_iris_exportado.csv” que hemos exportado anteriormente utilizando la función genérica <code>read_delim()</code>, solo hay que decirle que el separador es una coma. Se lo decimos con la opción <code>delim = &quot;,&quot;</code>. Veámoslo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- importamos los datos del fichero &#34;iris.csv&#34; y los guardamos en un objeto que llamamos iris_imp_csv_2. Fíjate en el argumento &#39;delim&#39;</span>
+</span></span><span style="display:flex;"><span>iris_imp_csv_2 <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">read_delim</span>(<span style="color:#d14">&#34;./datos/pruebas/iris.csv&#34;</span>, delim <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;,&#34;</span>)
+</span></span></code></pre></div><p>Como el formato tabular mas extendido es el CSV; en general, no tendremos necesidad de exportar datos tabulares separados por caracteres distintos a la coma, pero si quisiéramos hacerlo, podríamos hacerlo con <code>write_tsv()</code> o con <code>write_delim()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- exportamos iris en formato tabular separado por punto y coma. </span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">write_delim</span>(iris, <span style="color:#d14">&#34;./datos/pruebas/iris_2.txt&#34;</span>, delim <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;;&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- exportamos iris en formato tabular separado por tabuladores </span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">write_delim</span>(iris, <span style="color:#d14">&#34;./datos/pruebas/iris_3.txt&#34;</span>, delim <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;\t&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- exportamos iris en formato tabular separado por un espacio en blanco </span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">write_delim</span>(iris, <span style="color:#d14">&#34;./datos/pruebas/iris_4.txt&#34;</span>, delim <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34; &#34;</span>)
+</span></span></code></pre></div><br>
+<p>Si quisiéramos importarlos, tendríamos que hacer:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- exportamos iris en formato tabular separado por punto y coma. </span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">read_delim</span>(<span style="color:#d14">&#34;./datos/pruebas/iris_2.txt&#34;</span>, delim <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;;&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- exportamos iris en formato tabular separado por tabuladores </span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">read_delim</span>(<span style="color:#d14">&#34;./datos/pruebas/iris_3.txt&#34;</span>, delim <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;\t&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- exportamos iris en formato tabular separado por un espacio en blanco </span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">read_delim</span>(<span style="color:#d14">&#34;./datos/pruebas/iris_4.txt&#34;</span>, delim <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34; &#34;</span>)
+</span></span></code></pre></div><br>
+<br>
+<hr>
+<br>
+
+
+
+
+<h1 id="4-formatos-propietarios">4. Formatos propietarios
+  <a href="#4-formatos-propietarios"></a>
+</h1>
+<p>Hasta que R haga desparecer a SPSS, Stata, ….. <code>remo::ji(&quot;biceps&quot;)</code>, aún será necesario importar algún fichero en formatos de software propietario como los de Excel, SAS, Stata , SPSS y Eviews</p>
+<p>Normalmente lo que necesitaremos es importar datos en esos formatos, sólo alguna vez tendremos que exportarlos, ya que todos estos programas pueden leer datos en CSV.</p>
+<p>Lo que sí puede resultarnos útil es exportar datos en formato .xls, ya que Excel es muy útil para visualizar datos en formato tabular y también porque mucha gente prefiere (o solo sabe) leer/analizar datos en Excel.</p>
+<br>
+<hr>
+<br>
+
+
+
+
+<h2 id="excel">Excel
+  <a href="#excel"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+
+
+
+
+<h4 id="exportar-a-excel">Exportar a excel
+  <a href="#exportar-a-excel"></a>
+</h4>
+<p>Hay varios packages que graban datos en formato .xls. Pero el más sencillo es el package <code>xlsx</code>. Veámoslo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(xlsx)
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">write.xlsx</span>(iris, <span style="color:#d14">&#34;./datos/pruebas/iris.xlsx&#34;</span>)
+</span></span></code></pre></div><p>La función <code>write.xlsx()</code> permite especificar el nombre del libro y alguna cosa más; por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># library(xlsx)</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">write.xlsx</span>(iris, <span style="color:#d14">&#34;./datos/pruebas/iris.xlsx&#34;</span>, sheetName <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;IRIS&#34;</span>, row.names <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">FALSE</span>)
+</span></span></code></pre></div><p>La función <code>write.xlsx()</code> permite añadir datos a un archivo .xlsx preexistente; para ello tenemos que usar la opción <code>append = TRUE</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># library(xlsx)</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">write.xlsx</span>(iris, <span style="color:#d14">&#34;./datos/pruebas/iris.xlsx&#34;</span>, sheetName <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;IRIS_2&#34;</span>, append <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">TRUE</span>)
+</span></span></code></pre></div><br>
+<p>El paquete <code>xlsx</code> depende de Java. No suele haber problemas, pero si los tuvieses, el package <code>writexl</code> no tiene ninguna dependencia. Tendrías que hacer lo siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(writexl)
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">write_xlsx</span>(iris, <span style="color:#d14">&#34;./datos/pruebas/iris8.xlsx&#34;</span>)
+</span></span></code></pre></div><br>
+
+
+
+
+<h4 id="importar-archivos-en-formato-excel">Importar archivos en formato excel
+  <a href="#importar-archivos-en-formato-excel"></a>
+</h4>
+<p>También hay varios paquetes, pero usaremos el mismo que usa RStudio en sus menús: <code>readxl</code></p>
+<p><strong><code>readxl</code></strong> permite leer ficheros <code>.xls</code> y <code>.xlsx</code>. Por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># library(readxl)</span>
+</span></span><span style="display:flex;"><span>iris_imp_xls <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">read_excel</span>(<span style="color:#d14">&#34;./datos/pruebas/iris.xlsx&#34;</span>)
+</span></span></code></pre></div><br>
+<p>Podemos especificar el libro que queremos abrir, ya sea especificando su nombre o su posición en el fichero</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># library(readxl)</span>
+</span></span><span style="display:flex;"><span>iris_imp_xls <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">read_excel</span>(<span style="color:#d14">&#34;./datos/pruebas/iris.xlsx&#34;</span>, sheet <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">2</span>)
+</span></span><span style="display:flex;"><span>iris_imp_xls <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">read_excel</span>(<span style="color:#d14">&#34;./datos/pruebas/iris.xlsx&#34;</span>, sheet <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;IRIS_2&#34;</span>)
+</span></span></code></pre></div><p>La función <code>read_excel()</code> tiene más posibilidades; como ejemplo, la opción <code>skip = 4</code> permite empezar a importar a partir de la cuarta fila.</p>
+<br>
+<p>Si queremos importar todos los libros (o sheets) de un archivo Excel, podemos hacerlo así:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># library(readxl)</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># (!!!)</span>
+</span></span><span style="display:flex;"><span>IRIS_list <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">lapply</span>(<span style="color:#900;font-weight:bold">excel_sheets</span>(<span style="color:#d14">&#34;./datos/pruebas/iris.xlsx&#34;</span>), read_excel, path <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;./datos/pruebas/iris.xlsx&#34;</span>)
+</span></span></code></pre></div><p>Hemos guardado los 2 sheets del archivo “./datos/pruebas/iris.xlsx” en un objeto R llamado <code>IRIS_list</code>. Este objeto es una lista con 2 elementos. cada elemento contiene los datos de cada uno de los 2 sheets. Podemos verlo con <code>str()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># (!!!)</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">str</span>(IRIS_list)
+</span></span></code></pre></div><p>Si quisiéramos recuperar los datos en el formato en el que estamos habituados (dataframes) lo haríamos así:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># (!!!)</span>
+</span></span><span style="display:flex;"><span>primer_iris  <span style="color:#000;font-weight:bold">&lt;-</span> IRIS_list[[1]]
+</span></span><span style="display:flex;"><span>segundo_iris <span style="color:#000;font-weight:bold">&lt;-</span> IRIS_list[[2]]
+</span></span></code></pre></div><br>
+<hr>
+<br>
+
+
+
+
+<h2 id="otros-formatos-propietarios">Otros formatos propietarios
+  <a href="#otros-formatos-propietarios"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Veremos SPSS, Stata y SAS.</p>
+<p>Utilizaremos el mismo package que usa RStudio: <code>haven</code>. Si necesitásemos importar otro tipo formato es muy posible que se pueda hacer con los los packages <code>foreign</code> y <code>rio</code></p>
+<br>
+<hr>
+
+
+
+
+<h3 id="spss">SPSS
+  <a href="#spss"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+
+
+
+
+<h4 id="exportación-a-spss-formato-sav">Exportación a SPSS (formato <code>.sav</code>)
+  <a href="#exportaci%c3%b3n-a-spss-formato-sav"></a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># library(haven)</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">write_sav</span>(iris, <span style="color:#d14">&#34;./datos/pruebas/iris.sav&#34;</span>)
+</span></span></code></pre></div><br>
+
+
+
+
+<h4 id="importacion-de-ficheros-sav-tb-por">Importacion de ficheros <code>.sav</code> (tb <code>.por</code>)
+  <a href="#importacion-de-ficheros-sav-tb-por"></a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># library(haven)</span>
+</span></span><span style="display:flex;"><span>iris_imp_spss <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">read_spss</span>(<span style="color:#d14">&#34;./datos/pruebas/iris.sav&#34;</span>)
+</span></span></code></pre></div><br>
+<hr>
+
+
+
+
+<h3 id="stata">Stata
+  <a href="#stata"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+
+
+
+
+<h4 id="exportación-a-stata-formato-dta">Exportación a STATA (formato <code>.dta</code>)
+  <a href="#exportaci%c3%b3n-a-stata-formato-dta"></a>
+</h4>
+<p>Se puede exportar con <code>haven</code> (pero no permite labelled data!!), así que mejor hacerlo esta vez con el package <code>foreign</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># library(foreign)</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">write.dta</span>(iris, <span style="color:#d14">&#34;./datos/pruebas/iris.dta&#34;</span>)
+</span></span></code></pre></div><br>
+
+
+
+
+<h4 id="importacion-de-ficheros-stata-dta">Importacion de ficheros STATA (<code>.dta</code>)
+  <a href="#importacion-de-ficheros-stata-dta"></a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># library(haven)</span>
+</span></span><span style="display:flex;"><span>iris_imp_stata <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">read_stata</span>(<span style="color:#d14">&#34;./datos/pruebas/iris.dta&#34;</span>)
+</span></span></code></pre></div><br>
+<hr>
+
+
+
+
+<h3 id="sas">SAS
+  <a href="#sas"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+
+
+
+
+<h4 id="exportación-a-sas">Exportación a SAS
+  <a href="#exportaci%c3%b3n-a-sas"></a>
+</h4>
+<p><strong><code>haven</code></strong> exporta bien a SAS; pero … los nombres de las variables no pueden contener puntos, así que usamos otro fichero de datos <code>mtcars</code>. Podríamos haber cambiado el nombre de las columnas de iris (quitando los puntos), pero lo dejamos para el próximo tutorial.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># mtcars es un dataset  del pkg ggplot2, asi que ggplot2 debe estar cargado</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># library(ggplot2)</span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># library(haven)</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">write_sas</span>(mtcars, <span style="color:#d14">&#34;./datos/pruebas/mtcars.sas&#34;</span>) 
+</span></span></code></pre></div><br>
+
+
+
+
+<h4 id="importacion-de-ficheros-sas">Importacion de ficheros SAS
+  <a href="#importacion-de-ficheros-sas"></a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># library(haven)</span>
+</span></span><span style="display:flex;"><span>mtcars_imp_sas <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">read_sas</span>(<span style="color:#d14">&#34;./datos/pruebas/mtcars.sas&#34;</span>)
+</span></span></code></pre></div><br>
+<hr>
+<br>
+
+
+
+
+<h1 id="5-formatos-propios-de-r">5. Formato(s) propios de R
+  <a href="#5-formatos-propios-de-r"></a>
+</h1>
+<p>Guardar datos en formatos como txt, csv o Excel es lo más habitual si quieres abrir estos datos en otros programas; pero al grabar en estos formatos guardas los datos, PERO no guardas la estructura de los datos; es decir, si por ejemplo una columna la has definido como un factor o como integer, esta información se perderá. En estos casos, una solución es usar el formato propio de R.</p>
+<p>Hay dos posibilidades:</p>
+<ul>
+<li>si quieres grabar un solo objeto, es preferible hacerlo como <code>Rds</code></li>
+<li>si quieres grabar varios objetos tienes que hacerlo como <code>RData</code> o abreviado como <code>Rda</code></li>
+</ul>
+<br>
+<hr>
+
+
+
+
+<h2 id="rdata">RData
+  <a href="#rdata"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p><strong>RData</strong> (o Rda) es un formato especifico de R, pero tiene dos ventajas:</p>
+<ul>
+<li>es bastante eficiente</li>
+<li>permite guardar varios objetos en un único archivo</li>
+</ul>
+<br>
+<p>Para <strong>exportar</strong> <code>my_iris</code> a un fichero en formato <code>.RData</code> utilizaremos la función <code>save()</code>: solo hay que decirle el objeto que queremos exportar (en este caso un df/tibble llamado “my_iris”) y el nombre (junto con la ruta) del archivo donde queremos guardarlo.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- exporta en formato .RData el df my_iris al fichero &#34;iris.RData&#34;. </span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">save</span>(iris, file <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;./datos/pruebas/iris.RData&#34;</span>)
+</span></span></code></pre></div><br>
+El formato `.RData` tienen la ventaja de que puedes guardar varios objetos a la vez.
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">save</span>(mtcars, iris,  file <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;./datos/pruebas/mtcars_and_iris.RData&#34;</span>)
+</span></span></code></pre></div><p>Incluso puede guardar todos los objetos de la sesión. Mejor no hacerlo</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">save</span>(list <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">ls</span>(all <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">TRUE</span>), file<span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;./datos/pruebas/all_objects.RData&#34;</span>)
+</span></span></code></pre></div><p>O todo el espacio de trabajo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">save.image</span>(file <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;./datos/pruebas/my_work_space.RData&#34;</span>)
+</span></span></code></pre></div><p>para luego cargarlos con:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">load</span>(<span style="color:#d14">&#34;./datos/pruebas/all_objects.RData&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">load</span>(<span style="color:#d14">&#34;./datos/pruebas/my_work_space.RData&#34;</span>)
+</span></span></code></pre></div><br>
+<p>Para cargar o <strong>importar</strong> datos en formato <code>.RData</code> basta con arrastrarlos dentro de RStudio, o seguir la ruta de menús <code>File &gt; Open File</code> pero para hacerlo en un script se hace así:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- importamos el fichero &#34;my_data2.RData&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">load</span>(file <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;./datos/pruebas/iris.RData&#34;</span>)
+</span></span></code></pre></div><br>
+<p>Un posible pega es que al cargar datos con <code>load()</code> se cargan todos los datos que guardaste y además se cargan en el espacio de trabajo con el mismo nombre con que los guardaste. Esto puede ser una pega pues es posible que haya un objeto que se llame igual que un objeto con el que estás trabajando en RStudio.</p>
+
+
+
+
+<h2 id="rds-serialized-r-objects">RDS (Serialized R objects)
+  <a href="#rds-serialized-r-objects"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Una “desventaja” del formato <code>RData</code> es que al importar un fichero .RData, los objetos que contiene se cargan siempre con el nombre con el que fueron grabados. ¿Qué más da? Bueno, puede parecer que no es muy importante, pero a veces esto puede limitar el workflow, así que muchas veces es preferible grabar como <code>.RDS</code> con la función <code>write_rds()</code>. La pega es que está función solo permite guardar un objeto.</p>
+<p>Para <strong>exportar</strong> iris a formato RDS hacemos:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">write_rds</span>(iris, <span style="color:#d14">&#34;./datos/pruebas/iris.rds&#34;</span>)
+</span></span></code></pre></div><br>
+<p>Para leer o <strong>importar</strong> datos RDS (hay que asignarle un nombre, que puede ser o no el nombre original) hacemos:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>iris_imp_rds <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">readRDS</span>(<span style="color:#d14">&#34;./datos/pruebas/iris.rds&#34;</span>)
+</span></span></code></pre></div><br>
+<hr>
+<br>
+
+
+
+
+<h1 id="6-otros-formatos">6. Otros formatos
+  <a href="#6-otros-formatos"></a>
+</h1>
+<br>
+<p>Los formatos más frecuentes (al menos en nuestra área) continúan siendo los .csv, .xls, … PERO existen muchos otros formatos.</p>
+<p>Hay 2 formatos que es bueno, al menos, saber que existen, porque cada vez son más frecuentes:</p>
+<ul>
+<li>JSON (JavaScript Object Notation)</li>
+<li>XML (Extensible Markup Language).</li>
+</ul>
+<p>Para JSON, se recomienda usar el paquete <code>jsonlite</code> y para XML, <code>xml2</code>.</p>
+<br>
+
+
+
+
+<h4 id="el-package-rio-es-la-navaja-suiza-del-io-data-en-r">El package <code>rio</code> es la navaja suiza del I/O data en R
+  <a href="#el-package-rio-es-la-navaja-suiza-del-io-data-en-r"></a>
+</h4>
+<p>Si hay algún formato de datos que quieras abrir en R y no lo hayamos tratado, probablemente el package <code>rio</code> sea capaz de importarlo. 
+<a href="https://github.com/leeper/rio#supported-file-formats" target="_blank" rel="noopener">Aquí</a> tienes la lista de los formatos que puede importar; además todos ellos con una sola función (<code>import()</code>). Para exportar hay que usar la función <code>export()</code></p>
+<p>El paquete <code>rio</code> es muy fácil de usar, pero en realidad lo que hace es llamar/utilizar otros paquetes para hacer el trabajo. Por ejemplo para exportar/importar a SPSS usa el paquete <code>heaven</code>, para Matlab usa el paquete <code>rmatio</code>, así que si quieres importar datos de Matlab tendrás que tenerlo instalado. Al cargar el paquete <code>rio</code> con <code>library(rio</code> nos avisará de si nos falta algún paquete y si queremos los instalará por nosotros con la función <code>rio::install_formats()</code></p>
+<p>Veámos como funciona <code>rio</code>. Para ello primero <strong>exportaremos</strong> el fichero de datos <code>mtcars</code> adiferentes formatos:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(rio)
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">export</span>(mtcars, <span style="color:#d14">&#34;./datos/pruebas/mtcars.csv&#34;</span>)   <span style="color:#998;font-style:italic"># comma-separated values</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">export</span>(mtcars, <span style="color:#d14">&#34;./datos/pruebas/mtcars.rds&#34;</span>)   <span style="color:#998;font-style:italic"># R serialized</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">export</span>(mtcars, <span style="color:#d14">&#34;./datos/pruebas/mtcars.sav&#34;</span>)   <span style="color:#998;font-style:italic"># SPSS</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">export</span>(mtcars, <span style="color:#d14">&#34;./datos/pruebas/mtcars.json&#34;</span>)  <span style="color:#998;font-style:italic"># JSON</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">export</span>(mtcars, <span style="color:#d14">&#34;./datos/pruebas/mtcars.arff&#34;</span>)  <span style="color:#998;font-style:italic"># Weka Attribute-Relation File Format</span>
+</span></span></code></pre></div><br>
+<p>Además permite exportar y <strong>comprimir los datos directamente</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(rio)
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">export</span>(mtcars, <span style="color:#d14">&#34;./datos/pruebas/mtcars.tsv.zip&#34;</span>) <span style="color:#998;font-style:italic"># TSV &amp; Zip it</span>
+</span></span></code></pre></div><br>
+<p>Para <strong>importar</strong> los ficheros que hemos exportado previamente:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(rio)
+</span></span><span style="display:flex;"><span>mtcars_csv  <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">import</span>(<span style="color:#d14">&#34;./datos/pruebas/mtcars.csv&#34;</span>)  <span style="color:#998;font-style:italic"># CSV</span>
+</span></span><span style="display:flex;"><span>mtcars_spss <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">import</span>(<span style="color:#d14">&#34;./datos/pruebas/mtcars.sav&#34;</span>)  <span style="color:#998;font-style:italic"># SPSS (.sav)</span>
+</span></span></code></pre></div><p>Como curiosidad decir que <code>rio</code> importa los datos como data.frames, no como tibbles, pero puedes forzarlo con:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(rio)
+</span></span><span style="display:flex;"><span>mtcars_csv  <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">import</span>(<span style="color:#d14">&#34;./datos/pruebas/mtcars.csv&#34;</span>, setclass <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;tibble&#34;</span>)  <span style="color:#998;font-style:italic"># CSV</span>
+</span></span></code></pre></div><p>En 
+<a href="http://ritsokiguess.site/docs/2018/03/25/today-on-twitter-i-learned/" target="_blank" rel="noopener">este post</a> también explican que <code>rio</code> puede ser una alternativa a <code>rvest</code> y/o <code>xml2</code> para importar tablas html en internet. Por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>my_url <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#d14">&#34;http://www.scoresway.com/?sport=soccer&amp;page=competition&amp;id=8&#34;</span>
+</span></span><span style="display:flex;"><span>table <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">import</span>(my_url, format <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;html&#34;</span>, which <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">2</span>)
+</span></span></code></pre></div><p>Si tampoco <code>rio</code> puede leer el formato que necesitas, es muy probable que alguien haya escrito un package para hacerlo; tendrás que ver si existe buscando en internete.</p>
+<p>Recientemente ha aparecido otro meta-pkg para leer datos. Es el pkg <code>readit</code>. Aún no lo he usado pero, por varias razones, no quiero olvidarme de él. Puedes verlo 
+<a href="https://cran.r-project.org/web/packages/readit/index.html" target="_blank" rel="noopener">aquí</a></p>
+<br>
+<hr>
+<br>
+
+
+
+
+<h1 id="7-descargar-datos-de-internet">7. Descargar datos de internet
+  <a href="#7-descargar-datos-de-internet"></a>
+</h1>
+<br>
+<p>Hay muchísimos datos en internet para descargar; siempre podemos descargarlos usando el navegador, PERO la filosofía del curso es (si podemos) hacerlo todo desde R/RStudio</p>
+<p>Desde RStudio, podemos descargar datos con las mismas funciones que usábamos para cargar en el entorno de trabajo los datos que teníamos en nuestro PC. La única diferencia consiste en que, en lugar de proporcionar la ruta al fichero, tendremos que proporcionar la ruta de internet. Por ejemplo:</p>
+<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># cargamos los datos del fichero &#34;bio260-heights.csv&#34;</span>
+</span></span><span style="display:flex;"><span>url <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#d14">&#34;https://raw.githubusercontent.com/datasciencelabs/data/master/bio260-heights.csv&#34;</span>
+</span></span><span style="display:flex;"><span>datos <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">read_csv</span>(url)
+</span></span></code></pre></div><br>
+<p>A veces podemos necesitar hacer una copia de los datos a nuestro ordenador. En este caso, lo que yo haría es cargar los datos y luego exportarlos a .rds; pero también podemos hacerlo directamente con la función <code>download.file()</code>:</p>
+<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># descargamos y almacenamos en nuestro PC los datos del fichero &#34;bio260-heights.csv&#34;</span>
+</span></span><span style="display:flex;"><span>url <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#d14">&#34;https://raw.githubusercontent.com/datasciencelabs/data/master/bio260-heights.csv&#34;</span>
+</span></span><span style="display:flex;"><span>destino <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#d14">&#34;./datos/pruebas/bio260-heights.csv&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">download.file</span>(url, destino)
+</span></span><span style="display:flex;"><span>dat <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">read.csv</span>(destino)
+</span></span></code></pre></div><br>
+<p>A veces, la función de R-base <code>download.file</code> puede tener problemas si el protocolo es https. En estos casos, la función <code>dowload()</code> del pkg downloader puede solucionarlo:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#install.packages(&#34;downloader&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(downloader)
+</span></span><span style="display:flex;"><span>url <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#d14">&#34;https://raw.githubusercontent.com/datasciencelabs/data/master/bio260-heights.csv&#34;</span>
+</span></span><span style="display:flex;"><span>filename <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">basename</span>(url)
+</span></span><span style="display:flex;"><span>destino <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">paste0</span>(<span style="color:#d14">&#34;./datos/pruebas/&#34;</span>, filename)
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">download</span>(url,destino)
+</span></span><span style="display:flex;"><span>dat <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">read.csv</span>(destino)
+</span></span></code></pre></div><br>
+<hr>
+<br>
+
+
+
+
+<h1 id="8-apis-y-web-scrapping">8. API’s y Web Scrapping
+  <a href="#8-apis-y-web-scrapping"></a>
+</h1>
+<br>
+<p>El proceso y acciones para recopilar información de la Web se conoce como 
+<a href="https://es.wikipedia.org/wiki/Web_scraping" target="_blank" rel="noopener">web scrapping</a>. Este proceso se puede hacer manualmente, pero lo habitual es automatizarlo utilizando software. Se puede acceder a los datos directamente pero actualmente es muy común hacerlo a través de APIs, ya que la mayoría de organismos/empresas tienen una o varias APIs.</p>
+<p>API significa “Aplication Programming Interface” y se puede entender como un mecanismo que nos permite interactuar (por ejemplo para hacer una petición de datos) con un servidor de internet. Por ejemplo, muchos bancos tienen APIs a las que se les pueden hacer peticiones, esto hace posible que se desarrollen apps para hacer ciertas operaciones bancarias; es decir, una API es un mecanismo que nos permite acceder y/o interactuar con determinadas funciones de un servicio web.</p>
+<p>Las APIs facilitan mucho la recopilación de datos al poderse acceder a ellas de forma programática ya que proveen de un proceso de acceso a ellos estandarizado: se envía una “http request” a la API y se reciben los datos en un determinado formato, generalmente JSON.</p>
+<p>En el entorno R se pueden desarrollar paquetes para acceder a APIs; por ejemplo, vamos a utilizar el paquete de R <code>eurostat</code> para acceder a la API de Eurostat y descargar datos directamente en R. Veámoslo:</p>
+<hr>
+<br>
+
+
+
+
+<h2 id="eurostat">Eurostat
+  <a href="#eurostat"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Eursotat tiene una API que permite hacer peticiones de datos. Obviamente, para poder hacer peticiones de datos a través de su API has de conocer su sintaxis; si estás interesado puedes empezar 
+<a href="http://ec.europa.eu/eurostat/data/web-services" target="_blank" rel="noopener">aquí</a>. Nosotros accederemos a Eurostat a través del package 
+<a href="https://ropengov.github.io/eurostat/" target="_blank" rel="noopener"><code>eurostat</code></a>. Si estas interesado en bajar datos de Eurostat es conveniente que uses esta 
+<a href="http://ropengov.github.io/eurostat/articles/eurostat_tutorial.html" target="_blank" rel="noopener">vignette</a> y la 
+<a href="http://ropengov.github.io/eurostat/articles/cheatsheet.html" target="_blank" rel="noopener">cheat sheet</a>. Veamos un ejemplo:</p>
+<p>Con la función <code>get_eurostat()</code> es suficiente para bajar una tabla de Eurostat con el porcentaje de empleos en sectores culturales:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># install.packages(&#34;eurostat&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(<span style="color:#d14">&#34;eurostat&#34;</span>)
+</span></span><span style="display:flex;"><span>df <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">get_eurostat</span>(<span style="color:#d14">&#34;cult_emp_sex&#34;</span>, time_format <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;raw&#39;</span>, keepFlags <span style="color:#000;font-weight:bold">=</span> <span style="color:#999">T</span>)       <span style="color:#998;font-style:italic">#- bajamos los datos de la tabla &#34;cult_emp_sex&#34;: empleo cultural por genero&#34;</span>
+</span></span></code></pre></div><br>
+<p>Un ejemplo más completo: descargaremos los datos de la tabla <code>hlth_silc_17</code> que contiene datos con la “esperanza de vida saludable” para diferentes años en los países de la UE.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># install.packages(&#34;eurostat&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(<span style="color:#d14">&#34;eurostat&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#------------------ podemos buscar un  &#34;tema&#34; con la f. search_eurostat()</span>
+</span></span><span style="display:flex;"><span>aa <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">search_eurostat</span>(<span style="color:#d14">&#34;employment&#34;</span>, type <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;all&#34;</span>) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#------------------ elegimos una tabla de Eurostat</span>
+</span></span><span style="display:flex;"><span>my_table <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#d14">&#34;hlth_silc_17&#34;</span>          <span style="color:#998;font-style:italic">#- elegimos una tabla; por ejemplo &#34;hlth_silc_17&#34;: &#34;Healthy life expectancy based on self-perceived health&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">label_eurostat_tables</span>(my_table)     <span style="color:#998;font-style:italic">#- da informacion sobre la Base de datos q estas buscando</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#------------------ descargamos los datos con get_eurostat()</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">get_eurostat</span>(my_table, time_format <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;raw&#39;</span>, keepFlags <span style="color:#000;font-weight:bold">=</span> <span style="color:#999">T</span> )       <span style="color:#998;font-style:italic">#- bajamos los datos de una tabla</span>
+</span></span><span style="display:flex;"><span>df_l <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">label_eurostat</span>(df)        <span style="color:#998;font-style:italic">#- pone labels: Spain en lugar de su código (mas legible,menos fácil de programar)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#------------------ los arreglamos un poco </span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(<span style="color:#d14">&#34;tidyverse&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(<span style="color:#d14">&#34;pjpv2020.01&#34;</span>) <span style="color:#998;font-style:italic">#- remotes::install_github(&#34;perezp44/pjpv2020.01&#34;)</span>
+</span></span><span style="display:flex;"><span>aa <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">pjp_f_valores_unicos</span>(df)       <span style="color:#998;font-style:italic">#- ver los valores unicos de cada columna</span>
+</span></span><span style="display:flex;"><span>aa <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">pjp_f_valores_unicos</span>(df_l)     <span style="color:#998;font-style:italic">#- ver los valores unicos de cada columna</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">label_eurostat</span>(df, code <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">c</span>(<span style="color:#d14">&#34;geo&#34;</span>, <span style="color:#d14">&#34;unit&#34;</span>, <span style="color:#d14">&#34;indic_he&#34;</span>))
+</span></span></code></pre></div><p>Ahora vamos a fusionarlo con datos de los límites espaciales de cada país, para finalmente hacer un gráfico espacial …. PERO Eurostat o eurostat cambiaron su API, entonces …. este chunk no funciona con la versión actual del paquete <code>eurostat</code>. Lo dejo por si aún funcionase en los ordenadores del aula.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#- selecciono datos de 2016, Females, y HE_50 y después hago un cut de &#34;values&#34;</span>
+</span></span><span style="display:flex;"><span>df_x <span style="color:#000;font-weight:bold">&lt;-</span> df <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#900;font-weight:bold">filter</span>(time <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#34;2016&#34;</span>) <span style="color:#000;font-weight:bold">%&gt;%</span>  <span style="color:#900;font-weight:bold">filter</span>(sex <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#34;Females&#34;</span>) <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#900;font-weight:bold">filter</span>(indic_he_code <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#34;HE_50&#34;</span>) <span style="color:#000;font-weight:bold">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#900;font-weight:bold">mutate</span>(cat <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">cut_to_classes</span>(values, n <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">7</span>, decimals <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span>))
+</span></span><span style="display:flex;"><span>mapdata <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">merge_eurostat_geodata</span>(df_x, resolution <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;20&#34;</span>, geocolumn <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;geo_code&#34;</span>) <span style="color:#998;font-style:italic">#- fusiono con geo data</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">ggplot</span>(mapdata, <span style="color:#900;font-weight:bold">aes</span>(x <span style="color:#000;font-weight:bold">=</span> long, y <span style="color:#000;font-weight:bold">=</span> lat, group <span style="color:#000;font-weight:bold">=</span> group))<span style="color:#000;font-weight:bold">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">geom_polygon</span>(<span style="color:#900;font-weight:bold">aes</span>(fill <span style="color:#000;font-weight:bold">=</span> cat), color <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;black&#34;</span>, size <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">.1</span>)<span style="color:#000;font-weight:bold">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">scale_fill_brewer</span>(palette <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;RdYlBu&#34;</span>) <span style="color:#000;font-weight:bold">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">labs</span>(title <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;Healthy life expectancy, 2016&#34;</span>,
+</span></span><span style="display:flex;"><span>       subtitle <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;Health expectancy in years at 50&#34;</span>,
+</span></span><span style="display:flex;"><span>       fill <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;Healthy life expectancy&#34;</span>,
+</span></span><span style="display:flex;"><span>       caption <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;(C) EuroGeographics for the administrative boundaries&#34;</span>) <span style="color:#000;font-weight:bold">+</span> <span style="color:#900;font-weight:bold">theme_light</span>() <span style="color:#000;font-weight:bold">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">coord_map</span>(xlim <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">c</span>(<span style="color:#099">-12</span>, <span style="color:#099">44</span>), ylim <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">c</span>(<span style="color:#099">35</span>, <span style="color:#099">67</span>))
+</span></span></code></pre></div><p>Este sí funcionará con la nueva versión del pkg <code>eurostat</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>df_x <span style="color:#000;font-weight:bold">&lt;-</span> df <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#900;font-weight:bold">filter</span>(time <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#34;2016&#34;</span>) <span style="color:#000;font-weight:bold">%&gt;%</span>  <span style="color:#900;font-weight:bold">filter</span>(sex <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#34;Females&#34;</span>) <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#900;font-weight:bold">filter</span>(indic_he_code <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#34;HE_50&#34;</span>) <span style="color:#000;font-weight:bold">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#900;font-weight:bold">mutate</span>(cat <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">cut_to_classes</span>(values, n <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">7</span>, decimals <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>geometrias <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">get_eurostat_geospatial</span>(resolution <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;20&#34;</span>, nuts_level <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;0&#34;</span>) <span style="color:#998;font-style:italic">#- ahora se bajan las geometrías y tienes que unirla tu con dplyr (Hay un Pb de encoding)</span>
+</span></span><span style="display:flex;"><span>mapdata <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">inner_join</span>(geometrias, df_x, by <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">c</span>(<span style="color:#d14">&#34;geo&#34;</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;geo_code&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>p <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">ggplot</span>(mapdata) <span style="color:#000;font-weight:bold">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">geom_sf</span>(<span style="color:#900;font-weight:bold">aes</span>(fill <span style="color:#000;font-weight:bold">=</span> cat, geometry <span style="color:#000;font-weight:bold">=</span> geometry), color <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;black&#34;</span>, size <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">.1</span>) <span style="color:#000;font-weight:bold">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">scale_fill_brewer</span>(palette <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;RdYlBu&#34;</span>) <span style="color:#000;font-weight:bold">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">labs</span>(title <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;Healthy life expectancy, 2016&#34;</span>,
+</span></span><span style="display:flex;"><span>       subtitle <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;Health expectancy in years at 50&#34;</span>,
+</span></span><span style="display:flex;"><span>       fill <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;Healthy life expectancy&#34;</span>,
+</span></span><span style="display:flex;"><span>       caption <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;(C) EuroGeographics for the administrative boundaries&#34;</span>) <span style="color:#000;font-weight:bold">+</span> <span style="color:#900;font-weight:bold">theme_light</span>() <span style="color:#000;font-weight:bold">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">coord_sf</span>(xlim <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">c</span>(<span style="color:#099">-12</span>, <span style="color:#099">44</span>), ylim <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">c</span>(<span style="color:#099">35</span>, <span style="color:#099">67</span>)) 
+</span></span><span style="display:flex;"><span>p
+</span></span></code></pre></div><img src="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-4-importar-y-exportar-datos-con-r/index_files/figure-html/unnamed-chunk-58-1.png" width="60%" style="display: block; margin: auto;" />
+<br>
+<hr>
+<br>
+
+
+
+
+<h2 id="ine">INE
+  <a href="#ine"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<br>
+<p>¿El INE tiene API? Pues sí, 
+<a href="http://www.ine.es/dyngs/DataLab/manual.html?cid=45" target="_blank" rel="noopener">aquí</a> puedes “verla”, pero …</p>
+<p>Hace poco tuvimos que utilizar alguna tabla del INE y, en lugar de usar la API, nos bajamos los datos así:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(<span style="color:#d14">&#34;pxR&#34;</span>)              <span style="color:#998;font-style:italic">#- para trabajar con datos PC-Axis</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(<span style="color:#d14">&#34;tidyverse&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(<span style="color:#d14">&#34;pjpv2020.01&#34;</span>)
+</span></span><span style="display:flex;"><span>file_name <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#d14">&#34;http://www.ine.es/jaxiT3/files/t/es/px/4189.px?nocab=1&#34;</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">read.px</span>(file_name) <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#900;font-weight:bold">as.data.frame</span>() <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#900;font-weight:bold">as.tbl</span>()   <span style="color:#998;font-style:italic">#- no funcionaba en 3.5 x $</span>
+</span></span><span style="display:flex;"><span>aa <span style="color:#000;font-weight:bold">&lt;-</span> pjpv2020.01<span style="color:#000;font-weight:bold">::</span><span style="color:#900;font-weight:bold">pjp_f_valores_unicos</span>(df)     <span style="color:#998;font-style:italic">#- ver los valores únicos de cada columna</span>
+</span></span></code></pre></div><p>La verdad es que ahora (2019) hay un paquete que funciona/funcionaba bastante bien: 
+<a href="https://github.com/oddworldng/INEbaseR" target="_blank" rel="noopener">https://github.com/oddworldng/INEbaseR</a></p>
+<hr>
+<br>
+
+
+
+
+<h2 id="banco-mundial">Banco Mundial
+  <a href="#banco-mundial"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<br>
+<p>Para acceder a la 
+<a href="https://datahelpdesk.worldbank.org/knowledgebase/topics/125589" target="_blank" rel="noopener">API del Banco Mundial</a> hay, actualmente, 2 paquetes de R: 
+<a href="https://github.com/vincentarelbundock/WDI" target="_blank" rel="noopener"><code>WDI</code></a> y 
+<a href="https://github.com/GIST-ORNL/wbstats" target="_blank" rel="noopener"><code>wbstats</code></a>.</p>
+<br>
+<p>Podemos bajar datos del Banco Mundial con el paquete <code>WDI</code> así:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#install.packages(&#34;WDI&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(<span style="color:#d14">&#34;WDI&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#---- buscamos datos relacionados con GDP</span>
+</span></span><span style="display:flex;"><span>aa <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">WDIsearch</span>(<span style="color:#d14">&#39;gdp&#39;</span>)
+</span></span><span style="display:flex;"><span>aa <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">WDIsearch</span>(<span style="color:#d14">&#39;gdp.*capita.*constant&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#---- descargamos &#34;NY.GDP.PCAP.KD&#34;:  GDP per capita (constant 2010 US$)</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">WDI</span>(indicator <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;NY.GDP.PCAP.KD&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#---- podemos filtrar la querry</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">WDI</span>(indicator <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;NY.GDP.PCAP.KD&#34;</span>, country <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">c</span>(<span style="color:#d14">&#39;MX&#39;</span>,<span style="color:#d14">&#39;CA&#39;</span>,<span style="color:#d14">&#39;US&#39;</span>), start <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1960</span>, end <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">2017</span>)
+</span></span></code></pre></div><br>
+<p>Podemos bajar datos del Banco Mundial con el paquete <code>wbstats</code> así:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#install.packages(&#34;wbstats&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(<span style="color:#d14">&#34;wbstats&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#-------  lista de indicadores disponibles</span>
+</span></span><span style="display:flex;"><span>aa <span style="color:#000;font-weight:bold">&lt;-</span> wb_cachelist
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#---- buscamos datos relacionados con GDP</span>
+</span></span><span style="display:flex;"><span>aa <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">wbsearch</span>(pattern <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;gdp&#34;</span>)
+</span></span><span style="display:flex;"><span>aa <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">wbsearch</span>(<span style="color:#d14">&#39;gdp.*capita.*constant&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#---- descargamos &#34;NY.GDP.PCAP.KD&#34;:  GDP per capita (constant 2010 US$)</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">wb</span>(indicator <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;NY.GDP.PCAP.KD&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#---- podemos filtrar la querry</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">wb</span>(indicator <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;NY.GDP.PCAP.KD&#34;</span>, country <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">c</span>(<span style="color:#d14">&#39;MX&#39;</span>,<span style="color:#d14">&#39;CA&#39;</span>,<span style="color:#d14">&#39;US&#39;</span>), startdate <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">2000</span>, enddate <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">2017</span>)
+</span></span></code></pre></div><br>
+<p>
+<a href="http://www.magesblog.com/2016/04/new-r-package-to-access-world-bank-data.html" target="_blank" rel="noopener">Aquí</a> tenemos un post en el que se usa el pkg wbstats para obtener datos y luego graficarlos.</p>
+<hr>
+<br>
+
+
+
+
+<h2 id="crossref">CrossRef
+  <a href="#crossref"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>El paquete <code>rcrossref</code> permite acceder a varias de las APIs de 
+<a href="http://search.crossref.org/" target="_blank" rel="noopener">CrossRef</a>. ¿Que qué es CrossRef? Pues es un servicio que permite, entre otras cosas, facilitar el proceso de referenciar artículos en tus papers. 
+<a href="http://www.neoscientia.com/crossref/" target="_blank" rel="noopener">Aquí</a> lo explican. Hay otro package para acceder a CrossRef: 
+<a href="https://github.com/ropensci/crminer" target="_blank" rel="noopener"><code>crminer</code></a> este pkg permite bajarse el texto del documento, pero claro, el texto ha de estar disponible!!</p>
+<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#install.packages(&#34;rcrossref&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(<span style="color:#d14">&#34;rcrossref&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#----- con cr_cn() podemos ver como se cita un determinado artículo en un determinado formato, por ejemplo &#34;apa&#34;</span>
+</span></span><span style="display:flex;"><span>my_doi <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#d14">&#34;10.1111/j.1467-6486.2012.01072.x&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">cr_cn</span>(dois <span style="color:#000;font-weight:bold">=</span> my_doi, format <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;text&#34;</span>, style <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;apa&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">cr_cn</span>(dois <span style="color:#000;font-weight:bold">=</span> my_doi, format <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;bibtex&#34;</span>, style <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;apa&#34;</span>, locale <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;en-US&#34;</span>, raw <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">FALSE</span>, progress <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;none&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#------ con cr_citation_count() puedes ver el numero de citas de un artículo/DOI</span>
+</span></span><span style="display:flex;"><span>aa <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">cr_citation_count</span>(doi <span style="color:#000;font-weight:bold">=</span> my_doi)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#------ con cr_abstract()</span>
+</span></span><span style="display:flex;"><span>aa <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">cr_abstract</span>(doi <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;10.1109/TASC.2010.2088091&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#------ con cr_journals() vemos journals</span>
+</span></span><span style="display:flex;"><span>aa <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">cr_journals</span>(query <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;economics&#34;</span>, limit <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">100</span>) <span style="color:#000;font-weight:bold">%&gt;%</span> .$data <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#900;font-weight:bold">as.tibble</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#------ mucha informacion del articulo</span>
+</span></span><span style="display:flex;"><span>aa <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">cr_works</span>(dois <span style="color:#000;font-weight:bold">=</span> my_doi) <span style="color:#000;font-weight:bold">%&gt;%</span> .$data <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#900;font-weight:bold">as.tibble</span>()
+</span></span></code></pre></div><hr>
+<br>
+
+
+
+
+<h2 id="otros-pkg-for-apis">Otros pkg for APIs
+  <a href="#otros-pkg-for-apis"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<br>
+<p>Hay muchos otros paquetes de R hechos para acceder a APIs (twitter, ECB, spotify, pdfetch, naturalearth, ….). Puedes ver algunos 
+<a href="https://rviews.rstudio.com/2017/11/01/r-data-packages/" target="_blank" rel="noopener">aquí</a>, 
+<a href="https://www.r-bloggers.com/r-packages-for-data-access/" target="_blank" rel="noopener">aquí</a> y 
+<a href="https://www.r-bloggers.com/new-data-sources-for-r/" target="_blank" rel="noopener">aquí</a>.</p>
+<p>
+<a href="https://github.com/ropensci/webservices" target="_blank" rel="noopener">Aquí</a> puedes ver un listado enorrrrrme<code>remo::ji(&quot;munch&quot;)</code>eeee: Pinterest, Instagram, GoogleTrends, Google Analytics, Flickr, …., …., ….</p>
+<p>Una de las ultimas que he visto ha sido el pkg 
+<a href="https://cran.r-project.org/web/packages/spocc/index.html" target="_blank" rel="noopener">spooc</a>. En su 
+<a href="https://cran.r-project.org/web/packages/spocc/vignettes/spocc_vignette.html" target="_blank" rel="noopener">vignette</a> nos dicen que se pueden acceder a un conjunto de paquetes que contienen: “some form of biodiversity or taxonomic data. Since several of these datasets have been georeferenced, it provides numerous opportunities for visualizing species distributions”</p>
+<hr>
+<br>
+
+
+
+
+<h2 id="scrapping-tables">Scrapping tables
+  <a href="#scrapping-tables"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Además de utilizar paquetes para acceder a servicios web a través de sus APIs, podemos usar otros paquetes (principalmente <code>rvest</code>) para hacer web scrapping. Puedes ver ejemplos 
+<a href="http://zevross.com/blog/2015/05/19/scrape-website-data-with-the-new-r-package-rvest/" target="_blank" rel="noopener">aquí</a>, 
+<a href="https://www.r-bloggers.com/fantasy-hockey-with-rvest-and-purrr/" target="_blank" rel="noopener">aquí</a>, 
+<a href="https://www.analyticsvidhya.com/blog/2017/03/beginners-guide-on-web-scraping-in-r-using-rvest-with-hands-on-knowledge/" target="_blank" rel="noopener">aquí</a> o
+
+<a href="https://rayms.github.io/2018-01-13-civil-political-rights/" target="_blank" rel="noopener">aquí</a>.</p>
+<br>
+<p>
+<a href="https://almeriarusers.wordpress.com/2016/10/11/web-scraping-pca-y-k-means-para-sacar-todo-el-potencial-a-laliga/?utm_source=dlvr.it&amp;utm_medium=twitter" target="_blank" rel="noopener">Aquí</a> tenéis un ejemplo sencillo para bajar datos de jurgol … pero ya no funciona</p>
+<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(XML)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#d14">&#34;http://www.comuniazo.com/comunio/jugadores&#34;</span>
+</span></span><span style="display:flex;"><span>url <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#d14">&#34;https://www.comuniazo.com/comunio/jugadores&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>jugadores <span style="color:#000;font-weight:bold">&lt;-</span>  <span style="color:#900;font-weight:bold">readHTMLTable</span>(url, stringsAsFactors <span style="color:#000;font-weight:bold">=</span> <span style="color:#999">T</span>, colnames <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">c</span>(<span style="color:#d14">&#34;Posicion&#34;</span>,<span style="color:#d14">&#34;Equipo&#34;</span>,<span style="color:#d14">&#34;Jugador&#34;</span>,<span style="color:#d14">&#34;Puntos&#34;</span>,<span style="color:#d14">&#34;Media&#34;</span>,<span style="color:#d14">&#34;Puntos_Casa&#34;</span>,<span style="color:#d14">&#34;Media_Casa&#34;</span>,<span style="color:#d14">&#34;Puntos_Fuera&#34;</span>,<span style="color:#d14">&#34;Media_fuera&#34;</span>, <span style="color:#d14">&#34;Valor&#34;</span>), colClasses <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">c</span>(<span style="color:#d14">&#34;character&#34;</span>,<span style="color:#d14">&#34;character&#34;</span>,<span style="color:#d14">&#34;character&#34;</span>,<span style="color:#d14">&#34;FormattedNumber&#34;</span>,<span style="color:#d14">&#34;FormattedNumber&#34;</span>,<span style="color:#d14">&#34;FormattedNumber&#34;</span>,<span style="color:#d14">&#34;FormattedNumber&#34;</span>,<span style="color:#d14">&#34;FormattedNumber&#34;</span>,<span style="color:#d14">&#34;FormattedNumber&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>aa <span style="color:#000;font-weight:bold">&lt;-</span> jugadores[[1]] <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#900;font-weight:bold">as.tibble</span>()
+</span></span></code></pre></div><p>Para sustituir el ejemplo del jurgol bajemos una tabla de la wikipedia. Este ejemplo está sacado de 
+<a href="https://rflowers5.netlify.com/2018/01/17/altitud-de-los-municipios-de-teruel/" target="_blank" rel="noopener">este post</a></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(<span style="color:#d14">&#34;rvest&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(<span style="color:#d14">&#34;tidyverse&#34;</span>)
+</span></span><span style="display:flex;"><span>content <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">read_html</span>(<span style="color:#d14">&#34;https://es.wikipedia.org/wiki/Anexo:Municipios_de_la_provincia_de_Teruel&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>body_table <span style="color:#000;font-weight:bold">&lt;-</span> content <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#900;font-weight:bold">html_nodes</span>(<span style="color:#d14">&#39;body&#39;</span>)  <span style="color:#000;font-weight:bold">%&gt;%</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#900;font-weight:bold">html_nodes</span>(<span style="color:#d14">&#39;table&#39;</span>) <span style="color:#000;font-weight:bold">%&gt;%</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#900;font-weight:bold">html_table</span>(dec <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;,&#34;</span>) 
+</span></span><span style="display:flex;"><span>Teruel <span style="color:#000;font-weight:bold">&lt;-</span> body_table[[1]]
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">names</span>(Teruel) <span style="color:#000;font-weight:bold">&lt;-</span> <span style="color:#900;font-weight:bold">c</span>(<span style="color:#d14">&#34;Nombre&#34;</span>, <span style="color:#d14">&#34;Extension&#34;</span>, <span style="color:#d14">&#34;Poblacion&#34;</span>, <span style="color:#d14">&#34;Densidad&#34;</span>, <span style="color:#d14">&#34;Comarca&#34;</span>, <span style="color:#d14">&#34;Partido_judicial&#34;</span>, <span style="color:#d14">&#34;Altitud&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(stringr)
+</span></span><span style="display:flex;"><span>Teruel <span style="color:#000;font-weight:bold">&lt;-</span> Teruel <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#900;font-weight:bold">map</span>(str_trim) <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#900;font-weight:bold">as_tibble</span>() <span style="color:#998;font-style:italic">#- quita caracteres al final</span>
+</span></span><span style="display:flex;"><span>Teruel <span style="color:#000;font-weight:bold">&lt;-</span> Teruel <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#900;font-weight:bold">mutate</span>(Altitud <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">str_replace_all</span>(Altitud,<span style="color:#d14">&#34;[[:punct:]]&#34;</span>, <span style="color:#d14">&#34;&#34;</span>)) 
+</span></span><span style="display:flex;"><span>Teruel <span style="color:#000;font-weight:bold">&lt;-</span> Teruel <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#900;font-weight:bold">mutate</span>(Altitud <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">as.double</span>(Altitud)) <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#900;font-weight:bold">arrange</span>(<span style="color:#900;font-weight:bold">desc</span>(Altitud))
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">library</span>(kableExtra)
+</span></span><span style="display:flex;"><span>aa <span style="color:#000;font-weight:bold">&lt;-</span> Teruel <span style="color:#000;font-weight:bold">%&gt;%</span> <span style="color:#900;font-weight:bold">select</span>(<span style="color:#099">1</span>,<span style="color:#099">3</span>,<span style="color:#099">5</span>,<span style="color:#099">7</span>) <span style="color:#000;font-weight:bold">%&gt;%</span>  <span style="color:#900;font-weight:bold">slice</span>(<span style="color:#099">1</span><span style="color:#000;font-weight:bold">:</span><span style="color:#099">4</span>) 
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#knitr::kable(aa, digits = 2, align = &#34;c&#34;, caption = &#34;Los 4 municipios de Teruel con más altitud&#34; )</span>
+</span></span><span style="display:flex;"><span>knitr<span style="color:#000;font-weight:bold">::</span><span style="color:#900;font-weight:bold">kable</span>(aa, <span style="color:#d14">&#34;html&#34;</span>, digits <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">2</span>,  caption <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;Los 4 municipios de Teruel con más altitud&#34;</span>) <span style="color:#000;font-weight:bold">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#900;font-weight:bold">kable_styling</span>(bootstrap_options <span style="color:#000;font-weight:bold">=</span> <span style="color:#900;font-weight:bold">c</span>(<span style="color:#d14">&#34;striped&#34;</span>, <span style="color:#d14">&#34;hover&#34;</span>))
+</span></span></code></pre></div><table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>
+Table 1: Los 4 municipios de Teruel con más altitud
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Nombre
+</th>
+<th style="text-align:left;">
+Poblacion
+</th>
+<th style="text-align:left;">
+Comarca
+</th>
+<th style="text-align:right;">
+Altitud
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Valdelinares
+</td>
+<td style="text-align:left;">
+106
+</td>
+<td style="text-align:left;">
+Gúdar-Javalambre
+</td>
+<td style="text-align:right;">
+1695
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Griegos
+</td>
+<td style="text-align:left;">
+136
+</td>
+<td style="text-align:left;">
+Sierra de Albarracín
+</td>
+<td style="text-align:right;">
+1601
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gúdar
+</td>
+<td style="text-align:left;">
+76
+</td>
+<td style="text-align:left;">
+Gúdar-Javalambre
+</td>
+<td style="text-align:right;">
+1587
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bronchales
+</td>
+<td style="text-align:left;">
+432
+</td>
+<td style="text-align:left;">
+Sierra de Albarracín
+</td>
+<td style="text-align:right;">
+1569
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<hr>
+<br>
+
+
+
+
+<h1 id="bibliografía">Bibliografía
+  <a href="#bibliograf%c3%ada"></a>
+</h1>
+<ul>
+<li>
+<p>
+<a href="https://www.datacamp.com/community/tutorials/r-data-import-tutorial#gs.ppa6aFg" target="_blank" rel="noopener">This R Data Import Tutorial Is Everything You Need</a>. Así es como se llama este tutorial de Datacamp. Es sencillo y no muy largo. Tiene muy buena pinta. En general utiliza funciones de base-R. Lo han actualizado hace 4-5 días. No he tenido tiempo de ver que ha cambiado, pero seguro que a mejor.</p>
+</li>
+<li>
+<p>La 
+<a href="https://www.rstudio.com/resources/cheatsheets/" target="_blank" rel="noopener">cheat Sheet de data import de RStudio</a>. Muy buen resumen/chuleta</p>
+</li>
+<li>
+<p>La 
+<a href="http://www.statmethods.net/input/importingdata.html" target="_blank" rel="noopener">sección de importar datos de Quick-R</a>. Conciso pero muy claro. Quick-R es muy buen recurso para aprender R.</p>
+</li>
+<li>
+<p>
+<a href="https://cran.r-project.org/doc/manuals/r-release/R-data.html" target="_blank" rel="noopener">La documentacion oficial</a> de R</p>
+</li>
+<li>
+<p>
+<a href="https://www.r-bloggers.com/accessing-apis-from-r-and-a-little-r-programming/" target="_blank" rel="noopener">Un post sobre APIs y R</a>. Supongo que complicado.</p>
+</li>
+<li>
+<p>Dos post que hacen uso de web scrapping: 
+<a href="https://rayms.github.io/2018-01-13-civil-political-rights/" target="_blank" rel="noopener">este</a> y 
+<a href="https://datascienceplus.com/web-scraping-and-applied-clustering-global-happiness-and-social-progress-index/" target="_blank" rel="noopener">este</a>. También puede que complicado, pero son dos ejemplos de análisis de datos (completo) con R.</p>
+</li>
+</ul>
+
+      </section>
+      <footer class="post-footer">
+        <div class="post-pagination dt w-100 mt4 mb2">
+  
+  
+    <a class="prev dtc pr2 tl v-top fw6"
+    href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-3-iniciaci-n-a-r-base/">&larr; Tema 3: Iniciación a R-base</a>
+  
+  
+  
+    <a class="next dtc pl2 tr v-top fw6"
+    href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-5-data-munging-manejo-de-datos-con-r-the-tidyverse-way/">Tema 5: Data munging: manejo de datos con R, the tidyverse way &rarr;</a>
+  
+</div>
+
+      </footer>
+    </article>
+    
+  </section>
+</main>
+
+<aside class="page-sidebar" role="complementary">
+                         
+ 
+
+
+
+
+
+
+
+
+
+
+
+  <img src="/collection/featured-sidebar.jpg" class="db ma0">
+
+                         
+ 
+
+
+
+<div class="flex items-start sticky ph4 pb4 flex-row">
+  <div class="w-two-thirds w-50-l ph0">
+    <h2 class="mv3 f5 fw7 ttu tracked">
+      <a class="no-underline dim" href="/collection/">Outline</a></h2>
+    <nav id="SectionTableOfContents" aria-label="SectionTableOfContents">
+        <ul>
+        
+          
+          
+          <li class="" hugo-nav="/collection/prework/">
+            <a href="https://achalmaedison.netlify.app/collection/prework/">Prework</a></li>
+          
+          </li>
+        
+          
+          
+          
+          <details  class="">
+            <summary class="" hugo-nav="/collection/day01/"><a href="https://achalmaedison.netlify.app/collection/day01/">Day 01</a></summary>
+            
+              
+              <li class="" hugo-nav="/collection/day01/01-github/"><a href="https://achalmaedison.netlify.app/collection/day01/01-github/">A GitHub profile</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/day01/02-postcards/"><a href="https://achalmaedison.netlify.app/collection/day01/02-postcards/">A postcard</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/day01/03-distill/"><a href="https://achalmaedison.netlify.app/collection/day01/03-distill/">A distill site</a></li>
+            
+          </details>
+          
+          </li>
+        
+          
+          
+          
+          <details  class="">
+            <summary class="" hugo-nav="/collection/day02/"><a href="https://achalmaedison.netlify.app/collection/day02/">Day 02</a></summary>
+            
+              
+              <li class="" hugo-nav="/collection/day02/01-netlify/"><a href="https://achalmaedison.netlify.app/collection/day02/01-netlify/">Netlify</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/day02/02-blogdown/"><a href="https://achalmaedison.netlify.app/collection/day02/02-blogdown/">Using blogdown</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/day02/03-blogdown/"><a href="https://achalmaedison.netlify.app/collection/day02/03-blogdown/">Warm woolen mittens</a></li>
+            
+          </details>
+          
+          </li>
+        
+          
+          
+          
+          <details  class="">
+            <summary class="" hugo-nav="/collection/2023-01-06-investigacion-operativa/"><a href="https://achalmaedison.netlify.app/collection/2023-01-06-investigacion-operativa/">Investigacion operativa</a></summary>
+            
+              
+              <li class="" hugo-nav="/collection/2023-01-06-investigacion-operativa/2023-01-06-unidad-1/"><a href="https://achalmaedison.netlify.app/collection/2023-01-06-investigacion-operativa/2023-01-06-unidad-1/">Unidad 1</a></li>
+            
+          </details>
+          
+          </li>
+        
+          
+          
+          
+          <details open class="active">
+            <summary class="active" hugo-nav="/collection/2023-01-07-ciencia-de-datos/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/">Ciencia de datos</a></summary>
+            
+              
+              <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-1-ciencia-de-datos-y-la-era-del-big-data/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-1-ciencia-de-datos-y-la-era-del-big-data/">Tema 1: Ciencia de datos y la era del Big Data</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-2-r-rstudio-y-forma-de-trabajar/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-2-r-rstudio-y-forma-de-trabajar/">Tema 2. R, RStudio y forma de trabajar</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-3-iniciaci-n-a-r-base/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-3-iniciaci-n-a-r-base/">Tema 3: Iniciación a R-base</a></li>
+            
+              
+              <li class="active" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-4-importar-y-exportar-datos-con-r/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-4-importar-y-exportar-datos-con-r/">Tema 4: Importar (y exportar) datos con R</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-5-data-munging-manejo-de-datos-con-r-the-tidyverse-way/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-5-data-munging-manejo-de-datos-con-r-the-tidyverse-way/">Tema 5: Data munging: manejo de datos con R, the tidyverse way</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-6-visualizaci-n-gr-ficos-con-ggplot2/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-6-visualizaci-n-gr-ficos-con-ggplot2/">Tema 6: Visualización: gráficos con ggplot2</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-7-documentos-reproducibles-con-rmarkdown/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-7-documentos-reproducibles-con-rmarkdown/">Tema 7: Documentos reproducibles con **Rmarkdown**</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-8-tablas-en-documentos-rmarkdown/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-8-tablas-en-documentos-rmarkdown/">Tema 8: Tablas en documentos Rmarkdown</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/prefacio/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/prefacio/">Prefacio</a></li>
+            
+          </details>
+          
+          </li>
+        
+        </ul>
+    </nav>
+  </div>
+  <details id="PageTableOfContents">
+    <summary><h2 class="mv0 f5 fw7 ttu tracked dib">On this page<h2></summary>
+    <div class="pl2 pr0 mh0">
+    <nav id="TableOfContents">
+  <ul>
+    <li></li>
+  </ul>
+
+  <ul>
+    <li></li>
+  </ul>
+
+  <ul>
+    <li><a href="#csv">CSV</a></li>
+    <li><a href="#otros-datos-tabulares">Otros datos tabulares</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#excel">Excel</a></li>
+    <li><a href="#otros-formatos-propietarios">Otros formatos propietarios</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#rdata">RData</a></li>
+    <li><a href="#rds-serialized-r-objects">RDS (Serialized R objects)</a></li>
+  </ul>
+
+  <ul>
+    <li></li>
+  </ul>
+
+  <ul>
+    <li><a href="#eurostat">Eurostat</a></li>
+    <li><a href="#ine">INE</a></li>
+    <li><a href="#banco-mundial">Banco Mundial</a></li>
+    <li><a href="#crossref">CrossRef</a></li>
+    <li><a href="#otros-pkg-for-apis">Otros pkg for APIs</a></li>
+    <li><a href="#scrapping-tables">Scrapping tables</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+  
+</div>
+
+</aside>
+
+<footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
+  <nav class="db dt-l w-100">
+    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
+      &copy; 2023 Edison Achalma, Ayacucho
+      <span class="middot-divider"></span>
+      Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
+      <br />
+      
+Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/formspree/blogophonic-hugo" rel="dct:source">Blogophonic</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://formspree.io" property="cc:attributionName" rel="cc:attributionURL">Formspree</a>.
+    </p>
+    
+    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
+      <div class="social-icon-links" aria-hidden="true">
+  
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://github.com/achalmed" title="github" target="_blank" rel="me noopener">
+      <i class="fab fa-github fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://www.facebook.com/achalmaedison.23" title="facebook-square" target="_blank" rel="me noopener">
+      <i class="fab fa-facebook-square fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://www.instagram.com/achalmaedison/" title="instagram" target="_blank" rel="me noopener">
+      <i class="fab fa-instagram fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://twitter.com/achalmaedison" title="twitter" target="_blank" rel="me noopener">
+      <i class="fab fa-twitter fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://orcid.org/0000-0001-6996-3364" title="orcid" target="_blank" rel="me noopener">
+      <i class="ai ai-orcid fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://www.youtube.com/@achalmaedison" title="youtube" target="_blank" rel="me noopener">
+      <i class="fab fa-youtube fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://www.linkedin.com/in/achalmaedison/" title="linkedin-in" target="_blank" rel="me noopener">
+      <i class="fab fa-linkedin-in fa-lg fa-fw"></i>
+    </a>
+  
+</div>
+
+    </div>
+    
+    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
+      
+      <a class="dib pv1 ph2 link" href="/license/" title="License">License</a>
+      
+      <a class="dib pv1 ph2 link" href="/contact/" title="Contact form">Contact</a>
+      
+      <a class="dib pv1 ph2 link" href="/contributors/" title="Contributors">Contributors</a>
+      
+    </div>
+  </nav>
+  
+    <script>
+
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (let i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) ||
+            /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+</script>
+
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+
+    
+  
+  
+</footer>
+
+      </div>
+    </body>
+</html>

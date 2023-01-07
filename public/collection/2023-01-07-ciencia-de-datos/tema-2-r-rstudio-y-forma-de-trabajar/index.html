@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr"><head>
+  
+                           
+     
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.104.3" />
+<title>Tema 2. R, RStudio y forma de trabajar | Edison Achalma, Econ</title>
+
+
+<meta property="twitter:site" content="@achalmaedison">
+<meta property="twitter:creator" content="@achalmaedison">
+
+
+
+
+
+
+
+  
+    
+  
+<meta name="description" content="Personal website and portfolio of Dr. Edison Achalma.">
+
+
+<meta property="og:site_name" content="Edison Achalma, Econ">
+<meta property="og:title" content="Tema 2. R, RStudio y forma de trabajar | Edison Achalma, Econ">
+<meta property="og:description" content="Personal website and portfolio of Dr. Edison Achalma." />
+<meta property="og:type" content="page" />
+<meta property="og:url" content="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-2-r-rstudio-y-forma-de-trabajar/" />
+<meta property="og:locale" content="es">
+
+
+
+
+    
+        <meta property="og:image" content="https://achalmaedison.netlify.app/img/papillons.jpg" >
+        <meta property="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="https://achalmaedison.netlify.app/img/papillons.jpg" >
+    
+  <meta itemprop="name" content="Tema 2. R, RStudio y forma de trabajar">
+<meta itemprop="description" content="El objetivo de esta sección es proporcionar una breve primera introducción a R y RStudio para personas que no han tenido contacto previo con estos programas y explicitar la forma que tendremos de interactuar con ellos; es decir, la forma de trabajar con ellos (workflow).
+El curso es una introducción a la Ciencia de Datos: haremos diversos análisis con datos y para ello utilizaremos R. R será el programa que hará los cálculos, gráficos, informes, pero interactuaremos con R, le daremos las ordenes a R, a través de otro programa: RStudio."><meta itemprop="datePublished" content="2023-01-07T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-01-07T00:00:00+00:00" />
+<meta itemprop="wordCount" content="5129">
+<meta itemprop="keywords" content="" />
+  
+  
+  <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+  
+  
+  <link rel="stylesheet" href="/style.main.min.508aa34bb4fa7ebfddd6892a4ec251e1ce46ad0e0c5be6380abc84336f01b14e.css" integrity="sha256-UIqjS7T6fr/d1okqTsJR4c5GrQ4MW&#43;Y4CryEM28BsU4=" media="screen">
+  
+  
+  <script src="/panelset.min.ed1ac24b6e16f4e2481e3d1d098ae66f5bc77438aef619e6e266d8ac5b00dc72.js" type="text/javascript"></script>
+  
+  
+  <script src="/main.min.bd942b3ee0207252d2636d656fcdf94a2442e99ac52f2b4145605a78e6b0a6d4.js" type="text/javascript"></script>
+</head>
+<body>
+      <div class="grid-container single-series">
+<header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
+  <nav class="site-nav db dt-l w-100" role="navigation">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="https://achalmaedison.netlify.app/" title="Home">
+      <img src="/img/blogophonic-mark-dark.png" class="dib db-l h2 w-auto" alt="Edison Achalma, Econ">
+    </a>
+    <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/about/" title="About Blogophonic">Sobre Mí</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/blog/" title="Blog">Blog</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/project/" title="Project Portfolio">Proyectos</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/talk/" title="Talks">Talks</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 active" href="/collection/" title="A collection">Cursos</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/elements/" title="Element Page">Elementos</a>
+      
+      
+    </div>
+  </nav>
+</header>
+
+
+<main class="page-main ph4 pt4" role="main">
+  <section class="page-content mw7 center">
+    <article class="post-content pa0 pr3-l">
+      <header class="post-header">
+        <h4 class="breadcrumb pb5">
+
+  
+    
+      
+  
+    
+      
+  
+    
+      
+  
+
+    
+    
+      <a href="/collection/">Create a Collection</a>
+    
+  
+
+    
+    
+      <a href="/collection/2023-01-07-ciencia-de-datos/">Ciencia de datos</a>
+    
+  
+
+    
+    
+      Tema 2. R, RStudio y forma de trabajar
+    
+  
+
+</h4>
+
+
+
+
+        
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">Tema 2. R, RStudio y forma de trabajar</h1>
+        
+        
+        
+        
+        
+      
+        
+      </header>
+      <section class="post-body pt5 pb4">
+        <script src="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-2-r-rstudio-y-forma-de-trabajar/index_files/clipboard/clipboard.min.js"></script>
+<link href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-2-r-rstudio-y-forma-de-trabajar/index_files/primer-tooltips/build.css" rel="stylesheet" />
+<link href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-2-r-rstudio-y-forma-de-trabajar/index_files/klippy/css/klippy.min.css" rel="stylesheet" />
+<script src="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-2-r-rstudio-y-forma-de-trabajar/index_files/klippy/js/klippy.min.js"></script>
+<script>
+  addClassKlippyTo("pre.r, pre.markdown");
+  addKlippy('right', 'top', 'auto', '1', 'Copy code', 'Copied!');
+</script>
+<hr>
+<br>
+<p>El objetivo de esta sección es proporcionar una breve primera introducción a R y RStudio para personas que no han tenido contacto previo con estos programas y explicitar la forma que tendremos de interactuar con ellos; es decir, la forma de trabajar con ellos (<strong>workflow</strong>).</p>
+<p>El curso es una introducción a la Ciencia de Datos: haremos diversos análisis con datos y para ello utilizaremos R. R será el programa que hará los cálculos, gráficos, informes, pero interactuaremos con R, le daremos las ordenes a R, a través de otro programa: RStudio. Así que tendremos que instalar los 2 programas. Por ello, en la 
+<a href="https://perezp44.github.io/intro-ds-21-22-web/" target="_blank" rel="noopener">web del curso</a> tienes un fichero donde se explica como hacerlo: concretamente 
+<a href="https://perezp44.github.io/intro-ds-20-21-web/mas-recursos/Instrucciones_instalacion-a.html" target="_blank" rel="noopener">aquí</a>.</p>
+<p>
+<a href="https://www.dataquest.io/blog/tutorial-getting-started-with-r-and-rstudio/" target="_blank" rel="noopener">Aquí</a> tienes un articulo que explica, con mucho detalle, como empezar a trabajar con R: instalación, configuración, paquetes, etc…</p>
+<br>
+<p>Se puede trabajar con R/RStudio de varias formas. Nosotros trabajaremos, casi siempre, con <code>Rprojects</code>. Enseguida diremos qué son los Rprojects, pero de momento podemos pensar que son carpetas donde se almacenan los ficheros necesarios para hacer un análisis de datos.</p>
+<p>Dentro de esas carpetas o <code>Rprojects</code> tendremos distintos tipos de ficheros: ficheros de datos, imágenes etc… y unos ficheros, llamados habitualmente <strong>scripts</strong> que contendrán las instrucciones que queramos que sean ejecutadas por R/RStudio. Bien, pues esos scripts o ficheros de ordenes pueden ser de varios tipos. Concretamente, durante el curso utilizaremos 2 tipos de ficheros para darle las ordenes a R:</p>
+<ul>
+<li>
+<p><code>ficheros .R</code> , y</p>
+</li>
+<li>
+<p><code>ficheros Rmarkdown</code> o <code>ficheros .Rmd</code>.</p>
+</li>
+</ul>
+<p>Lo normal es que nunca hayas oído hablar de todo esto, así que al principio te sonará complicado, pero en nada te parecerá lo más natural del mundo. Bird by bird!!!</p>
+
+
+
+
+<h2 id="1-r">1. R
+  <a href="#1-r"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Ya hemos hablado de R, pero …</p>
+
+
+
+
+<h3 id="qué-es-r">¿Qué es R?
+  <a href="#qu%c3%a9-es-r"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>Ya lo habéis visto mientras hacíamos algún ejemplo, pero para los nuevos: R es un lenguaje de programación y un entorno para el análisis estadístico y gráfico. Se puede utilizar para muchas cosas ya que es un lenguaje de programación, pero principalmente se utiliza en el campo de la estadística y la ciencia de datos; de hecho, R fue inicialmente creado en 1993 por dos estadísticos de la Universidad de Auckland: R. Ihaka y R.Gentleman<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. A partir de 1997 el desarrollo de R (o <strong>base-R</strong>) es gestionado por un grupo de programadores conocido como “The R-core team”; pero actualmente, el entorno o ecosistema R es el resultado de la colaboración de toda una comunidad de usuarios que extiende las utilidades de base-R mediante la creación de nuevos paquetes y funciones.</p>
+<p>R forma parte del sistema 
+<a href="https://es.wikipedia.org/wiki/GNU" target="_blank" rel="noopener">GNU</a> y se distribuye bajo la licencia 
+<a href="https://es.wikipedia.org/wiki/GNU_General_Public_License" target="_blank" rel="noopener">GNU GPL</a> por lo que los usuarios tenemos la libertad de usar, estudiar, compartir (copiar) y modificar el software; es decir, R es 
+<a href="https://www.gnu.org/philosophy/free-sw.es.html" target="_blank" rel="noopener"><strong>software libre</strong></a>. Además de software libre, R es gratuito y multiplataforma: está disponible para Windows, Macintosh y GNU/Linux.</p>
+<p>La página web oficial de R se llama: 
+<a href="https://www.r-project.org/" target="_blank" rel="noopener">The R Project for Statistical Computing</a>. Allí podrás encontrar toda la información y documentación oficial acerca de R. Aunque si alguna vez la necesitas, se puede consultar desde R con la función <code>help.start()</code> o, en un formato visualmente más agradable, en 
+<a href="https://colinfay.me/r-manuals/" target="_blank" rel="noopener">este repositorio</a> de Collin Fay un destacado miembro de la actual comunidad R. Si quieres ver las personas que forman parte del R core-team o que han contribuido al desarrollo de R no tienes mas que teclear en R <code>contributors()</code>.</p>
+<p>R proporciona un amplio abanico de herramientas estadísticas y gráficas (modelos lineales y no lineales, tests estadísticos, análisis de series temporales, algoritmos de clasificación y agrupamiento, etc.). Como R también es un lenguaje de programación, permite que los usuarios lo extiendan definiendo sus propias funciones y paquetes. De hecho, actualmente R se ha convertido de un proyecto colaborativo y abierto en el que sus usuarios pueden publicar paquetes que extienden su configuración básica. Para darte una idea de lo prolífica y colaborativa que es la comunidad R puedes visitar estos 2 proyectos: 
+<a href="https://www.r-bloggers.com/" target="_blank" rel="noopener">R-bloggers</a> y 
+<a href="https://rweekly.org/" target="_blank" rel="noopener">R-Weekly</a>. Precisamente estos 2 aspectos (abundancia de paquetes y comunidad de usuarios) son claves en el éxito de R</p>
+<p>Ya hemos dicho que R (junto con sus paquetes) puede implementar una gran variedad de técnicas estadísticas y gráficas. Existe un repositorio oficial de paquetes: Comprehensive R Archive Network o 
+<a href="https://cran.r-project.org/" target="_blank" rel="noopener">CRAN</a>. CRAN alcanzó los 
+<a href="https://blog.revolutionanalytics.com/2017/01/cran-10000.html" target="_blank" rel="noopener">10.000 paquetes</a> en enero de 2017, y actualmente, julio de 2019, tiene 14.553 paquetes. Además, existen muchos más paquetes en repositorios como 
+<a href="https://www.bioconductor.org/" target="_blank" rel="noopener">Bioconductor</a>, 
+<a href="https://github.com/" target="_blank" rel="noopener">Github</a> y otros.</p>
+<br>
+
+
+
+
+<h3 id="instalación-de-r">Instalación de R
+  <a href="#instalaci%c3%b3n-de-r"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>Obviamente, para usar R y sus paquetes tenemos que instalarlo primero. Para ello “solo” tienes que ir a 
+<a href="https://cran.r-project.org/" target="_blank" rel="noopener">CRAN</a> y descargar la distribución de R adecuada para tu sistema operativo. Obviamente mejor la última versión. En el momento de re-escribir estas notas la última versión es <code>R-4.1.1</code> llamada “Kick Things” released on 2021/08/10.</p>
+<p>No te va a a hacer falta pero por si acaso, 
+<a href="https://jjallaire.shinyapps.io/learnr-tutorial-00-setup/#section-install-r" target="_blank" rel="noopener">aquí</a> tienes un vídeo de 1:30 donde se explica de manera sencilla como instalar R, y 
+<a href="https://github.com/pachamaltese/tutoriales/blob/master/2019-04-24-instalar-r.md" target="_blank" rel="noopener">aquí</a> tienes una explicación muy detallada del proceso de instalación.</p>
+<p>Como recomiendan 
+<a href="https://teachdatascience.com/cloud/" target="_blank" rel="noopener">aquí</a> el primer día de clase usaremos R a través de la plataforma 
+<a href="https://rstudio.cloud/" target="_blank" rel="noopener">RStudio Cloud</a>. Demoraremos los potenciales problemas que puedan surgir en la instalación de R al segundo o tercer día de clase<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
+
+
+
+
+<h2 id="2-rstudio">2. RStudio
+  <a href="#2-rstudio"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+
+
+
+
+<h3 id="qué-es-rstudio">¿Qué es RStudio?
+  <a href="#qu%c3%a9-es-rstudio"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>Pues es un programa que utilizaremos para interactuar con R. Las instrucciones que queramos dar a R para que las ejecute se las daremos a través de RStudio. La razón es que la interfaz de usuario (GUI, Graphical User Interface) de R no es muy amigable ni versátil, así que interactuaremos con R a través de RStudio.</p>
+<p>RStudio es un programa que nos permitirá interactuar con R de forma más amigable, además de facilitar muchas de las tareas de programación y análisis de datos en R; es decir, RStudio es una GUI (Graphical User Interface). En realidad, RStudio es más que una GUI, es una IDE, un entorno de desarrollo integrado para R, en inglés <em>‘integrated development environment’</em> o <strong>IDE</strong>.</p>
+<p>El actual científico jefe de RStudio es 
+<a href="http://hadley.nz/" target="_blank" rel="noopener">Hadley Wickham</a>. Wickham es uno de los más prolíficos desarrollador de paquetes para R y creador de un nuevo estilo de programar y analizar datos en R conocido como <em>‘
+<a href="https://blog.rstudio.org/2016/09/15/tidyverse-1-0-0/" target="_blank" rel="noopener">tidyverse</a>’</em>. Muchos de los packages que utilizaremos en el curso han sido desarrollados por él y el equipo de RStudio.</p>
+<br>
+
+
+
+
+<h3 id="instalación-de-rstudio">Instalación de RStudio
+  <a href="#instalaci%c3%b3n-de-rstudio"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>La versión de escritorio de RStudio también es libre y gratuita. Se puede descargar 
+<a href="https://www.rstudio.com/products/rstudio/download/" target="_blank" rel="noopener">aquí</a>. Tienes que descargarte el <em>‘installer’</em> adecuado para tu sistema operativo.</p>
+<p>Se puede trabajar perfectamente con las opciones por defecto de RStudio, pero os recomiendo cambiar algunas opciones, así que vamos a configurar RStudio.</p>
+
+
+
+
+<h3 id="configurando-rstudio">Configurando RStudio
+  <a href="#configurando-rstudio"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>Está sección no es obligatoria, solo que es recomendable configurar las opciones de RStudio. ¿Cómo? En RStudio, sigue está ruta de menús: <code>Tools &gt; Global OPtions...</code></p>
+<p>Se abrirá una ventana (que puedes ver abajo) con las opciones de configuración de RStudio. De momento vamos sólo a tocar la categoría que ves en la imagen; es decir, <code>R General</code>. Tienes que hacer dos cosas:</p>
+<ol>
+<li>
+<p>desmarcar todas las casillas (quitarles los ticks)</p>
+</li>
+<li>
+<p>Es importante, poner <code>Never</code> en la casilla donde pone “Save workspace to .RData on exit”.</p>
+</li>
+</ol>
+<p>Al final, en mi ordenador, la ventana con las opciones de <code>R General</code> queda como:</p>
+<p>En tu ordenador debe quedar todo igual excepto la caja de texto. El texto de la caja le dice a RStudio donde se guardarán los archivos que vayamos generando; es decir, indica el directorio de trabajo por defecto. Como mi sistema operaivo es Linux y habitualmente trabajo en el escritorio de mi PC, en la imagen de abajo pone “~/Escritorio”, si mi sistema operativo fuese Windowns pondría algo como “C:/Users/perezp/Desktop”. Te recomiendo trabajar sobre el escritorio o Desktop, pero puedes seleccionar la carpeta en la que más cómoda trabajes<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
+<p>Ya explicaré en clase porqué seleccionamos estas opciones en RStudio.</p>
+
+
+
+
+<h4 id="aún-más-configuración-de-rstudio">Aún más configuración de RStudio
+  <a href="#a%c3%ban-m%c3%a1s-configuraci%c3%b3n-de-rstudio"></a>
+</h4>
+<ol>
+<li>
+<p>En RStudio sigue está ruta de menús: <code>Tools &gt; Global OPtions...</code> y selecciona <code>Code</code>. Intenta dejar la opciones de la pestaña <code>Editing</code> como ves en la imagen de abajo. Concretamente lo que más me interesa es que esté marcada la opción <code>Insert spaces for tab</code></p>
+</li>
+<li>
+<p>En RStudio sigue está ruta de menús: <code>Tools &gt; Global OPtions...</code> y selecciona <code>Code</code>. Ahora intenta dejar las opciones de la pestaña <code>Saving</code> como ves en la imagen de abajo. Lo más importante es que en la caja de texto <code>Default text encoding</code> ponga: <code>UTF-8</code>. Esto evitará que tengamos problemas con la codificación de loa caracteres, por ejemplo con la eñe o con las tildes.</p>
+</li>
+</ol>
+<p>Ya tenemos R y RStudio instalados y configurados, así que vamos a empezar a toquetear RStudio.</p>
+
+
+
+
+<h3 id="conociendo-la-interfaz-de-rstudio">Conociendo la interfaz de RStudio
+  <a href="#conociendo-la-interfaz-de-rstudio"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>Durante el curso vamos a utilizar R para hacer análisis estadísticos pero lo vamos a hacer a través de RStudio, así que el primer paso es familiarizarnos un poco con la interfaz de RStudio. Para acostumbrase a R y RStudio lo mejor es la práctica, pero si os hiciese falta, 
+<a href="https://ismayc.github.io/rbasics-book/index.html" target="_blank" rel="noopener">aquí</a> tenéis un fantástico libro para habituarse a trabajar con R y RStudio.</p>
+<p>Al abrir RStudio verás que al principio tiene 3 paneles, aunque enseguida abriremos un cuarto panel. La consola es el panel de la izquierda. Cuando tengamos 4 paneles la consola será el panel situado izquierda-abajo. Podemos pensar que la consola es lo más parecido a R, ya que en la consola se pueden ejecutar instrucciones de R directamente.</p>
+<p>Cuando abras RStudio veras lo siguiente:</p>
+<ul>
+<li>
+<p>Consola (izquierda)</p>
+</li>
+<li>
+<p>Environment/History (arriba-derecha)</p>
+</li>
+<li>
+<p>Files/Plots/Packages/Help (abajo-derecha)</p>
+</li>
+</ul>
+<p>Ya sabemos que el panel de la izquierda es la consola. En la consola se ve un mensaje de bienvenida que nos dice que versión de R estamos usando y alguna cosa más. Al final del texto aparece el símbolo <code>&gt;</code>. A este símbolo se le conoce como <em>prompt</em> y simplemente nos indica que el intérprete de R, que R, está listo para ejecutar nuestras instrucciones.</p>
+<p>¿Cómo le damos las instrucciones u ordenes a R? La forma más inmediata es escribiendo las ordenes en la consola, después del prompt (<code>&gt;</code>). Por ejemplo, si escribimos en la consola <code>2+2</code> y presionamos <kbd>Enter</kbd>, R ejecutará la instrucción y nos devolverá el resultado.</p>
+<p>A veces usaremos la consola para ejecutar alguna instrucción, pero en general ejecutaremos las instrucciones a través de un “script”. Una razón para no usar la consola es que trabajar en la consola es muy limitado ya que las instrucciones se han de introducir una a una. Otra razón es que queremos tener un registro con todas las instrucciones que ejecutemos para poder replicar nuestro análisis en otro momento; así que lo habitual es trabajar con <strong>scripts</strong> o <strong>ficheros de instrucciones</strong>.</p>
+<p>Un script no es más que un fichero de texto con extensión <code>.R</code> en el que escribiremos las instrucciones que queramos que R ejecute.</p>
+<p>Vamos a crear nuestro primer script. Para ello tienes que seguir esta ruta de menús en RStudio: <code>File &gt; New File &gt; R Script</code>. Visualmente:</p>
+<p>Cuando pinches con el ratón en <code>R Script</code> se abrirá en RStudio un nuevo panel, el cuarto, arriba a la izquierda. Visualmente:</p>
+<p>Este cuarto panel (arriba-izquierda) en realidad es un editor de texto. En él podemos
+escribir las instrucciones que queramos que ejecute R. Por ejemplo, fíjate en la siguiente imagen lo que he escrito en el panel arriba-izquierda:</p>
+<p>He escrito estas cuatro lineas:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#998;font-style:italic"># mi primer script de R</span>
+</span></span><span style="display:flex;"><span><span style="color:#099">2</span> <span style="color:#000;font-weight:bold">+</span> <span style="color:#099">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#099">5</span> <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">6</span>
+</span></span><span style="display:flex;"><span><span style="color:#099">400</span><span style="color:#000;font-weight:bold">/</span><span style="color:#099">2</span>
+</span></span></code></pre></div><p>Escribe tú también (o copia y pega) estás cuatro lineas de texto en el editor (arriba-izquierda) de tu Rstudio.</p>
+<p>R ejecutará, cuando se lo indiquemos, las lineas de instrucciones una a una.</p>
+<p>Una vez hayas escrito o pegado esas 4 lineas en RStudio, verás que la primera linea es diferente: lo más evidente es que está en color verde, pero en realidad lo importante es que comienza con el símbolo <code>#</code>. Este hecho, está marcando/diciendo a R que esa linea es un comentario para los humanos, para nosotros, no es código R y por tanto R no la ejecutará.</p>
+<p>En un script sólo se pueden escribir 2 cosas:</p>
+<ul>
+<li>
+<p>comentarios (si la linea comienza con <code>#</code>). R no las ejecutará</p>
+</li>
+<li>
+<p>instrucciones R (no comienzan con <code>#</code>). R las ejecutará si están escritas en R; es decir, si siguen las reglas del lenguaje R. Si están mal escritas R nos devolverá un mensaje de error. Tenemos que aprender R ya!!!</p>
+</li>
+</ul>
+<p>Hemos escrito cuatro lineas en nuestro script y ahora queremos que R las ejecute. R ejecutará, cuando se lo indiquemos, las lineas de instrucciones una a una.</p>
+<p>Para ejecutar una linea, situamos el cursor en ella y pulsamos <kbd>Crtl</kbd> + <kbd>Enter</kbd>.</p>
+<p>Please, sitúa el cursor en la primera linea y pulsa <kbd>Crtl</kbd> + <kbd>Enter</kbd>. Observa qué ha ocurrido. Le hemos dicho a R que ejecute la primera linea, pero como esta primera linea comienza con <code>#</code>, R la ha interpretado (correctamente) como un comentario y, por supuesto, no la ha ejecutado, por lo que ha pasado a la segunda linea, y esta vez sí que la ejecuta. Como la segunda linea no comienza con <code>#</code>, R la interpreta como una instrucción de R y, sí la entiende (si las has escrito correctamente siguiendo la sintaxis o lenguaje de R), ejecutará la instrucción. R entiende que significa <code>2 + 2</code>, así que ejecuta la instrucción y nos devuelve el resultado en la consola.</p>
+<br>
+<p>En la imagen de abajo yo ya he ejecutado la instrucción <code>2 + 2</code>. R nos muestra el resultado en la consola: primero nos muestra, en azul, la instrucción que ha ejecutado; es decir <code>&gt; 2 + 2</code> y luego nos nos muestra, en negro, el resultado de la ejecución de la instrucción; es decir <code>[1] 4</code>. Ya veremos que significa el [1] de la linea de resultados.</p>
+<p>Es más fácil hacerlo que contarlo, aunque puede que te atasques en alguna cosa, normal!!. Por ejemplo, si en lugar de poner el cursor en la segunda linea, señalas o subrayas solo parte de la linea, entonces, seguramente R no te entenderá. Ahora te toca a ti: please, ejecuta la tercera linea de tu script.</p>
+<p>¿Cómo le decimos a R que ejecute la tercera linea <code>5 * 6</code>? Cuando lo hacíamos en la consola simplemente había que pulsar <kbd>Enter</kbd>, pero ahora estamos trabajando en un script: hay que situar el cursor en la linea que queremos ejecutar y darle a <kbd>Crtl</kbd> + <kbd>Enter</kbd>. R ejecutará la instrucción y nos devolverá el resultado en la consola.</p>
+<p>Enseguida aprenderemos más instrucciones o funciones de R, ahora solo estamos intentando familiarizándonos con el interfaz de RStudio. Ya sabemos como crear un fichero con instrucciones de R (ó script) y como ejecutar esas instrucciones.</p>
+<p>Lo normal es que guardes tus scripts en un archivo por si tuvieses que volver a correr las mismas instrucciones más adelante. Para guardar tus instrucciones en un fichero sólo tienes que seguir esta ruta de menús en RStudio: <code>File &gt; Save as ...</code></p>
+<p>Tendrás que elegir un nombre para tu script y decidir en que carpeta de tu ordenador guardarlo. Si decides que tu script se llame <code>my_script_01</code>, se creará un fichero (donde tú hayas decidido) llamado <code>my_script_01.R</code>. Fíjate que la extensión del archivo es <strong><code>.R</code></strong>, está extensión identifica los scripts o ficheros con instrucciones de R.</p>
+<p>Esto vas a acabar entendiéndolo en poco tiempo, pero cuanto antes lo entiendas mejor: damos las ordenes/instrucciones a R por escrito, generalmente usamos “scripts”; es decir, escribimos las instrucciones en un fichero con extensión .R. Para ejecutar las ordenes que hemos escrito en nuestro fichero R hemos de, linea por linea, teclear: <kbd>Crtl</kbd> + <kbd>Enter</kbd>. Si la orden tiene sentido, es decir, si R entiende la orden, la ejecutará y te mostrará el resultado en la Consola.</p>
+<br>
+<p>Bien, ya sabemos hacer que R ejecute nuestras instrucciones: podemos ejecutar ordenes en la Consola (con <kbd>Enter</kbd>) o en un script (<kbd>Crtl</kbd> + <kbd>Enter</kbd>). Usaremos la consola a veces, muchas veces trabajaremos con scripts o ficheros .R pero, poco a poco, acabaremos trabajando de otra forma.</p>
+<p>Como queremos que nuestros análisis sean reproducibles, habitualmente trabajaremos con <code>Rprojects</code> y con <code>ficheros .Rmd</code>. <strong>Sí!!</strong>, en lugar de con <code>ficheros .R</code> (o scripts) trabajaremos con <code>ficheros  **Rmarkdown**</code> ó <code>ficheros .Rmd</code>. Ya lo veremos, pero antes tendremos que familiarizarnos un poco más con el lenguaje R. De momento seguimos con el interfaz de RStudio.</p>
+<br>
+
+
+
+
+<h4 id="los-4-paneles-de-rstudio">Los 4 paneles de RStudio
+  <a href="#los-4-paneles-de-rstudio"></a>
+</h4>
+<p>Vamos a mirar con un poco más de detalle <strong>los 4 paneles de RStudio</strong>. Como puedes ver en la imagen de abajo, generalmente, a la izquierda encontramos la consola y el editor de scripts. Ya sabemos que desde estos dos paneles podemos dar instrucciones a R para que las ejecute.</p>
+<p>Veamos un poco los 2 paneles de la derecha. Podemos pensar que son paneles auxiliares, nos ayudarán en determinadas tareas. Estos dos paneles de la derecha tienen cada uno varias pestañas. Por ejemplo, el panel que está en la posición arriba-derecha tiene cuatro pestañas: <code>Environment</code> y 3 más<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>. En seguida veremos que al interactuar con R iremos creando objetos (por ejemplo un vector o una matriz o una tabla de datos). Estos objetos estarán guardados en la memoria del ordenador pero los “veremos”, aparecerán en la pestaña <code>Environment</code>. En la pestaña <code>History</code> tendremos un listado con las instrucciones de R que hayamos ejecutado previamente en nuestra actual sesión de R (por ejemplo <code>2 + 2</code>). Otro ejemplo: a veces en nuestro análisis con R haremos un gráfico o varios, podremos ver el gráfico en la pestaña <code>Plots</code> en el panel situado abajo-derecha.</p>
+<p>La imagen de arriba es de hace unos años, si te fijas el panel superior-derecha tiene solo 2 pestañas. En 2020 salió la versión 1.3 de RStudio, en la que en el panel superior-derecha, en lugar de haber 2 pestañas, hay 4, una de ellas, llamada “Tutorials”, permite ejecutar tutoriales para aprender R dentro de RStudio.</p>
+<br>
+
+
+
+
+<h2 id="3-forma-de-trabajar-con-r-y-rstudio">3. Forma de trabajar con R y RStudio
+  <a href="#3-forma-de-trabajar-con-r-y-rstudio"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Ya hemos dejado claro que vamos a usar RStudio para interactuar con R. Ok, pero hay distintas formas de trabajar, o distintos “workflows”.</p>
+<p>Cuando hagas un análisis estadístico complejo, por ejemplo para tu TFG, o para el trabajo final de este curso, lo normal es que para realizar el proyecto no sea suficiente con un único script; lo habitual es que cada proyecto necesite de varios inputs (datos, imágenes, scripts etc…). En estos casos, utilizaremos un <strong>Rproject</strong> para cada proyecto.</p>
+<p>En seguida veremos como podemos crear un Rproject, y explicaremos sus ventajas, pero de momento puedes pensar que un Rproject no es más que una carpeta dedicada en exclusiva a tu proyecto, una carpeta creada para almacenar todo lo relacionado con tu proyecto.</p>
+<p>¿Por qué utilizaremos <strong>Rprojects</strong>? Las razones son varias, pero como casi siempre quien mejor lo explica es 
+<a href="https://twitter.com/jennybryan?lang=es" target="_blank" rel="noopener">Jenny Bryan</a>, por ejemplo 
+<a href="https://whattheyforgot.org/project-oriented-workflow.html" target="_blank" rel="noopener">aquí</a>.</p>
+<p>Voy a intentar resumir yo lo que nos aconseja Jenny:</p>
+<ul>
+<li>
+<p>es beneficioso poner todos los archivos (datos, scripts, imágenes, etc…) necesarios para un análisis en una única carpeta dedicada en exclusiva a ese análisis o proyecto.</p>
+</li>
+<li>
+<p>en la carpeta del proyecto es útil utilizar subcarpetas, por ejemplo una carpeta para datos, otra para imágenes, etc…</p>
+</li>
+<li>
+<p>los nombres de los archivos y las carpetas también son importantes. Hay que intentar que los nombres de los archivos sean explicativos de lo que hace o contiene el archivo. Los nombres de los ficheros han de ser legibles por las personas, pero también por las máquinas. Jenny lo explica 
+<a href="https://speakerdeck.com/jennybc/how-to-name-files" target="_blank" rel="noopener">aquí</a>. Por favor, no dejéis espacios en blanco en los nombres de los ficheros, si queréis separar palabras usad <code>-</code> y/o <code>_</code>. No uséis espacios en blanco!!!</p>
+</li>
+<li>
+<p>una de las características más interesantes de un Rproject es que el directorio de trabajo del proyecto es la propia carpeta del proyecto<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>. Repito, en un Rproject, el directorio de trabajo es la propia carpeta del Rproject, y así podemos trabajar con <strong>rutas</strong> o paths <strong>relativas</strong>, lo que tiene la ventaja de que las rutas relativas funcionarán en cualquier ordenador<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>.</p>
+</li>
+</ul>
+<br>
+<p>Trato de explicarlo un poco más: cuando trabajemos en un proyecto, generalmente, tendremos que cargar unos datos. Por ejemplo, imagina que los datos que vas a usar están en el fichero “mis_datos.xlsx”, así que tendrás que decirle a R donde están los datos. Tendrás que darle la ruta o path hasta el archivo de datos. Normal!!</p>
+<p>Pero como vamos a trabajar con proyectos, los datos estarán dentro de la carpeta de mi proyecto, quizás en una subcarpeta llamada “datos”. Es posible que la ruta real o absoluta a mis datos sea la siguiente: <code>C:/Users/perezp/my_proyecto/datos/mis_datos.xlsx</code>, pero como trabajamos con proyectos, nuestro directorio de trabajo es la propia carpeta del proyecto, así que solo tendremos que usar una ruta relativa, solo tendremos que poner <code>./datos/mis_datos.xls</code>.</p>
+<p>La ventaja de esto no es solamente que ahorramos tiempo escribiendo los nombres de las rutas, que también, la principal ventaja consiste en que, si por ejemplo, queremos compartir nuestro análisis con un colaborador, le daremos nuestra carpeta con todo el proyecto y los scripts <strong>seguirán funcionando en SU ordenador</strong> independientemente de donde ponga él la carpeta del proyecto que le hemos dejado.</p>
+<p>La razón obviamente es que en nuestro proyecto hemos usado <strong>rutas relativas</strong>. Las rutas relativas, toman como referencia, empiezan desde el directorio de trabajo, y en un <code>Rproject</code> la carpeta de trabajo es siempre la propia carpeta del proyecto.</p>
+<p>Para alguno de vosotros esto os parecerá complicado, pero ya veréis, en clase, que una vez lo entiendes, es muy-muy sencillo. Os habituareis enseguida a usar proyectos y rutas relativas.</p>
+<p>Como dice Jenny:</p>
+<blockquote>
+<p>These habits guarantee that the project can be moved around on your computer or onto other computers and will still “just work”.</p>
+</blockquote>
+<br>
+<p>Para acabar esta sección, no puedo resistirme a citar otra vez a Jennyfer Bryan:</p>
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">
+File organization and naming are powerful weapons against chaos by <a href="https://twitter.com/JennyBryan?ref_src=twsrc%5Etfw">(**JennyBryan?**)</a> <a href="https://twitter.com/hashtag/Mozfest?src=hash&amp;ref_src=twsrc%5Etfw">\#Mozfest</a> <a href="https://twitter.com/hashtag/MozCookie?src=hash&amp;ref_src=twsrc%5Etfw">\#MozCookie</a> <a href="https://twitter.com/hashtag/FortuneCookie?src=hash&amp;ref_src=twsrc%5Etfw">\#FortuneCookie</a> <a href="https://t.co/W08ugLLrSa">pic.twitter.com/W08ugLLrSa</a>
+</p>
+— David Guarch 🖖 🎗️ ((**DGuarch?**)) <a href="https://twitter.com/DGuarch/status/663049353007931392?ref_src=twsrc%5Etfw">November 7, 2015</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p><br><br></p>
+
+
+
+
+<h3 id="creando-un-rproject">Creando un Rproject
+  <a href="#creando-un-rproject"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>Bien, ya nos has dicho que trabajaremos con Rproject, vale, pero ¿cómo se crea un Rproject?</p>
+<p>Simplemente has de abrir RStudio y seguir está ruta de menús: <code>File &gt; New Project...</code> y se abrirá una ventana donde tendrás que seleccionar <code>New Project</code>. Entonces, se abrirá otra ventana y tendrás que seleccionar <code>New Directory</code>. Se abrirá otra ventana con dos cajas de texto, una, la de abajo, estará escrita la ruta donde se va a crear nuestra carpeta o proyecto y la caja de arriba estará vacía y has de poner allí el nombre que quieres que tenga tu proyecto. Como puedes ver en las imágenes de abajo, yo he llamado al proyecto “my_primer_project”.</p>
+<p>Una vez hagas todo esto, RStudio creará una carpeta nueva en tu ordenador que será nuestra carpeta para el proyecto. En mi caso la carpeta estará en “C:/Users/perezp/Desktop/my_primer_proyecto”. Es una carpeta normal con un archivo dentro con un icono azulito y que tendrá por nombre “my_primer_proyecto.Rproj”; es un fichero de texto con extensión <strong>.Rproj</strong>. Ya hablaremos de él. Además de crear una carpeta en nuestro ordenador, RStudio habrá iniciado una nueva sesión de R con nuestro proyecto y verás algo como esto:</p>
+<p>Sencillamente tenemos R y RStudio listos para trabajar; es decir, para ejecutar instrucciones en la consola o para crear nuestros scripts. Eso sí, los scripts que creemos ahora, se crearán directamente en la carpeta del proyecto. Ya parlarem mès de cómo interactuar con los Rprojects en clase.</p>
+<p>Podemos pensar que un Rproject no es más que una carpeta en nuestro ordenador. De hecho puedes buscar la carpeta de tu proyecto en tu ordenador y manipularla como haces con cualquier carpeta de tu ordenador; es decir, puedes abrirla, moverla, cambiarle el nombre, crear subcarpetas, crear archivos, borrar archivos o borrar toda la carpeta. <strong>Insisto</strong>, para tu sistema operativo es una carpeta como cualquier otra. De momento esa carpeta solo contiene un archivo de texto con extensión <strong>.Rproj</strong>, poco a poco la iremos llenando con los archivos de nuestro proyecto (datos, scripts, etc …)</p>
+<p>La carpeta del proyecto es una carpeta normal para tu sistema operativo, pero no es una carpeta normal para RStudio. Si vas a la carpeta de tu proyecto y pinchas en el archivo “my_primer_proyecto.Proj” se abrirá RStudio, y RStudio reconocerá esa carpeta como un proyecto; es decir, entre otras cosas fijará el directorio de trabajo a la propia carpeta del proyecto y podremos usar rutas relativas.</p>
+<p><strong>Acuérdate siempre de lanzar un proyecto pinchando en el archivo con extensión “.Rproj” !!!!</strong> Hay otras formas de lanzar el proyecto pero de momento usaremos esta.</p>
+
+
+
+
+<h3 id="por-qué-usamos-rprojects">¿Por qué usamos Rprojects?
+  <a href="#por-qu%c3%a9-usamos-rprojects"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>Gestionar tus análisis utilizando Rprojects tiene ventajas:</p>
+<ol>
+<li>
+<p>puedes gestionar varios proyectos a la vez, cada uno con su espacio de trabajo (ó environment), pero sobre todo,</p>
+</li>
+<li>
+<p>facilita el compartir tus análisis; es decir, favorece la investigación reproducible.</p>
+</li>
+</ol>
+<p>Podemos pensar que un Rproject es una carpeta, pero es más que eso: cada Rproject tiene su propio directorio de trabajo, espacio de trabajo (environment), historial de instrucciones; además, permite crear una estructura de carpetas donde guardar los documentos asociados al proyecto en carpetas separadas (p.ej: una carpeta para datos, otra para imágenes, …).</p>
+<p>Cuando abres un Rproject en RStudio (pinchando en el fichero <code>.Rproj</code>) ocurre lo siguiente:</p>
+<ul>
+<li>
+<p>Comienza un nuevo proceso de R (esto también es importante para la investigación reproducible)</p>
+</li>
+<li>
+<p>El directorio de trabajo se fija a la carpeta que contiene el Rproject, con lo que podemos usar rutas relativas (relativas a la carpeta del proyecto)</p>
+</li>
+</ul>
+<br>
+
+
+
+
+<h4 id="cuidado-con-los-paths">Cuidado con los paths!!
+  <a href="#cuidado-con-los-paths"></a>
+</h4>
+<ul>
+<li>
+<p>Un gran inconveniente para conseguir informes (plenamente) reproducibles son los paths o rutas de ficheros. Si un programa necesita llamar a un fichero de datos (por ejemplo para cargar unos datos), tendrás que especificar la ruta y si alguien quiere ejecutar tus <em>scripts</em> en <strong>su</strong> ordenador deberá cambiar la ruta.</p>
+</li>
+<li>
+<p>Trabajar con Rprojects permite solventar este problema, ya que el directorio de trabajo del Rproject coincide con la carpeta donde está alojado el Rproject y esto permite (ya lo veremos en el próximo tutorial) trabajar con rutas (o paths) relativas en lugar de absolutas. (!!)</p>
+</li>
+</ul>
+<br>
+<ul>
+<li>
+<p>En palabras de 
+<a href="https://github.com/jennybc" target="_blank" rel="noopener">Jenny Bryan</a> una de mis he<strong>R</strong>oínas y destacada miembro de la comunidad R, si empiezas tus scripts con <code>setwd()</code>, significa que estás usando rutas absolutas, puedes hacerlo, pero Jenny nos aconseja que … <strong>PLEASE STOP DOING THAT !!</strong> Ademas Jenny nos lo explica:</p>
+<blockquote>
+<p>This makes your script very fragile, hard-wired to exactly one time and place. As soon as you rename or move directories, it breaks. Or maybe you get a new computer? Or maybe someone else needs to run your code?</p>
+</blockquote>
+</li>
+<li>
+<p>Para Jenny la solución es usar el pkg <code>here</code>, y tiene razón, pero nosotros (de momento) sólo usaremos Rprojects (suficiente!!). <code>remo::ji(&quot;thinking&quot;)</code> . Bueno no, eso era en el curso para profesores, a vosotros sí que os veo capacitados para aprender como usar <code>here::here()</code>. <code>remo::ji(&quot;devil&quot;)</code> <code>remo::ji(&quot;lol&quot;)</code> . Lo veremos. El que tenga curiosidad puede leer en 
+<a href="https://malco.io/2018/11/05/why-should-i-use-the-here-package-when-i-m-already-using-projects/" target="_blank" rel="noopener">este post</a> porqué, a pesar de trabajar con Rprojects, tiene ventajas especificar las rutas con el paquete <code>here</code>.</p>
+</li>
+</ul>
+<br>
+
+
+
+
+<h2 id="4-rmarkdown-archivos-rmd">4. RMarkdown (archivos <strong>.Rmd</strong>)
+  <a href="#4-rmarkdown-archivos-rmd"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Sí, ya sabemos que trabajaremos con Rprojects. OK, pero también dije que muchas veces en lugar de dar las instrucciones a R por medio de scripts o ficheros <code>.R</code>, trabajaríamos con ficheros <code>Rmarkdown</code>. Estos ficheros Rmarkdown tienen extensión <code>.Rmd</code>.</p>
+<ul>
+<li>
+<p>Los documentos <strong>RMarkdown</strong> son ficheros con extensión <strong><code>.Rmd</code></strong>.</p>
+</li>
+<li>
+<p>Si acabas utilizando R para hacer análisis estadísticos, los ficheros <code>.Rmd</code> te permitirán escribir muy-muy fácilmente informes, tutoriales y transparencias para presentaciones.</p>
+</li>
+<li>
+<p>Estos ficheros .Rmd son (plenamente) reproducibles.</p>
+</li>
+<li>
+<p>Lo veremos, pero en esos ficheros .Rmd se mezclan trozos de texto escritos en Markdown (narratives) y trozos con código R (chunks) para hacer análisis estadísticos.</p>
+</li>
+<li>
+<p>Estos ficheros se procesan con un paquete de R llamado <code>knitr</code> desarrollado por 
+<a href="https://yihui.name/knitr/" target="_blank" rel="noopener">Yihui Xie</a> … y salen unos informes o transparencias fantásticas … en una gran variedad de formatos.</p>
+</li>
+<li>
+<p>Con RStudio es muy fácil: solo hay que usar los menús desplegables de RStudio para crear un documento Rmarkdown, escribir lo que quieres contar y darle al botón Knitr y <code>knitr</code> tejerá el documento y lo transformará a …. pdf, word, html …</p>
+</li>
+</ul>
+<br>
+<p>Tardaremos unas 3-4 clases en explicar en detalle qué son y para que sirven los ficheros Rmarkdown, pero vamos ya a crear uno. Para ello tienes que seguir en RStudio esta ruta de menús: <code>File &gt; New File &gt; R Markdown...</code>. Visualmente:</p>
+<p>Se abrirá una ventana. De momento no cambies nada, sólo pincha en <code>OK</code>.</p>
+<p>Verás que se ha abierto una pestaña en el editor de RStudio (arriba-izquierda), con lo que parece que son muchas lineas de código R. Sí, ha creado para nosotros un archivo <code>.Rmd</code> y ha puesto unas lineas de código que nos sirven como ejemplo de cómo se escribe en Rmarkdown. Ya lo veremos. Visualmente:</p>
+<p>Estos ficheros <code>.Rmd</code> se ejecutan de otra forma. Tienes que pinchar en el icono que pone <code>Knit</code>. Visualmente:</p>
+<p>Aparecerá una ventana pidiéndote que le pongas un nombre al fichero <code>.Rmd</code>. Como puedes ver abajo yo le puse el nombre “para_borrar”, pero puedes poner el nombre que quieras.</p>
+<p>Una vez le hayas puesto nombre. R ejecutará todas las instrucciones que hay en el fichero .Rmd y generará un nuevo documento que podrás ver en el panel de abajo-derecha. Además si pinchas en el icono que aparece marcado con una mano( panel abajo-derecha) en la imagen de abajo podrás verlo en tu navegador. Visualmente:</p>
+<p>Durante el curso vamos a trabajar mucho con ficheros .Rmd, así que tendremos que explicarlos/entenderlos bien. Pero será otro día/lesson. Si os apetece podéis ver 
+<a href="https://www.youtube.com/watch?v=lNWVQ2oxNho" target="_blank" rel="noopener">este video</a> donde se explica las ventajas de trabajar en con ficheros Rmarkdow. Igual mañana lo pregunto.</p>
+<p><br><br></p>
+<p>Para finalizar un consejo: estamos empezando, así que PATIENCE!!! cuesta un poco aprender/empezar con R. Además todo el mundo comete errores, pero la mayoría de los errores son “tontos”. Eso sí, tenéis que entender las ideas básicas: script, .R, .Rmd, Rproject, rutas relativas etc… si no lo entiendes, no lo dejes pasar, pregúntalo en clase, seguro que más de uno te lo agradece o podemos arreglarlo en tutorías, pero no lo dejes pasar.</p>
+<blockquote class="twitter-tweet" align="center" data-width="550" data-lang="en" data-dnt="true" data-theme="light"><p lang="en" dir="ltr">Troubleshooting lessons I guess I&#39;ll just relearn forever: <br><br>- take a break<br>- it&#39;s almost certainly not a bug<br>- extra eyes are awesome<br>- spelling <a href="https://t.co/J17S8I6b3W">pic.twitter.com/J17S8I6b3W</a></p>&mdash; Allison Horst 🥑 (@allison_horst) <a href="https://twitter.com/allison_horst/status/1213275783675822080?ref_src=twsrc%5Etfw">January 4, 2020</a></blockquote>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>
+<a href="https://dl.acm.org/doi/abs/10.1145/3386334" target="_blank" rel="noopener">Aquí</a> tienes un artículo con la historia de R&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>De esto esta vez no estoy seguro porque en Agosto de 2020 RStudio Cloud comenzará a ser de pago. Veremos como queda la versión gratuita&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Siempre que esa carpeta no esté muy abajo en la lista de directorios para que la ruta hacía ese directorio no sea demasiado larga para Windows&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>Igual en vuestro ordenador tenéis más (o menos) pestañas, eso dependerá de la versión de RStudio que tengáis instalada. Yo ahora mismo tengo cuatro, pero igual la próxima versión de Rstudio puede tener 5 pestañas&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>Sí, sé que si parece un trabalenguas, pero es muy importante que esto lo acabes entendiendo. Cuando lo entiendas, y seguro que lo haces pronto, verás que en realidad es muy fácil.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>Esto lo conseguiremos trabajando con Rprojects y con el paquete <code>here</code>. Lo veremos pronto&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+      </section>
+      <footer class="post-footer">
+        <div class="post-pagination dt w-100 mt4 mb2">
+  
+  
+    <a class="prev dtc pr2 tl v-top fw6"
+    href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-1-ciencia-de-datos-y-la-era-del-big-data/">&larr; Tema 1: Ciencia de datos y la era del Big Data</a>
+  
+  
+  
+    <a class="next dtc pl2 tr v-top fw6"
+    href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-3-iniciaci-n-a-r-base/">Tema 3: Iniciación a R-base &rarr;</a>
+  
+</div>
+
+      </footer>
+    </article>
+    
+  </section>
+</main>
+
+<aside class="page-sidebar" role="complementary">
+                         
+ 
+
+
+
+
+
+
+
+
+
+
+
+  <img src="/collection/featured-sidebar.jpg" class="db ma0">
+
+                         
+ 
+
+
+
+<div class="flex items-start sticky ph4 pb4 flex-row">
+  <div class="w-two-thirds w-50-l ph0">
+    <h2 class="mv3 f5 fw7 ttu tracked">
+      <a class="no-underline dim" href="/collection/">Outline</a></h2>
+    <nav id="SectionTableOfContents" aria-label="SectionTableOfContents">
+        <ul>
+        
+          
+          
+          <li class="" hugo-nav="/collection/prework/">
+            <a href="https://achalmaedison.netlify.app/collection/prework/">Prework</a></li>
+          
+          </li>
+        
+          
+          
+          
+          <details  class="">
+            <summary class="" hugo-nav="/collection/day01/"><a href="https://achalmaedison.netlify.app/collection/day01/">Day 01</a></summary>
+            
+              
+              <li class="" hugo-nav="/collection/day01/01-github/"><a href="https://achalmaedison.netlify.app/collection/day01/01-github/">A GitHub profile</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/day01/02-postcards/"><a href="https://achalmaedison.netlify.app/collection/day01/02-postcards/">A postcard</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/day01/03-distill/"><a href="https://achalmaedison.netlify.app/collection/day01/03-distill/">A distill site</a></li>
+            
+          </details>
+          
+          </li>
+        
+          
+          
+          
+          <details  class="">
+            <summary class="" hugo-nav="/collection/day02/"><a href="https://achalmaedison.netlify.app/collection/day02/">Day 02</a></summary>
+            
+              
+              <li class="" hugo-nav="/collection/day02/01-netlify/"><a href="https://achalmaedison.netlify.app/collection/day02/01-netlify/">Netlify</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/day02/02-blogdown/"><a href="https://achalmaedison.netlify.app/collection/day02/02-blogdown/">Using blogdown</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/day02/03-blogdown/"><a href="https://achalmaedison.netlify.app/collection/day02/03-blogdown/">Warm woolen mittens</a></li>
+            
+          </details>
+          
+          </li>
+        
+          
+          
+          
+          <details  class="">
+            <summary class="" hugo-nav="/collection/2023-01-06-investigacion-operativa/"><a href="https://achalmaedison.netlify.app/collection/2023-01-06-investigacion-operativa/">Investigacion operativa</a></summary>
+            
+              
+              <li class="" hugo-nav="/collection/2023-01-06-investigacion-operativa/2023-01-06-unidad-1/"><a href="https://achalmaedison.netlify.app/collection/2023-01-06-investigacion-operativa/2023-01-06-unidad-1/">Unidad 1</a></li>
+            
+          </details>
+          
+          </li>
+        
+          
+          
+          
+          <details open class="active">
+            <summary class="active" hugo-nav="/collection/2023-01-07-ciencia-de-datos/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/">Ciencia de datos</a></summary>
+            
+              
+              <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-1-ciencia-de-datos-y-la-era-del-big-data/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-1-ciencia-de-datos-y-la-era-del-big-data/">Tema 1: Ciencia de datos y la era del Big Data</a></li>
+            
+              
+              <li class="active" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-2-r-rstudio-y-forma-de-trabajar/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-2-r-rstudio-y-forma-de-trabajar/">Tema 2. R, RStudio y forma de trabajar</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-3-iniciaci-n-a-r-base/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-3-iniciaci-n-a-r-base/">Tema 3: Iniciación a R-base</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-4-importar-y-exportar-datos-con-r/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-4-importar-y-exportar-datos-con-r/">Tema 4: Importar (y exportar) datos con R</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-5-data-munging-manejo-de-datos-con-r-the-tidyverse-way/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-5-data-munging-manejo-de-datos-con-r-the-tidyverse-way/">Tema 5: Data munging: manejo de datos con R, the tidyverse way</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-6-visualizaci-n-gr-ficos-con-ggplot2/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-6-visualizaci-n-gr-ficos-con-ggplot2/">Tema 6: Visualización: gráficos con ggplot2</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-7-documentos-reproducibles-con-rmarkdown/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-7-documentos-reproducibles-con-rmarkdown/">Tema 7: Documentos reproducibles con **Rmarkdown**</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/tema-8-tablas-en-documentos-rmarkdown/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/tema-8-tablas-en-documentos-rmarkdown/">Tema 8: Tablas en documentos Rmarkdown</a></li>
+            
+              
+              <li class="" hugo-nav="/collection/2023-01-07-ciencia-de-datos/prefacio/"><a href="https://achalmaedison.netlify.app/collection/2023-01-07-ciencia-de-datos/prefacio/">Prefacio</a></li>
+            
+          </details>
+          
+          </li>
+        
+        </ul>
+    </nav>
+  </div>
+  <details id="PageTableOfContents">
+    <summary><h2 class="mv0 f5 fw7 ttu tracked dib">On this page<h2></summary>
+    <div class="pl2 pr0 mh0">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-r">1. R</a></li>
+    <li><a href="#2-rstudio">2. RStudio</a></li>
+    <li><a href="#3-forma-de-trabajar-con-r-y-rstudio">3. Forma de trabajar con R y RStudio</a></li>
+    <li><a href="#4-rmarkdown-archivos-rmd">4. RMarkdown (archivos <strong>.Rmd</strong>)</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+  
+</div>
+
+</aside>
+
+<footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
+  <nav class="db dt-l w-100">
+    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
+      &copy; 2023 Edison Achalma, Ayacucho
+      <span class="middot-divider"></span>
+      Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
+      <br />
+      
+Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/formspree/blogophonic-hugo" rel="dct:source">Blogophonic</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://formspree.io" property="cc:attributionName" rel="cc:attributionURL">Formspree</a>.
+    </p>
+    
+    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
+      <div class="social-icon-links" aria-hidden="true">
+  
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://github.com/achalmed" title="github" target="_blank" rel="me noopener">
+      <i class="fab fa-github fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://www.facebook.com/achalmaedison.23" title="facebook-square" target="_blank" rel="me noopener">
+      <i class="fab fa-facebook-square fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://www.instagram.com/achalmaedison/" title="instagram" target="_blank" rel="me noopener">
+      <i class="fab fa-instagram fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://twitter.com/achalmaedison" title="twitter" target="_blank" rel="me noopener">
+      <i class="fab fa-twitter fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://orcid.org/0000-0001-6996-3364" title="orcid" target="_blank" rel="me noopener">
+      <i class="ai ai-orcid fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://www.youtube.com/@achalmaedison" title="youtube" target="_blank" rel="me noopener">
+      <i class="fab fa-youtube fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://www.linkedin.com/in/achalmaedison/" title="linkedin-in" target="_blank" rel="me noopener">
+      <i class="fab fa-linkedin-in fa-lg fa-fw"></i>
+    </a>
+  
+</div>
+
+    </div>
+    
+    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
+      
+      <a class="dib pv1 ph2 link" href="/license/" title="License">License</a>
+      
+      <a class="dib pv1 ph2 link" href="/contact/" title="Contact form">Contact</a>
+      
+      <a class="dib pv1 ph2 link" href="/contributors/" title="Contributors">Contributors</a>
+      
+    </div>
+  </nav>
+  
+    <script>
+
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (let i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) ||
+            /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+</script>
+
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+
+    
+  
+  
+</footer>
+
+      </div>
+    </body>
+</html>
