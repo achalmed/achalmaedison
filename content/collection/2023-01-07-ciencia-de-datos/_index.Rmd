@@ -10,10 +10,20 @@ publishDate: '2021-01-22'
 show_author_byline: false
 show_post_date: false
 show_post_thumbnail: true
-subtitle: All about Day 01 of 'Introduce Yourself Online'.
+subtitle: Descubriendo patrones ocultos en grandes conjuntos de datos.
 weight: 5
 slug: ciencia-de-datos
 categories: []
 tags:
   - regression
 ---
+
+Este libro sirve de acompañamiento al curso “Programación y manejo de datos en la era del Big Data” que se empezó a impartir el curso 2019-2020 en el Grado de Economía de la Universitat de València. ^[También son ganas a estas alturas de ponerse a escribir un libro cuando el gurú de las tecnología y la innovación Enrique Dans dice [aquí](
+https://www.enriquedans.com/2019/02/el-obsoleto-y-danino-libro-de-texto.html) y [aquí](https://www.enriquedans.com/2019/08/el-proximo-gran-error-en-educacion.html) que los libros no sólo se han quedado obsoletos, sino que pueden ser dañinos en el proceso de aprendizaje. En mi descargo decir que técnicamente esto que ves en realidad no es un libro, es una pagina web con formato libro, y llena de referencias y materiales. Además, el título del curso incorpora " ... en la era del ...", algo que es criticado [aquí](https://books.google.es/books/about/La_era_de_Casandra.html?id=4fEhEAAAQBAJ&printsec=frontcover&source=kp_read_button&redir_esc=y#v=onepage&q&f=false). Otra vez en mi descargo decir que su función es meramente retorica, vamos, para llamar un poco la atención]
+
+Está edición es para el curso 2021-22. Se escribe, otra vez, con un poco con prisa, así que veremos como sale!! En esta primera frase ya he querido dejar claro cual será el estilo del libro: se sacrificará el estilo, e incluso a veces la corrección ortográfica para conseguir más claridad. 
+
+
+Llama la atención el título del curso. Es un título muy largo, poco estándar, vamos, un poco raro. El curso en realidad debería llamarse “Una introducción a la Ciencia de Datos para Economía” pero preferí que en el título apareciese en primer lugar la palabra "programación". La razón es que quiero que los estudiantes que se matriculen sepan que vamos a pasar buena parte del curso dándole ordenes al ordenador por escrito; es decir, programando. 
+
+Señalar que, obviamente, el libro no es el curso. Pretendo que el curso sea fundamentalmente práctico y que se aprenda mientras se trabaja con datos y casos. El libro lo enfoco como un esfuerzo de sintetizar los temas de los que se hablarán en el curso y una vía de entrada a la multitud de materiales disponibles sobre estos temas en Internet. Me ha parecido conveniente confeccionar estas notas/libro para que los estudiantes tengan algo, un mínimo, donde tener minimamente reunidos los principales contenidos que se tratarán en la asignatura.

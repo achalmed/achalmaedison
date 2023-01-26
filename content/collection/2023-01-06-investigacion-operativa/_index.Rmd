@@ -10,8 +10,8 @@ publishDate: '2021-01-22'
 show_author_byline: false
 show_post_date: false
 show_post_thumbnail: true
-subtitle: All about Day 01 of 'Introduce Yourself Online'.
+subtitle: Operaciones estratégicas una guía de investigación para tomar decisiones en tiempo real.
 weight: 4
 ---
 
-If you choose `layout: single-series`, you can add markdown text here and it will be the landing page for this nested subsection.
+La investigación operativa es una disciplina que se ocupa de la toma de decisiones en situaciones que involucran recursos limitados. A través del uso de técnicas matemáticas y herramientas de análisis, la investigación operativa permite a los tomadores de decisiones encontrar la mejor solución a un problema dado, teniendo en cuenta restricciones y objetivos específicos. Los ámbitos de aplicación de la investigación operativa son amplios, y van desde la industria y los negocios, hasta la política pública y la planificación de la producción. Algunos de los temas clave en investigación operativa incluyen la programación lineal, la teoría de colas y el análisis de sistemas.

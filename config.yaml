@@ -38,14 +38,12 @@ ignoreFiles:
 # habilita el uso de emojis en el sitio
 enableEmoji: yes
 
-
 # Permalinks especifica la estructura de las URLs de los posts y páginas del sitio
 permalinks:
   # para los posts del blog, la URL incluye el año, mes y título del post
  blog: "/blog/:year-:month-:slug/"
  # para las páginas de charlas, la URL incluye el nombre del archivo
  talk: "/talk/:filename/"
- 
  
 markup:
   # utiliza goldmark como procesador de markdown
@@ -65,7 +63,7 @@ markup:
     endLevel: 2
     # La ordenación de los elementos de la tabla de contenidos no está habilitada
     ordered: no
-    # El nivel de inicio de la tabla de contenidos es el nivel 2
+    # El nivel de inicio de la tabla de contenidos es el nivel 1
     startLevel: 2
     
     
@@ -134,7 +132,7 @@ params:
   # o especificar un archivo SCSS personalizado en la carpeta assets/ con el nombre del archivo.
   # Para usar colores hexadecimales en lugar de colores nombrados de Tachyons, incluir "hex" en el nombre del archivo.
   # Ejemplo de tema personalizado: fb-hex-achi
-  custom_theme: ''
+  custom_theme: 
   # usar fuente sans-serif para el texto
   textFontFamily: sans-serif
   # Fuente personalizada para el texto del sitio.

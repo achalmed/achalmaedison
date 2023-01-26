@@ -1,0 +1,10 @@
+pdf_document:
+  number_sections: yes
+  toc: yes
+  toc_depth: 3
+  toc_latex_depth: 3
+  font_family: "Arial"
+  font_size: 12pt
+  papersize: letter
+  columnas: 1
+  fig_caption: yes
