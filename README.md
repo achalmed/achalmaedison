@@ -25,4 +25,4 @@ Soy Edison Achalma, un economista en proceso y entusiasta de la tecnología. Pue
 Este proyecto está bajo la Licencia [nombre de la licencia]. Ver el archivo LICENSE para más detalles.
 
 
-![Screenshot](/home/achalmaedison/Documents/achalmaedison/Screenshot.png)
+![Screenshot](Screenshot.png)
