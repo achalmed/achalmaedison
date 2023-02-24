@@ -2,7 +2,7 @@
 action_label: Sobre Mí &rarr;
 action_link: /about
 action_type: text # text, button
-description: ¡Hola! Soy @achalmaedison, economista en proceso, “programador” con muchas comillas con conocimientos en Hacking y Ciberseguridad entre otros. Me gusta viajar y tomar fotografía también me gusta sentarme en la esquina, preferiblemente con un capuchino. Esporádicamente escribiré publicaciones en el blog cuando tenga tiempo 😅.
+description: ¡Hola! Soy @achalmaedison, un economista en proceso y entusiasta de la tecnología. Aunque todavía me considero un programador novato, he adquirido conocimientos en áreas como Hacking y Ciberseguridad, entre otros. Cuando no estoy frente a mi computadora, disfruto de la fotografía y de viajar a nuevos lugares. Además, me encanta pasar el tiempo en cafeterías, preferiblemente con un delicioso capuchino en la mano. De vez en cuando, publicaré contenido en mi blog cuando tenga la oportunidad. 📷 ☕ ️😅 ¡Gracias por visitar mi página web!
 image_left: false
 images:
 - img/avatarachalma1.png
