@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/hubotio/hubot.svg?branch=master)](https://travis-ci.org/hubotio/hubot) [![Coverage Status](https://coveralls.io/repos/github/hubotio/hubot/badge.svg?branch=master)](https://coveralls.io/github/hubotio/hubot?branch=master)
+
 # Mi Página Web Personal
 
 Este repositorio contiene el código fuente de mi página web personal. La página se construye con la ayuda de herramientas como Rmarkdown, Quarto, HTML, CSS, y JavaScript, y utiliza una variedad de tecnologías para proporcionar una experiencia de usuario fluida e interactiva.
@@ -22,7 +24,7 @@ Soy Edison Achalma, un economista en proceso y entusiasta de la tecnología. Pue
 
 ## Licencia
 
-Este proyecto está bajo la Licencia [nombre de la licencia]. Ver el archivo LICENSE para más detalles.
+Este proyecto está bajo la Licencia [LICENSE](LICENSE.md). Ver el archivo LICENSE para más detalles.
 
 
 ![Screenshot](Screenshot.png)
