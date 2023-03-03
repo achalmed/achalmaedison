@@ -13,7 +13,7 @@ layout: list-sidebar # list, list-sidebar, list-grid
 # para el diseño de la barra lateral de la lista
 sidebar: 
   title: Bienvenido a los cursos
-  description: "En la web encontrarás información acerca del desarrollo del curso, así como la mayoría de los materiales que se usarán en él." 
+  description: "¡Aquí encontrarás una amplia variedad de cursos diseñados para ayudarte a mejorar tus habilidades y conocimientos en diferentes áreas. Nuestros cursos están cuidadosamente diseñados y son impartidos por expertos en cada materia. Desde programación hasta marketing digital, estamos seguros de que encontrarás un curso que se adapte a tus necesidades y objetivos. ¡Explora nuestra selección de cursos y comienza tu camino hacia el éxito hoy mismo!" 
   author: Edison Achalma
   text_link_label: Subscribe via RSS
   text_link_url: /index.xml

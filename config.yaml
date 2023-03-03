@@ -79,7 +79,7 @@ params:
   mainSections:
     - blog
     - project
-    - talk
+    - collection
   # Configuración para la visualización de fórmulas matemáticas  
   math:
     # Utilizar el renderer de KaTeX para visualizar fórmulas
@@ -194,18 +194,18 @@ menu:
       title: Project Portfolio
       url: /project/
       weight: 3
-    - name: Talks
-      title: Talks
-      url: /talk/
-      weight: 4
+    #- name: Talks
+      #title: Talks
+      #url: /talk/
+      #weight: 4
     - name: Cursos
       title: A collection
       url: /collection/
       weight: 5
-    - name: Elementos
-      title: Element Page
-      url: /elements/
-      weight: 6
+    #- name: Elementos
+      #title: Element Page
+      #url: /elements/
+      #weight: 6
       
       
 # see https://gohugo.io/about/hugo-and-gdpr/
