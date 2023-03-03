@@ -150,7 +150,7 @@
      * @param panel Panel ID of selected panel in panelset, or null to delete from search params
      * @param params Current params object, or params from window.location.search
      */
-    function updateSearchParams (panelset, panel, params = new URLSearchParams(window.location.search)) {
+    function updateSearchParams(panelset, panel, params = new URLSearchParams(window.location.search)) {
       if (panel) {
         params.set(panelset, panel)
       } else {

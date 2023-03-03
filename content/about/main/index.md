@@ -12,5 +12,5 @@ outro: |
   <i class="fas fa-glass-cheers pr2"></i>¡Gracias por su visita!
 ---
 
-** el índice no contiene un cuerpo, solo el frente anterior.
-Ver about/list.html in the layouts folder **
+**el índice no contiene un cuerpo, solo el frente anterior.
+Ver about/list.html in the layouts folder**

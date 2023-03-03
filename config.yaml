@@ -10,16 +10,16 @@ title: Edison Achalma, Econ
 author: Edison Achalma
 # El copyright se deja en blanco para sobrescribir el copyright generado automáticamente
 # utilizando la información de la organización y el año actual
-copyright: '' 
+copyright: ""
 # Código de Google Analytics, dejar en blanco si no se usa
-googleAnalytics: ''
+googleAnalytics: ""
 # Nombre corto de Disqus, dejar en blanco si no se usa
 # ver params.utterances para usar expresiones en lugar de Disqus
-disqusShortname: '' 
+disqusShortname: ""
 # Formato de metadatos, establecido como yaml
 metaDataFormat: yaml
 # Contenido del enlace de retorno de la nota al pie, se establece como "↩"
-footnoteReturnLinkContents: '&#8617;' # ↩
+footnoteReturnLinkContents: "&#8617;" # ↩
 # Número de entradas por página, se establece en 5 para pruebas
 # Seleccione el número que prefiera en función del diseño del blog elegido
 paginate: 5
@@ -41,10 +41,10 @@ enableEmoji: yes
 # Permalinks especifica la estructura de las URLs de los posts y páginas del sitio
 permalinks:
   # para los posts del blog, la URL incluye el año, mes y título del post
- blog: "/blog/:year-:month-:slug/"
- # para las páginas de charlas, la URL incluye el nombre del archivo
- talk: "/talk/:filename/"
- 
+  blog: "/blog/:year-:month-:slug/"
+  # para las páginas de charlas, la URL incluye el nombre del archivo
+  talk: "/talk/:filename/"
+
 markup:
   # utiliza goldmark como procesador de markdown
   defaultMarkdownHandler: goldmark
@@ -65,8 +65,7 @@ markup:
     ordered: no
     # El nivel de inicio de la tabla de contenidos es el nivel 1
     startLevel: 2
-    
-    
+
 # Parámetros de la página
 params:
   # Descripción del sitio. Se usa en motores de búsqueda y cuando se comparte en redes sociales.
@@ -80,7 +79,7 @@ params:
     - blog
     - project
     - collection
-  # Configuración para la visualización de fórmulas matemáticas  
+  # Configuración para la visualización de fórmulas matemáticas
   math:
     # Utilizar el renderer de KaTeX para visualizar fórmulas
     renderer: katex
@@ -92,7 +91,7 @@ params:
   orgName: Edison Achalma
   #  Imagen por defecto para compartir en redes sociales y buscadores. Place image file in `static` folder and specify image name here.
   sharing_image: /img/papillons.jpg
-  
+
   # Social icons may appear on homepage and in site header or footer
   # Configure show/hide above - add as many as you like below
   # Icon pack "fab" includes brand icons, see: https://fontawesome.com/icons?d=gallery&s=brands&m=free
@@ -132,7 +131,7 @@ params:
   # o especificar un archivo SCSS personalizado en la carpeta assets/ con el nombre del archivo.
   # Para usar colores hexadecimales en lugar de colores nombrados de Tachyons, incluir "hex" en el nombre del archivo.
   # Ejemplo de tema personalizado: fb-hex-achi
-  custom_theme: 
+  custom_theme:
   # usar fuente sans-serif para el texto
   textFontFamily: sans-serif
   # Fuente personalizada para el texto del sitio.
@@ -144,8 +143,7 @@ params:
   headingFontFamily: sans-serif
   # Fuente personalizada para los encabezados del sitio. Ver opciones de customtextFontFamily.
   customheadingFontFamily: Fraunces
-  
-  
+
   # Configuration of https://utteranc.es/ for comments
   utterances:
     # habilitar el uso de Utterances para los comentarios
@@ -157,17 +155,15 @@ params:
     # tema para los comentarios
     theme: boxy-light
     # etiqueta para los comentarios
-    label: 'comments :crystal_ball:'
-
+    label: "comments :crystal_ball:"
 
 taxonomies:
   category: categories
   series: series
   tag: tags
-  
-  
+
 menu:
-# Configure header
+  # Configure header
   footer:
     - name: Licencia
       title: License
@@ -195,19 +191,18 @@ menu:
       url: /project/
       weight: 3
     #- name: Talks
-      #title: Talks
-      #url: /talk/
-      #weight: 4
+    #title: Talks
+    #url: /talk/
+    #weight: 4
     - name: Cursos
       title: A collection
       url: /collection/
       weight: 5
     #- name: Elementos
-      #title: Element Page
-      #url: /elements/
-      #weight: 6
-      
-      
+    #title: Element Page
+    #url: /elements/
+    #weight: 6
+
 # see https://gohugo.io/about/hugo-and-gdpr/
 privacy:
   disqus:

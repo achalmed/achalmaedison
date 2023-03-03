@@ -65,7 +65,7 @@ Here are the links to each font so you can see them in action:
 
 Alternatively, you may want to use a system font, which you know will be rendered reliably across languages, operating systems, and browsers. Apéro uses [Tachyons](https://tachyons.io) to render beautiful system font stacks for your site, making it super simple to configure and blazing fast to load. The default choices are `sans-serif` or `serif`, and can be assigned to headings and body text, respectively. Additional options can be found in the [Tachyons Font Family Reference](https://tachyons.io/docs/typography/font-family/). Why use system fonts?
 
->  Relying on systems fonts greatly improves page performance and can also help your web application/site blend in with the user’s operating system. Readability is strongly linked to familiarity, so this helps create a more fluid reading experience, allowing your users to focus on your content. 
+> Relying on systems fonts greatly improves page performance and can also help your web application/site blend in with the user’s operating system. Readability is strongly linked to familiarity, so this helps create a more fluid reading experience, allowing your users to focus on your content.
 >
 > &mdash; [Tachyons typography docs](http://tachyons.io/docs/typography/font-family/)
 
@@ -73,7 +73,7 @@ Here is a step-by-step, using the `config.toml` file:
 
 + Leave both `customtextFontFamily` and `customheadingFontFamily` blank (with empty quotes, or comment out the line entirely).
 
-+ Just below those keys, select a `textFontFamily` and `headingFontFamily` from the options listed [here](http://tachyons.io/docs/typography/font-family/). All values are lower case, and exclude the `.` in front. 
++ Just below those keys, select a `textFontFamily` and `headingFontFamily` from the options listed [here](http://tachyons.io/docs/typography/font-family/). All values are lower case, and exclude the `.` in front.
 
 ```toml
 [params]
@@ -92,6 +92,7 @@ Here is a step-by-step, using the `config.toml` file:
 ```
 
 For example, you may choose:
+
 ```toml
   textFontFamily = "courier"
   headingFontFamily = "baskerville"
@@ -125,7 +126,7 @@ Here are the steps:
 }
 ```
 
-Your final step is to go back to your `config.toml` file and add the `font-family` values for the font(s) you want to use to the `customtextFontFamily` and/or `customheadingFontFamily` keys. You can combine custom fonts with system fonts too. 
+Your final step is to go back to your `config.toml` file and add the `font-family` values for the font(s) you want to use to the `customtextFontFamily` and/or `customheadingFontFamily` keys. You can combine custom fonts with system fonts too.
 
 ```toml
 [params]

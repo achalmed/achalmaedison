@@ -16,7 +16,7 @@ title: Built-in Contact Form
 
 ![Formspree Logo](formspree-logo.png)
 
-## [Formspree](https://formspree.io) makes it easy to receive submissions from HTML forms on your static website.
+## [Formspree](https://formspree.io) makes it easy to receive submissions from HTML forms on your static website
 
 ---
 

@@ -16,15 +16,15 @@ title: Set up your social
 
 There are five places where you can choose to show social icons. Here is the tl;dr:
 
-+ site header (set in `config.toml`), 
-+ site footer (set in `config.toml`), 
++ site header (set in `config.toml`),
++ site footer (set in `config.toml`),
 + [homepage](/) (set in `content/_index.md`),
 + [about page](/about) in the sidebar (set in `content/about/sidebar/index.md`), and
-+ [contact page](/contact) (set in `content/form/contact.md`). 
++ [contact page](/contact) (set in `content/form/contact.md`).
 
 Read on to learn how to set up your social icons, and how to show/hide them.
 
-## Configure social 
+## Configure social
 
 Wherever you end up wanting to show your social icons, you'll need to start by setting up the links in your site `config.toml` file. Open that up and scroll down to the `[[params.social]]` section. The start of it looks like this:
 

@@ -17,12 +17,12 @@ title: Style your site colors
 ---
 
 You can totally customize your site's theme colors within minutes of
-creating a new site. Read on to find out how, and decide which of the 
+creating a new site. Read on to find out how, and decide which of the
 three options meets your needs.
 
 ## Use a color theme
 
-Hugo Apéro includes 8 built-in color themes that work "out of the box." 
+Hugo Apéro includes 8 built-in color themes that work "out of the box."
 This means you can use a color theme to quickly customize the look of your site
 without needing to write any CSS. You can select the color theme in your `config.toml` file. Scroll down to find:
 
@@ -50,7 +50,7 @@ You should see:
 
 ![Switching to the peach color theme](peach.png)
 
-If you select a theme that isn't one of the available options (like `"pecan"`), 
+If you select a theme that isn't one of the available options (like `"pecan"`),
 you should see an error message print to your viewer pane in the RStudio IDE:
 
 ```bash
@@ -61,7 +61,7 @@ All of the color themes were designed to meet [WCAG 2.0 level AA requirements](h
 
 ## Use Tachyons named colors
 
-This theme uses [Tachyons](https://tachyons.io), a design system that allows you 
+This theme uses [Tachyons](https://tachyons.io), a design system that allows you
 to design gorgeous interfaces in the browser with little effort.
 
 ![Tachyons Logo Script](tachyons-logo-script.png)
@@ -162,4 +162,3 @@ After adding the name of your theme file (minus the `.scss` extension) that you 
   # to use hex colors instead of named tachyons colors, include "hex" in filename
   custom_theme = "hex-colors" 
 ```
-

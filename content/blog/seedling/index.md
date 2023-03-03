@@ -10,7 +10,7 @@ subtitle: How to add panelsets in plain markdown posts.
 title: Using panelsets
 ---
 
-Courtesy of panelset.js by Garrick Aden-Buie, from his xaringanExtra package: https://pkg.garrickadenbuie.com/xaringanExtra/#/panelset
+Courtesy of panelset.js by Garrick Aden-Buie, from his xaringanExtra package: <https://pkg.garrickadenbuie.com/xaringanExtra/#/panelset>
 
 For example, this panelset:
 
@@ -36,9 +36,7 @@ Was created by combining this theme's `panelset` and `panel` shortcodes:
 {{</* /panelset */>}}
 ```
 
-
 You could also revert to HTML as well. For example, this panelset:
-
 
 <div class="panelset">
   <div class="panel">
