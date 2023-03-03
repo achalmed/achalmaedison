@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Edison Achalma, Econ</title>
+    <link>https://achalmaedison.netlify.app/tags/python/</link>
+    <description>Recent content in Python on Edison Achalma, Econ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Fri, 03 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://achalmaedison.netlify.app/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Definicion de ciencia de datos</title>
+      <link>https://achalmaedison.netlify.app/project/definicion-de-ciencia-de-datos/</link>
+      <pubDate>Fri, 03 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://achalmaedison.netlify.app/project/definicion-de-ciencia-de-datos/</guid>
+      <description>¿Qué son los datos? En nuestra vida cotidiana, estamos constantemente rodeados de datos. El texto que estás leyendo ahora son datos. La lista de números de teléfono de sus amigos en su teléfono inteligente son datos, así como la hora actual que se muestra en su reloj. Como seres humanos, operamos naturalmente con datos contando el dinero que tenemos o escribiendo cartas a nuestros amigos.
+Sin embargo, los datos se volvieron mucho más críticos con la creación de computadoras.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -9,9 +9,10 @@ tags:
   - Python
 subtitle: ''
 excerpt: 'En nuestra vida cotidiana, estamos constantemente rodeados de datos. El texto que estás leyendo ahora son datos. La lista de números de teléfono de sus amigos en su teléfono inteligente son datos, así como la hora actual que se muestra en su reloj. Como seres humanos, operamos naturalmente con datos contando el dinero que tenemos o escribiendo cartas a nuestros amigos.'
-draft: yes
+draft: no
 series: ~
-layout: single
+featured: true
+layout: single-sidebar
 links:
   - icon: door-open
     icon_pack: fas
