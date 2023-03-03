@@ -9,5 +9,4 @@ headline: |
 <!-- este es un subtitulo -->
 ¡Hola! Soy Edison Achalma.
 
-Soy economista en proceso | ☭ Comunista | 👨‍💻 "Programador" con muchas comillas | 💻 Hacking y Ciberseguridad entre otros.
-✈ Viajar 💳🎒📷.
+¡Bienvenido/a a mi página web personal! Aquí podrás encontrar información sobre mí, mis proyectos y mi experiencia profesional. Me dedico al campo de la economía y también tengo interés en la programación en Linux. Espero que encuentres todo lo que necesitas y no dudes en contactarme si tienes alguna pregunta o si deseas colaborar en algún proyecto conjunto. ¡Gracias por visitar mi sitio web!

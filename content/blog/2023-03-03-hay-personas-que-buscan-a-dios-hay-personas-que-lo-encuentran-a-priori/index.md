@@ -1,0 +1,40 @@
+---
+title: La complejidad de creer o no en Dios
+author: Edison Achalma Mendoza
+date: '2023-03-03'
+slug: hay-personas-que-buscan-a-dios-hay-personas-que-lo-encuentran-a-priori
+categories:
+  - Filosofía
+  - Religión
+tags:
+  - Ateísmo
+  - Religión
+  - Filosofía
+subtitle: '¿Por qué es difícil aceptar la creencia dogmática o negar la existencia de Dios?'
+excerpt: 'En este artículo, Edison Achalma Mendoza explora la dificultad de aceptar la creencia dogmática en Dios y de negar su existencia. Achalma reflexiona sobre la complejidad de la teología y la filosofía detrás de las creencias religiosas, y cómo esta complejidad puede ser difícil de entender para aquellos que no tienen una formación teológica. También examina cómo algunos ateos pueden sentirse intelectualmente superiores simplemente por negar la existencia de Dios, mientras que algunos creyentes pueden ser dogmáticos en su fe sin profundizar en su comprensión teológica. A través de su análisis, Achalma concluye que la creencia en Dios no determina la inteligencia de una persona y que, en última instancia, cada caso debe ser examinado individualmente.'
+draft: no
+series: ~
+layout: single
+---
+
+Casualmente todos los ateos que conozco son unos pendejos, que se sienten superiores intelectualmente solo por decir que no creen en un dios  
+Está de moda decir que el ateo es superior quiere decir que es ateo porque quiere pendejear.
+
+Estoy de acuerdo en que ser ateo no te pone intelectualmente por encima de nadie, pero también te confieso que es muy complicado no sentirse superiormente intelectual a un creyente cuando lo escuchas hablar de Dios. Es un ejercicio muy cabrón respetar, pero se tiene que hacer.
+
+Entre más profundice alguien, cuando habla de Dios, a mí me pierde.
+
+Hay una parábola muy extraña, sobre la dificultad de la ignorancia, “que una persona puede llegar y decirte, la luna es de queso”, y tú, no mames, o sea, no hay suficientes vacas en el mundo para producir la cantidad de lácteos necesarios, para llevarlos pasteurizados al espacio y hacer una bola gigante de queso, que se mantenga sin gravedad. necios!! la ptm _ja, ja, ja_.
+
+Pero pasa mucho esto, hay una distancia simétrica en la dificultad de explicar algunos de los fenómenos del mundo versus el dogmatismo; contra la creencia dogmática que no necesita nada para fundarse. Pero, por qué los padres que profundizan la teología no llegan a un momento en donde el padre diga no puedo creer en esto.
+
+Es que la premisa no se acepta en ninguno de los dos lados. Uno de mis filósofos favoritos, Žižek, es católico. Es idealista Hegeliano, cree en dios y estudia Lacan. Y San Agustín es uno de los más grandes pensadores que jamás haya existido. Quiero decir que, para mí, para nada va de la mano tener creencia o tener fe, te hace más o menos inteligente, para nada. No va por ahí.  
+De nuevo parece que hay una cuestión de caso por caso. Pero Hay gente que está buscando a Dios. Hay gente que lo encuentran a priori.
+
+¿y no es más fácil después de todo este tipo de lecturas al ver que incluso son arquetipos en ciertas veces los dogmas de fe, y quedar en el pensamiento de que no?
+
+Yo creo que sí, hasta cierto punto terminas desmintiendo gran parte de la estructura estereotipada de lo que es Dios. Pero lo que pasa es, qué significa la propia palabra, el concepto de Dios. Como, por ejemplo, Espinoza, Espinoza tiene un texto muy bonito que habla de Dios, de hecho, Einstein, quien es famoso por ser un gran físico y socialista, lo cita y cuando le preguntan ¿crees en Dios? y él dice yo creo en el Dios de Espinoza, pero él cuando habla del Dios de Espinoza, se refiere al Dios de Espinoza, como la sustancia de la naturaleza, que está en todo, Espinoza diciendo que el universo es monista, materialista, radical, solo hay materia, y todo es un solo materia que cambia de forma, y lo único que podemos observar nosotros es la relación de la dinámica y los modos de manifestación de la materia, y Einstein dice, por supuesto, quería estudiar partículas a nivel subatómico, entiendo que todo se compone de un todo, nosotros nos ponemos entre paréntesis para entenderlo, pero ponerlo entre paréntesis es observar una de sus manifestaciones en modo, no es entenderlo como un todo, ese es el dios de Espinoza, ese es el dios al que aspira Einstein, eso es Dios.
+
+Y obviamente, cuando le dices eso a un católico, protestante, dogmático, que nunca ha leído ningún libro y sólo repite su dogma de fe, y te va a decir no sé si es el mismo Dios que el mío. Y es la clásica. Es tu Dios, ese es tu dios y no es mío aj.
+
+Tratar de hacer estas lecturas ridículas, reductivos de “el que cree es necio, y el que no cree es listo”, y aparte un poco de cultura inglesa, hay muchos ingleses famosos, ateos que ridiculizaban la iglesia, ridiculizaban porque eran protestantes, ridiculizó un poco el pensamiento teológico, más místico, y se opuso al italiano, al imperio romano y lo que quieras, y trataron de irse con uno con una práctica teológica un poco más racional, supuestamente, más humano centrista, si quisieras verlo de esa manera, pero me parece que los dos son testaferros, es decir, hubiera que verse realmente caso por caso por lo tanto, creo que hay ejemplos que rompen esa regla en los dos sentidos.

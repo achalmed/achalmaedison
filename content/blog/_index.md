@@ -13,7 +13,7 @@ layout: list-sidebar # list, list-sidebar, list-grid
 # for list-sidebar layout
 sidebar:
   title: Blog
-  description: "Este blog es mi [digital garden](https://nesslabs.com/digital-garden-set-up), entre un bloc de notas y un blog."
+  description: " ¡Bienvenidos a mi sección de blog en mi página web personal! Aquí encontrarás una variedad de temas y reflexiones que he querido compartir con ustedes, desde mis pensamientos sobre la vida y el mundo que nos rodea, hasta mi experiencia en diferentes áreas de mi vida profesional y personal. Espero que disfrutes leyendo mis publicaciones tanto como yo disfruto escribirlas. ¡Gracias por visitar mi sitio web y por ser parte de esta comunidad! Este blog es mi [digital garden](https://nesslabs.com/digital-garden-set-up), entre un bloc de notas y un blog."
   author: Edison Achalma
   text_link_label: Subscribe via RSS
   text_link_url: /index.xml
