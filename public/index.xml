@@ -6,7 +6,7 @@
     <description>Recent content in Edison Achalma on Edison Achalma, Econ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Fri, 03 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://achalmaedison.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://achalmaedison.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unidad 1</title>
       <link>https://achalmaedison.netlify.app/collection/2023-01-06-investigacion-operativa/2023-01-06-unidad-1/</link>
@@ -129,6 +129,15 @@ Clone GitHub repo usethis::create_from_github(&amp;quot;https://github.com/apres
       <description> Hi, I&#39;m the here-bot cat! Use me to find your way in your website.
 Here I am: content/collection/day02/03-blogdown/index.md To remove me, delete this line inside that file: {{&amp;lt; here &amp;gt;}}
 My content section is: collection My layout is: single-series part 2! does this work? now for some very cool things more get ready! </description>
+    </item>
+    
+    <item>
+      <title>La adicción a la despedida y la bienvenida</title>
+      <link>https://achalmaedison.netlify.app/blog/2023-03-la-adicci-n-a-la-despedida-y-la-bienvenida/</link>
+      <pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://achalmaedison.netlify.app/blog/2023-03-la-adicci-n-a-la-despedida-y-la-bienvenida/</guid>
+      <description>Siempre me hago la misma pregunta cuando tengo que despedirme de alguien a quien amo, y esa pregunta es “¿vale la pena?”. ¿Vale la pena estar lejos de mi familia, de las personas que me vieron crecer y me aman por lo que soy? ¿Vale la pena hacer nuevos lazos, en nuevos lugares, solo para romperlos cuando cambias de buzón una vez más? ¿Vale la pena cambiar la comodidad de un abrazo cariñoso por un asiento de avión?</description>
     </item>
     
     <item>

@@ -1,0 +1,23 @@
+---
+title: La adicción a la despedida y la bienvenida
+author: Edison Achalma Mendoza
+date: '2023-03-04'
+slug: la-adicci-n-a-la-despedida-y-la-bienvenida
+categories:
+  - Viajes
+tags: []
+subtitle: 'La lucha interna entre la comodidad del hogar y la emoción de explorar nuevos lugares.'
+excerpt: 'Los pequeños momentos son los que hacen la vida grande. Es fácil pasar por alto las cosas simples y cotidianas, pero son esas cosas las que realmente importan. Un abrazo cálido, una sonrisa sincera, un pequeño gesto de bondad. Son estas pequeñas cosas las que dan significado a nuestras vidas y hacen que cada día sea especial. Así que tomemos un momento para apreciar lo que tenemos, para estar presentes en el momento y para disfrutar de los pequeños momentos que hacen que la vida sea verdaderamente grande.'
+draft: no
+series: ~
+layout: single
+---
+Siempre me hago la misma pregunta cuando tengo que despedirme de alguien a quien amo, y esa pregunta es “¿vale la pena?”. ¿Vale la pena estar lejos de mi familia, de las personas que me vieron crecer y me aman por lo que soy? ¿Vale la pena hacer nuevos lazos, en nuevos lugares, solo para romperlos cuando cambias de buzón una vez más? ¿Vale la pena cambiar la comodidad de un abrazo cariñoso por un asiento de avión?
+
+A veces siento que no. Pero, ya sabes, la mayor parte del tiempo me siento como si lo hiciera. Siento que vale la pena vivir esta espiral de “adiós” y “hola”, esta intensidad de coleccionar rostros, esta fiebre por descubrir nuevos tesoros y tomar fotografías imaginarias con la mirada. Vale la pena. Porque vivir en este camino sin fin, en esta búsqueda ilimitada de nuevos paisajes, es un ejercicio al que me volví adicto y esta adicción me hace ser quien soy. Muéstrame cómo ser mejor, más diverso, más colorido. Me da nuevos acentos, nuevos aires, nuevas ideas. Me permite escuchar, comunicarme de diferentes maneras, ver infinitas oportunidades con los mismos ojos. Y ser una nueva versión de mí mismo cada día.
+
+Curiosamente, este lío es una marca mío que la gente que me quiere entiende y adora. Es lo que hace tan interesante y llevadero el hecho de verme partir en la cola de embarque y esperarme con una amplia sonrisa a mi regreso.
+
+Porque mi vida no solo está llena de despedidas. También está lleno de bienvenida.
+
+En este blog quiero compartir mi experiencia como un viajero empedernido que siempre se encuentra en una lucha interna entre la comodidad del hogar y la emoción de explorar nuevos lugares. Quiero reflexionar sobre la importancia de abrirse a nuevas experiencias, de coleccionar recuerdos y personas en el camino. Hablaré sobre cómo esta adicción a la despedida y la bienvenida me ha moldeado y me ha permitido crecer como persona. Además, compartiré historias y anécdotas de mis viajes, y espero inspirar a otros a lanzarse a la aventura y descubrir todo lo que el mundo tiene para ofrecer. ¡Bienvenidos a mi mundo de despedidas y bienvenidas!
