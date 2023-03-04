@@ -11,7 +11,7 @@ tags:
   - Marxismo
   - Maoísmo
 subtitle: 'Explorando las raíces históricas, teóricas y prácticas del comunismo marxista y maoísta en la lucha por la igualdad y la justicia social.'
-excerpt: ''
+excerpt: 'El comunismo marxista y maoísta son ideologías y movimientos revolucionarios que buscan la abolición del sistema capitalista y la creación de una sociedad igualitaria, donde los medios de producción sean propiedad del pueblo. Aunque comparten una base teórica, existen diferencias entre ellas, como la importancia del campesinado y la lucha armada en el maoísmo. A pesar de las críticas y los errores del pasado, estas ideologías siguen inspirando a muchos movimientos políticos y sociales en todo el mundo en la lucha por la justicia social y la igualdad.'
 draft: no
 series: ~
 layout: single

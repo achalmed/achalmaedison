@@ -5,9 +5,14 @@ date: '2023-03-04'
 slug: fedora-linux-la-distribuci-n-gratuita-y-de-c-digo-abierto-para-todos
 categories:
   - Linux
-tags: []
-subtitle: ''
-excerpt: ''
+  - Tecnología
+tags:
+  - Fedora
+  - Linux
+  - Código abierto
+  - Software libre
+subtitle: 'Descubre las bondades de Fedora Linux'
+excerpt: 'Fedora Linux es una distribución de código abierto y gratuita que ofrece una experiencia de usuario amigable y estable para todos los niveles de habilidad. Como distribución comunitaria, se basa en los valores de la colaboración, la transparencia y la innovación, lo que significa que cualquier persona puede contribuir al desarrollo y la mejora continua de la plataforma. Además, Fedora incluye una amplia variedad de software libre y de código abierto para satisfacer las necesidades de cualquier usuario, desde navegación web hasta producción multimedia.'
 draft: no
 series: ~
 layout: single
