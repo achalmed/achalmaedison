@@ -8,7 +8,7 @@ categories:
 tags: []
 subtitle: ''
 excerpt: ''
-draft: yes
+draft: no
 series: ~
 layout: single
 ---
